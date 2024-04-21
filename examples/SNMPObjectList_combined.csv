@@ -1,0 +1,12 @@
+DeviceName,OID,ValueType,Server IP,Version,User,AuthPass,PrivPass,SecurityLevel,AuthMode,PrivMode,Community,FriendlyName,DeviceFriendlyName
+T1-L00-DC1-A10-PDU-A,1.3.6.1.2.1.1.3.0,String,10.32.144.30,3,test,test,test,Auth Priv,SHA1,AES128,public,sysUpTime,T1-L00-DC1-A10-PDU-A
+T1-L00-DC1-A10-PDU-A,1.3.6.1.4.1.38446.1.3.4.1.6.1.1,Int,10.32.144.30,3,test,test,test,Auth Priv,SHA1,AES128,public,pduInputPhaseSTATUSVoltage,T1-L00-DC1-A10-PDU-A
+T1-L00-DC1-A10-PDU-A,1.3.6.1.4.1.38446.1.2.4.1.4.1,Int,10.32.144.30,3,test,test,test,Auth Priv,SHA1,AES128,public,pduUnitSTATUSActivePower,T1-L00-DC1-A10-PDU-A
+T1-L00-DC1-A10-PDU-A,1.3.6.1.4.1.38446.1.2.4.1.5.1,Int,10.32.144.30,3,test,test,test,Auth Priv,SHA1,AES128,public,pduUnitSTATUSApparentPower,T1-L00-DC1-A10-PDU-A
+T1-L00-DC1-A10-PDU-A,1.3.6.1.4.1.38446.1.2.4.1.6.1,Int,10.32.144.30,3,test,test,test,Auth Priv,SHA1,AES128,public,pduUnitSTATUSPeakPower,T1-L00-DC1-A10-PDU-A
+T1-L00-DC1-A10-PDU-A,1.3.6.1.4.1.38446.1.2.4.1.9.1,Int,10.32.144.30,3,test,test,test,Auth Priv,SHA1,AES128,public,pduUnitSTATUSEnergy,T1-L00-DC1-A10-PDU-A
+T1-L00-DC1-A10-PDU-A,1.3.6.1.4.1.38446.1.6.4.1.8.1.1,Int,10.32.144.30,3,test,test,test,Auth Priv,SHA1,AES128,public,pduExternalSensorSTATUSHighPrecisionValue.1,T1-L00-DC1-A10-PDU-A
+T1-L00-DC1-A10-PDU-A,1.3.6.1.4.1.38446.1.6.4.1.8.1.2,Int,10.32.144.30,3,test,test,test,Auth Priv,SHA1,AES128,public,pduExternalSensorSTATUSHighPrecisionValue.2,T1-L00-DC1-A10-PDU-A
+T1-L00-DC1-A10-PDU-A,1.3.6.1.4.1.38446.1.1.2.1.11.1,String,10.32.144.30,3,test,test,test,Auth Priv,SHA1,AES128,public,pduNamePlatePartNumber,T1-L00-DC1-A10-PDU-A
+T1-L00-DC1-A10-PDU-A,1.3.6.1.4.1.38446.1.1.2.1.12.1,String,10.32.144.30,3,test,test,test,Auth Priv,SHA1,AES128,public,pduNamePlateSerialNumber,T1-L00-DC1-A10-PDU-A
+DGS-12010-52MP,1.3.6.1.2.1.1.3.0,,,,,,,,,,,sysUpTime,

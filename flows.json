@@ -1,1 +1,2104 @@
-[]
+[
+    {
+        "id": "d353a7da6ed8c594",
+        "type": "tab",
+        "label": "Flow snmp fetch",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8902b921da4a441e",
+        "type": "tab",
+        "label": "Flow http serve",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "5bb232ee4f529f6f",
+        "type": "tab",
+        "label": "Flow tests",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "4cb39d2ff60de472",
+        "type": "subflow",
+        "name": "snmp-authPriv-SHA-DES fetch and save",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 100,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "daee20936e975ba4"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 780,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "09aa8e24b3ef72c3",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#C7E9C0"
+    },
+    {
+        "id": "84a32bb3445a4f89",
+        "type": "subflow",
+        "name": "save snmp object values",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 100,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "f8e7ef94f7f058f1"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 960,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "bc94f796713595aa",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#FFCC66"
+    },
+    {
+        "id": "85dbc6b35fde6078",
+        "type": "subflow",
+        "name": "initialise",
+        "info": "",
+        "category": "",
+        "in": [],
+        "out": [
+            {
+                "x": 1300,
+                "y": 380,
+                "wires": [
+                    {
+                        "id": "37c499da6fc7f219",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "a1e4324b31a71af9",
+        "type": "subflow",
+        "name": "db controller",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 100,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "d36a4e79b3216b62"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1520,
+                "y": 300,
+                "wires": [
+                    {
+                        "id": "da783329d90448fb",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#F3B567",
+        "icon": "node-red/leveldb.svg"
+    },
+    {
+        "id": "6dafd41e2e288cc7",
+        "type": "subflow",
+        "name": "db updateValues",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 100,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "54d3652d380d06e5"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 680,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "06a60aca83a65034",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#3FADB5",
+        "icon": "node-red/leveldb.svg"
+    },
+    {
+        "id": "dd256e9dce8a99f6",
+        "type": "subflow",
+        "name": "db selectObjects",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 100,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "2f15c708218e8cd0"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 680,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "1384b3946d4931b7",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#3FADB5",
+        "icon": "node-red/leveldb.svg"
+    },
+    {
+        "id": "08d2f1bf95687a11",
+        "type": "subflow",
+        "name": "Subflow 1",
+        "info": "",
+        "in": [
+            {
+                "x": 100,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "27fe39e5629549b8"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 680,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "5bd2a91e30d37839",
+                        "port": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "a7a9f54e066c76aa",
+        "type": "sqlitedb",
+        "db": "memory",
+        "mode": "RWC"
+    },
+    {
+        "id": "daee20936e975ba4",
+        "type": "snmp",
+        "z": "4cb39d2ff60de472",
+        "host": "",
+        "version": "3",
+        "timeout": 5,
+        "community": "public",
+        "auth": "authPriv",
+        "authprot": "SHA",
+        "privprot": "DES",
+        "oids": "",
+        "name": "snmp-authPriv-SHA-DES",
+        "x": 310,
+        "y": 140,
+        "wires": [
+            [
+                "09aa8e24b3ef72c3"
+            ]
+        ]
+    },
+    {
+        "id": "09aa8e24b3ef72c3",
+        "type": "subflow:84a32bb3445a4f89",
+        "z": "4cb39d2ff60de472",
+        "name": "",
+        "x": 570,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2b3af25592503162",
+        "type": "comment",
+        "z": "4cb39d2ff60de472",
+        "name": "snmp fetch oids",
+        "info": "",
+        "x": 280,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "f8e7ef94f7f058f1",
+        "type": "function",
+        "z": "84a32bb3445a4f89",
+        "name": "insert or update table",
+        "func": "// this query inserts a new record into snmp_oids table for each OID\n// unless there is an existing record with the same devicename and oid,\n// in which case this record is updated with the payload value and tstr\nmsg.topic = `\nINSERT INTO snmp_oids (devicename, oid, value, tstr, updated)\nVALUES ($devicename, $oid, $value, $tstr, CURRENT_TIMESTAMP)\nON CONFLICT(devicename, oid) DO UPDATE SET\nvalue = excluded.value,\ntstr = excluded.tstr,\nupdated = excluded.updated;\n`;\n\nmsg.payload = msg.payload.map(item => [\n    msg.devicename, \n    item.oid,\n    item.value ? item.value.toString() : null, // convert value to string if it's not null\n    item.tstr\n]);\n\nreturn msg;\n\n// this query inserts a new record into snmp_oids table for each OID\n// unless there is an existing record with the same devicename and oid,\n// in which case the record is deleted and replaced with a new one with the payload values\n// this isnt ideal as the id integer will autoincrement and the record id will increment up every time a poll is done\n// msg.topic = `\n// INSERT OR REPLACE INTO snmp_oids (devicename, oid, value, tstr, updated)\n// VALUES ($devicename, $oid, $value, $tstr, CURRENT_TIMESTAMP);\n// `;\n\n// msg.payload = msg.payload.map(item => [\n//     msg.devicename, \n//     item.oid,\n//     item.value ? item.value.toString() : null, // convert value to string if it's not null\n//     item.tstr\n// ]);\n\n// return msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 140,
+        "wires": [
+            [
+                "bce49cd118afc893"
+            ]
+        ]
+    },
+    {
+        "id": "bce49cd118afc893",
+        "type": "split",
+        "z": "84a32bb3445a4f89",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 550,
+        "y": 140,
+        "wires": [
+            [
+                "bc94f796713595aa"
+            ]
+        ]
+    },
+    {
+        "id": "bc94f796713595aa",
+        "type": "sqlite",
+        "z": "84a32bb3445a4f89",
+        "mydb": "a7a9f54e066c76aa",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 800,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6d800bf9937a1756",
+        "type": "comment",
+        "z": "84a32bb3445a4f89",
+        "name": "build SQL query",
+        "info": "",
+        "x": 280,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "bcd93ee5503399cc",
+        "type": "comment",
+        "z": "84a32bb3445a4f89",
+        "name": "update db",
+        "info": "",
+        "x": 800,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "6ab833d13925a725",
+        "type": "comment",
+        "z": "84a32bb3445a4f89",
+        "name": "one query per oid",
+        "info": "",
+        "x": 580,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "f1212253639938a5",
+        "type": "sqlite",
+        "z": "85dbc6b35fde6078",
+        "mydb": "a7a9f54e066c76aa",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 560,
+        "y": 140,
+        "wires": [
+            [
+                "ed01b660a70a595d"
+            ]
+        ]
+    },
+    {
+        "id": "ed01b660a70a595d",
+        "type": "function",
+        "z": "85dbc6b35fde6078",
+        "name": "create table",
+        "func": "msg.topic = `\nCREATE TABLE IF NOT EXISTS snmp_oids (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    devicename TEXT,\n    oid TEXT,\n    objectname TEXT,\n    value TEXT,\n    tstr TEXT,\n    updated DATETIME,\n    UNIQUE(devicename, oid)\n);\n`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 140,
+        "wires": [
+            [
+                "5f0e0a9dd9691908"
+            ]
+        ]
+    },
+    {
+        "id": "e7d0a51970180c95",
+        "type": "function",
+        "z": "85dbc6b35fde6078",
+        "name": "delete table",
+        "func": "msg.topic = `\nDROP TABLE IF EXISTS snmp_oids;\n`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 140,
+        "wires": [
+            [
+                "f1212253639938a5"
+            ]
+        ]
+    },
+    {
+        "id": "5f0e0a9dd9691908",
+        "type": "sqlite",
+        "z": "85dbc6b35fde6078",
+        "mydb": "a7a9f54e066c76aa",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 980,
+        "y": 140,
+        "wires": [
+            [
+                "cf6d6e1cc9e62c7b",
+                "ace450be30c729e4"
+            ]
+        ]
+    },
+    {
+        "id": "cf6d6e1cc9e62c7b",
+        "type": "debug",
+        "z": "85dbc6b35fde6078",
+        "name": "debug 15",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1340,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "8a560d462d8e6287",
+        "type": "comment",
+        "z": "85dbc6b35fde6078",
+        "name": "delete and rebuild empty db table every time flow starts",
+        "info": "",
+        "x": 300,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "ace450be30c729e4",
+        "type": "file in",
+        "z": "85dbc6b35fde6078",
+        "name": "",
+        "filename": "C:\\Users\\cliveg\\.node-red\\projects\\snmp-interface\\examples\\SNMPObjectList_combined.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 600,
+        "y": 260,
+        "wires": [
+            [
+                "25017f1ebb912170"
+            ]
+        ]
+    },
+    {
+        "id": "25017f1ebb912170",
+        "type": "csv",
+        "z": "85dbc6b35fde6078",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 1010,
+        "y": 260,
+        "wires": [
+            [
+                "aabad54eeda50e39"
+            ]
+        ]
+    },
+    {
+        "id": "aabad54eeda50e39",
+        "type": "function",
+        "z": "85dbc6b35fde6078",
+        "name": "insert snmp object list",
+        "func": "// this query inserts a new record into snmp_oids table for each OID\n// unless there is an existing record with the same devicename and oid,\n// in which case this record is updated with the payload value and tstr\nmsg.topic = `\nINSERT INTO snmp_oids (devicename, oid, objectname)\nVALUES ($devicename, $oid, $objectname)\nON CONFLICT(devicename, oid) DO UPDATE SET\nobjectname = excluded.objectname\n`;\n\nmsg.payload = msg.payload.map(item => [\n    item.DeviceName, \n    item.OID,\n    item.FriendlyName\n]);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 380,
+        "wires": [
+            [
+                "287490e5228dcbb1"
+            ]
+        ]
+    },
+    {
+        "id": "287490e5228dcbb1",
+        "type": "split",
+        "z": "85dbc6b35fde6078",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 990,
+        "y": 380,
+        "wires": [
+            [
+                "37c499da6fc7f219"
+            ]
+        ]
+    },
+    {
+        "id": "37c499da6fc7f219",
+        "type": "sqlite",
+        "z": "85dbc6b35fde6078",
+        "mydb": "a7a9f54e066c76aa",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 1140,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "982f3d55cb15109f",
+        "type": "comment",
+        "z": "85dbc6b35fde6078",
+        "name": "optional: set snmp object list file path",
+        "info": "",
+        "x": 420,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "1f537f25276d6d68",
+        "type": "inject",
+        "z": "85dbc6b35fde6078",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 140,
+        "wires": [
+            [
+                "e7d0a51970180c95"
+            ]
+        ]
+    },
+    {
+        "id": "31b609f52483bee1",
+        "type": "function",
+        "z": "a1e4324b31a71af9",
+        "name": "insert or update table",
+        "func": "// this query inserts a new record into snmp_oids table for each OID\n// unless there is an existing record with the same devicename and oid,\n// in which case this record is updated with the payload value and tstr\nmsg.topic = `\nINSERT INTO snmp_oids (devicename, oid, value, tstr, updated)\nVALUES ($devicename, $oid, $value, $tstr, CURRENT_TIMESTAMP)\nON CONFLICT(devicename, oid) DO UPDATE SET\nvalue = excluded.value,\ntstr = excluded.tstr,\nupdated = excluded.updated;\n`;\n\n// check if payload is an array or single object\nif (Array.isArray(msg.payload)) {\n    msg.payload = msg.payload.map(item => [\n        msg.devicename,\n        item.oid,\n        item.value ? item.value.toString() : null, // convert value to string if it's not null\n        item.tstr\n    ]);\n} else {\n    msg.payload = [[\n        msg.payload.devicename,\n        msg.payload.oid,\n        msg.payload.value ? msg.payload.value.toString() : null, // convert value to string if it's not null\n        msg.payload.tstr\n    ]];\n}\n\nreturn msg;\n\n// this query inserts a new record into snmp_oids table for each OID\n// unless there is an existing record with the same devicename and oid,\n// in which case the record is deleted and replaced with a new one with the payload values\n// this isnt ideal as the id integer will autoincrement and the record id will increment up every time a poll is done\n// msg.topic = `\n// INSERT OR REPLACE INTO snmp_oids (devicename, oid, value, tstr, updated)\n// VALUES ($devicename, $oid, $value, $tstr, CURRENT_TIMESTAMP);\n// `;\n\n// msg.payload = msg.payload.map(item => [\n//     msg.devicename, \n//     item.oid,\n//     item.value ? item.value.toString() : null, // convert value to string if it's not null\n//     item.tstr\n// ]);\n\n// return msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 300,
+        "wires": [
+            [
+                "d6c7989734c411c6"
+            ]
+        ]
+    },
+    {
+        "id": "d6c7989734c411c6",
+        "type": "split",
+        "z": "a1e4324b31a71af9",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 990,
+        "y": 300,
+        "wires": [
+            [
+                "da783329d90448fb"
+            ]
+        ]
+    },
+    {
+        "id": "f72fb46786743d63",
+        "type": "comment",
+        "z": "a1e4324b31a71af9",
+        "name": "build SQL query",
+        "info": "",
+        "x": 720,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "bd2f37536361be44",
+        "type": "comment",
+        "z": "a1e4324b31a71af9",
+        "name": "one query per oid",
+        "info": "",
+        "x": 1020,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "d36a4e79b3216b62",
+        "type": "switch",
+        "z": "a1e4324b31a71af9",
+        "name": "",
+        "property": "action",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "loadObjectList",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "updateValues",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "selectObjects",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 250,
+        "y": 140,
+        "wires": [
+            [
+                "739f820542ac8139"
+            ],
+            [
+                "31b609f52483bee1",
+                "1f505164e85928e0"
+            ],
+            [
+                "c17e5ff32bde3608"
+            ],
+            [
+                "6ff3a75ba8142d67"
+            ]
+        ],
+        "outputLabels": [
+            "loadObjectList",
+            "updateValues",
+            "selectObjects",
+            null
+        ]
+    },
+    {
+        "id": "dda40efb623467be",
+        "type": "comment",
+        "z": "a1e4324b31a71af9",
+        "name": "update object values",
+        "info": "",
+        "x": 730,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "739f820542ac8139",
+        "type": "function",
+        "z": "a1e4324b31a71af9",
+        "name": "insert snmp object list",
+        "func": "// this query inserts a new record into snmp_oids table for each OID\n// unless there is an existing record with the same devicename and oid,\n// in which case this record is updated with the payload value and tstr\nmsg.topic = `\nINSERT INTO snmp_oids (devicename, oid, objectname)\nVALUES ($devicename, $oid, $objectname)\nON CONFLICT(devicename, oid) DO UPDATE SET\nobjectname = excluded.objectname\n`;\n\nmsg.payload = msg.payload.map(item => [\n    item.DeviceName, \n    item.OID,\n    item.FriendlyName\n]);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 140,
+        "wires": [
+            [
+                "62b6258f8fc94aca"
+            ]
+        ]
+    },
+    {
+        "id": "62b6258f8fc94aca",
+        "type": "split",
+        "z": "a1e4324b31a71af9",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 990,
+        "y": 140,
+        "wires": [
+            [
+                "da783329d90448fb"
+            ]
+        ]
+    },
+    {
+        "id": "da783329d90448fb",
+        "type": "sqlite",
+        "z": "a1e4324b31a71af9",
+        "mydb": "a7a9f54e066c76aa",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 1360,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "896397f0ef5ea5d0",
+        "type": "comment",
+        "z": "a1e4324b31a71af9",
+        "name": "build SQL query",
+        "info": "",
+        "x": 720,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "8fce4888cf9b33fa",
+        "type": "comment",
+        "z": "a1e4324b31a71af9",
+        "name": "insert snmp objects",
+        "info": "",
+        "x": 730,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "4ea791a27f3df055",
+        "type": "comment",
+        "z": "a1e4324b31a71af9",
+        "name": "one query per oid",
+        "info": "",
+        "x": 1020,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "ed2f6b7e4b7b2920",
+        "type": "comment",
+        "z": "a1e4324b31a71af9",
+        "name": "execute on db",
+        "info": "",
+        "x": 1370,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "c17e5ff32bde3608",
+        "type": "function",
+        "z": "a1e4324b31a71af9",
+        "name": "select from snmp_oids",
+        "func": "let sqlQuery = \"SELECT * FROM snmp_oids\";\nif (msg.payload.devicename) {\n    sqlQuery += \" WHERE devicename = $devicename\";\n}\nmsg.topic = sqlQuery;\nmsg.payload = [msg.payload.devicename];\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 460,
+        "wires": [
+            [
+                "da783329d90448fb"
+            ]
+        ]
+    },
+    {
+        "id": "e2ec9c8f26ab8df9",
+        "type": "comment",
+        "z": "a1e4324b31a71af9",
+        "name": "fetch records from db, filter by query params",
+        "info": "# query params\n -  devicename: filters objects where devicename like devicename",
+        "x": 810,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "7944474ad3951890",
+        "type": "comment",
+        "z": "a1e4324b31a71af9",
+        "name": "fetch records",
+        "info": "",
+        "x": 710,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "1f908a957b881a19",
+        "type": "comment",
+        "z": "a1e4324b31a71af9",
+        "name": "1. loadObjectList",
+        "info": "",
+        "x": 400,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "21ed41b9cd5652f3",
+        "type": "comment",
+        "z": "a1e4324b31a71af9",
+        "name": "2. updateValues",
+        "info": "",
+        "x": 400,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "c6721f1ac52008db",
+        "type": "comment",
+        "z": "a1e4324b31a71af9",
+        "name": "3. selectObjects",
+        "info": "",
+        "x": 400,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "9889b007cf0c4635",
+        "type": "comment",
+        "z": "a1e4324b31a71af9",
+        "name": "4. otherwise",
+        "info": "",
+        "x": 390,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "23aa4a6a697b7335",
+        "type": "debug",
+        "z": "a1e4324b31a71af9",
+        "name": "unknown database operation",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "6ff3a75ba8142d67",
+        "type": "change",
+        "z": "a1e4324b31a71af9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "error",
+                "pt": "msg",
+                "to": "Unknown database operation. Check msg.action is valid",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 710,
+        "y": 580,
+        "wires": [
+            [
+                "23aa4a6a697b7335"
+            ]
+        ]
+    },
+    {
+        "id": "1f505164e85928e0",
+        "type": "debug",
+        "z": "a1e4324b31a71af9",
+        "name": "debug 17",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "06a60aca83a65034",
+        "type": "subflow:a1e4324b31a71af9",
+        "z": "6dafd41e2e288cc7",
+        "name": "",
+        "x": 510,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "54d3652d380d06e5",
+        "type": "change",
+        "z": "6dafd41e2e288cc7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "action",
+                "pt": "msg",
+                "to": "updateValues",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 140,
+        "wires": [
+            [
+                "06a60aca83a65034"
+            ]
+        ],
+        "info": "upsertValues:\r\nloadObjects"
+    },
+    {
+        "id": "acdf9533bd4cb658",
+        "type": "comment",
+        "z": "6dafd41e2e288cc7",
+        "name": "db operation: updateValues",
+        "info": "",
+        "x": 310,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "1384b3946d4931b7",
+        "type": "subflow:a1e4324b31a71af9",
+        "z": "dd256e9dce8a99f6",
+        "name": "",
+        "x": 510,
+        "y": 140,
+        "wires": [
+            [
+                "1a33a8e9b6c7c4d0"
+            ]
+        ]
+    },
+    {
+        "id": "2f15c708218e8cd0",
+        "type": "change",
+        "z": "dd256e9dce8a99f6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "action",
+                "pt": "msg",
+                "to": "selectObjects",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 140,
+        "wires": [
+            [
+                "1384b3946d4931b7"
+            ]
+        ],
+        "info": "upsertValues:\r\nloadObjects"
+    },
+    {
+        "id": "57d77387e86edbff",
+        "type": "comment",
+        "z": "dd256e9dce8a99f6",
+        "name": "db operation: selectObjects",
+        "info": "",
+        "x": 310,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "1a33a8e9b6c7c4d0",
+        "type": "debug",
+        "z": "dd256e9dce8a99f6",
+        "name": "debug 18",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "5bd2a91e30d37839",
+        "type": "subflow:a1e4324b31a71af9",
+        "z": "08d2f1bf95687a11",
+        "name": "",
+        "x": 510,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "27fe39e5629549b8",
+        "type": "change",
+        "z": "08d2f1bf95687a11",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "action",
+                "pt": "msg",
+                "to": "selectObjects",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 140,
+        "wires": [
+            [
+                "5bd2a91e30d37839"
+            ]
+        ],
+        "info": "upsertValues:\r\nloadObjects"
+    },
+    {
+        "id": "f8bd70c3e444e4ab",
+        "type": "comment",
+        "z": "08d2f1bf95687a11",
+        "name": "db operation: selectObjects",
+        "info": "",
+        "x": 310,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "6d09ee4d9f58f9d9",
+        "type": "comment",
+        "z": "d353a7da6ed8c594",
+        "name": "snmp device configuration",
+        "info": "",
+        "x": 630,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "b1d5799b4cca5ca6",
+        "type": "comment",
+        "z": "d353a7da6ed8c594",
+        "name": "snmp fetch values --> build SQL query --> update db",
+        "info": "",
+        "x": 1030,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "c00d5b762b9f8e37",
+        "type": "comment",
+        "z": "d353a7da6ed8c594",
+        "name": "delete and rebuild empty db table every time flow starts",
+        "info": "",
+        "x": 280,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "f6ce31580e4df122",
+        "type": "comment",
+        "z": "d353a7da6ed8c594",
+        "name": "periodically fetch device object values and update db",
+        "info": "",
+        "x": 270,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "7df45eaee86387e4",
+        "type": "subflow:4cb39d2ff60de472",
+        "z": "d353a7da6ed8c594",
+        "name": "",
+        "x": 1000,
+        "y": 260,
+        "wires": [
+            [
+                "d0d0baa64d24d079"
+            ]
+        ]
+    },
+    {
+        "id": "1dd32a2f1723abff",
+        "type": "change",
+        "z": "d353a7da6ed8c594",
+        "name": "DGS-12010-52MP",
+        "rules": [
+            {
+                "t": "set",
+                "p": "host",
+                "pt": "msg",
+                "to": "10.1.1.112",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "oid",
+                "pt": "msg",
+                "to": "1.3.6.1.2.1.1.3.0,1.3.6.1.2.1.1.5.0,1.3.6.1.4.1.38446.1.3.4.1.6.1.1,1.3.6.1.4.1.171.10.76.34.1.1.13.1.2.30,1.3.6.1.4.1.171.10.76.34.1.1.13.1.7.36,1.3.6.1.2.1.1.1,1.3.6.1.2.1.1.1.0",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "devicename",
+                "pt": "msg",
+                "to": "DGS-12010-52MP",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "username",
+                "pt": "msg",
+                "to": "testAuthPriv",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "authkey",
+                "pt": "msg",
+                "to": "test",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "privkey",
+                "pt": "msg",
+                "to": "test",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 610,
+        "y": 260,
+        "wires": [
+            [
+                "7df45eaee86387e4"
+            ]
+        ]
+    },
+    {
+        "id": "4a85d3de167ab092",
+        "type": "delay",
+        "z": "d353a7da6ed8c594",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "0",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 380,
+        "y": 260,
+        "wires": [
+            [
+                "1dd32a2f1723abff"
+            ]
+        ]
+    },
+    {
+        "id": "cb5220cd77de1b1e",
+        "type": "inject",
+        "z": "d353a7da6ed8c594",
+        "name": "every 2min",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "120",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "10",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 260,
+        "wires": [
+            [
+                "4a85d3de167ab092",
+                "e2c89243f46a117c",
+                "45b26f1b95a29c9a",
+                "d5dce8e1d952a6e0",
+                "37038099f7b13681"
+            ]
+        ]
+    },
+    {
+        "id": "e2c89243f46a117c",
+        "type": "delay",
+        "z": "d353a7da6ed8c594",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 380,
+        "y": 320,
+        "wires": [
+            [
+                "85f22d7bd40230b6"
+            ]
+        ]
+    },
+    {
+        "id": "45b26f1b95a29c9a",
+        "type": "delay",
+        "z": "d353a7da6ed8c594",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 380,
+        "y": 380,
+        "wires": [
+            [
+                "a7496ab808c71819"
+            ]
+        ]
+    },
+    {
+        "id": "d5dce8e1d952a6e0",
+        "type": "delay",
+        "z": "d353a7da6ed8c594",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "3",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 380,
+        "y": 440,
+        "wires": [
+            [
+                "b518b153838657c9"
+            ]
+        ]
+    },
+    {
+        "id": "37038099f7b13681",
+        "type": "delay",
+        "z": "d353a7da6ed8c594",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "4",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 380,
+        "y": 500,
+        "wires": [
+            [
+                "b52f09f77357d3c0"
+            ]
+        ]
+    },
+    {
+        "id": "85f22d7bd40230b6",
+        "type": "change",
+        "z": "d353a7da6ed8c594",
+        "name": "device 2",
+        "rules": [
+            {
+                "t": "set",
+                "p": "host",
+                "pt": "msg",
+                "to": "10.1.1.112",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "oid",
+                "pt": "msg",
+                "to": "1.3.6.1.2.1.1.3.0,1.3.6.1.2.1.1.5.0,1.3.6.1.4.1.38446.1.3.4.1.6.1.1",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "devicename",
+                "pt": "msg",
+                "to": "device 2",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "username",
+                "pt": "msg",
+                "to": "testAuthPriv",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "authkey",
+                "pt": "msg",
+                "to": "test",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "privkey",
+                "pt": "msg",
+                "to": "test",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 320,
+        "wires": [
+            [
+                "62945eb7804bd31d"
+            ]
+        ]
+    },
+    {
+        "id": "a7496ab808c71819",
+        "type": "change",
+        "z": "d353a7da6ed8c594",
+        "name": "device 3",
+        "rules": [
+            {
+                "t": "set",
+                "p": "host",
+                "pt": "msg",
+                "to": "10.1.1.112",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "oid",
+                "pt": "msg",
+                "to": "1.3.6.1.2.1.1.3.0,1.3.6.1.2.1.1.5.0,1.3.6.1.4.1.38446.1.3.4.1.6.1.1",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "devicename",
+                "pt": "msg",
+                "to": "device 3",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "username",
+                "pt": "msg",
+                "to": "testAuthPriv",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "authkey",
+                "pt": "msg",
+                "to": "test",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "privkey",
+                "pt": "msg",
+                "to": "test",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 380,
+        "wires": [
+            [
+                "8fd6ee2fbb8f8542"
+            ]
+        ]
+    },
+    {
+        "id": "b518b153838657c9",
+        "type": "change",
+        "z": "d353a7da6ed8c594",
+        "name": "device 4",
+        "rules": [
+            {
+                "t": "set",
+                "p": "host",
+                "pt": "msg",
+                "to": "10.1.1.112",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "oid",
+                "pt": "msg",
+                "to": "1.3.6.1.2.1.1.3.0,1.3.6.1.2.1.1.5.0,1.3.6.1.4.1.38446.1.3.4.1.6.1.1",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "devicename",
+                "pt": "msg",
+                "to": "device 4",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "username",
+                "pt": "msg",
+                "to": "testAuthPriv",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "authkey",
+                "pt": "msg",
+                "to": "test",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "privkey",
+                "pt": "msg",
+                "to": "test",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 440,
+        "wires": [
+            [
+                "324ec5854e6639db"
+            ]
+        ]
+    },
+    {
+        "id": "b52f09f77357d3c0",
+        "type": "change",
+        "z": "d353a7da6ed8c594",
+        "name": "test offline device",
+        "rules": [
+            {
+                "t": "set",
+                "p": "host",
+                "pt": "msg",
+                "to": "10.1.1.113",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "oid",
+                "pt": "msg",
+                "to": "1.3.6.1.2.1.1.3.0,1.3.6.1.2.1.1.5.0,1.3.6.1.4.1.38446.1.3.4.1.6.1.1",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "devicename",
+                "pt": "msg",
+                "to": "test offline device",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "username",
+                "pt": "msg",
+                "to": "somebody",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "authkey",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "privkey",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 610,
+        "y": 500,
+        "wires": [
+            [
+                "5efee4d4a45bf2ae"
+            ]
+        ]
+    },
+    {
+        "id": "62945eb7804bd31d",
+        "type": "subflow:4cb39d2ff60de472",
+        "z": "d353a7da6ed8c594",
+        "name": "",
+        "x": 1000,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8fd6ee2fbb8f8542",
+        "type": "subflow:4cb39d2ff60de472",
+        "z": "d353a7da6ed8c594",
+        "name": "",
+        "x": 1000,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "324ec5854e6639db",
+        "type": "subflow:4cb39d2ff60de472",
+        "z": "d353a7da6ed8c594",
+        "name": "",
+        "x": 1000,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5efee4d4a45bf2ae",
+        "type": "subflow:4cb39d2ff60de472",
+        "z": "d353a7da6ed8c594",
+        "name": "",
+        "x": 1000,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d0d0baa64d24d079",
+        "type": "debug",
+        "z": "d353a7da6ed8c594",
+        "name": "debug 11",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1340,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "8ac86a8c9074ddfd",
+        "type": "subflow:85dbc6b35fde6078",
+        "z": "d353a7da6ed8c594",
+        "name": "",
+        "x": 130,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "35c51323df4d14e8",
+        "type": "comment",
+        "z": "d353a7da6ed8c594",
+        "name": "then optionally load records from snmp object list",
+        "info": "if this step is skipped, points will be named on the XML Web Service as devicename_oid instead of devicename_objectname\neg \"DGS-12010-52MP_sysUpTime\" or \"DGS-12010-52MP_1.3.6.1.2.1.1.3.0\"",
+        "x": 680,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "f9b646efad1b1957",
+        "type": "http in",
+        "z": "8902b921da4a441e",
+        "name": "",
+        "url": "/objects",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 140,
+        "wires": [
+            [
+                "f45c372f9dbb5b2e"
+            ]
+        ]
+    },
+    {
+        "id": "a43c15c32469513b",
+        "type": "http response",
+        "z": "8902b921da4a441e",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 1080,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "862a7e8beaa8d91a",
+        "type": "template",
+        "z": "8902b921da4a441e",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<root>\n    <header/>\n    <body>\n        <queryparams>\n        </queryparams>\n        <objects>\n            {{#payload}}\n            {{#objectname}}\n            <{{devicename}}_{{objectname}} id=\"{{id}}\" deviceName=\"{{devicename}}\" objectName=\"{{objectname}}\" oid=\"{{oid}}\" tstr=\"{{tstr}}\" updated=\"{{updated}}\">\n                {{value}}\n            </{{devicename}}_{{objectname}}>\n            {{/objectname}}\n            {{^objectname}}\n            <{{devicename}}_{{oid}} id=\"{{id}}\" deviceName=\"{{devicename}}\" objectName=\"{{objectname}}\" oid=\"{{oid}}\" tstr=\"{{tstr}}\" updated=\"{{updated}}\">\n                {{value}}\n            </{{devicename}}_{{oid}}>\n            {{/objectname}}\n            {{/payload}}\n        </objects>\n    </body>\n</root>",
+        "output": "str",
+        "x": 840,
+        "y": 140,
+        "wires": [
+            [
+                "a43c15c32469513b"
+            ]
+        ]
+    },
+    {
+        "id": "a8ca054cee99ea30",
+        "type": "comment",
+        "z": "8902b921da4a441e",
+        "name": "listen on http endpoint",
+        "info": "",
+        "x": 180,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "61aed6e046eaec04",
+        "type": "comment",
+        "z": "8902b921da4a441e",
+        "name": "fetch records from db, filter by query params",
+        "info": "# query params\n -  devicename: filters objects where devicename like devicename",
+        "x": 470,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "4121aeb29a73a7de",
+        "type": "comment",
+        "z": "8902b921da4a441e",
+        "name": "structure xml response",
+        "info": "# query params\n -  devicename: filters objects where devicename like devicename",
+        "x": 880,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "c7073e1b4212f778",
+        "type": "comment",
+        "z": "8902b921da4a441e",
+        "name": "http response",
+        "info": "",
+        "x": 1090,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "f45c372f9dbb5b2e",
+        "type": "subflow:dd256e9dce8a99f6",
+        "z": "8902b921da4a441e",
+        "name": "",
+        "x": 390,
+        "y": 140,
+        "wires": [
+            [
+                "862a7e8beaa8d91a"
+            ]
+        ]
+    },
+    {
+        "id": "04370c044d7c6204",
+        "type": "debug",
+        "z": "5bb232ee4f529f6f",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "9a6eec210a2296b9",
+        "type": "inject",
+        "z": "5bb232ee4f529f6f",
+        "name": "click to inject",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 340,
+        "wires": [
+            [
+                "4cc2605ac72562f6"
+            ]
+        ]
+    },
+    {
+        "id": "886849650bdbe329",
+        "type": "inject",
+        "z": "5bb232ee4f529f6f",
+        "name": "click to inject",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 180,
+        "wires": [
+            [
+                "7a30bee5c3b466ff"
+            ]
+        ]
+    },
+    {
+        "id": "3b985bd271bdbd11",
+        "type": "comment",
+        "z": "5bb232ee4f529f6f",
+        "name": "tests",
+        "info": "",
+        "x": 130,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "6bc27428fb16adc4",
+        "type": "snmp subtree",
+        "z": "5bb232ee4f529f6f",
+        "host": "10.1.1.112",
+        "version": "3",
+        "timeout": "10",
+        "community": "public",
+        "auth": "authPriv",
+        "authprot": "SHA",
+        "privprot": "DES",
+        "oids": "1.3.6.1.4.1.171.10.76.34",
+        "name": "",
+        "x": 410,
+        "y": 500,
+        "wires": [
+            [
+                "9a7fbd1493744cfc",
+                "8db82ffe1e20d2e2"
+            ]
+        ]
+    },
+    {
+        "id": "9a7fbd1493744cfc",
+        "type": "debug",
+        "z": "5bb232ee4f529f6f",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "765a8f131e1aa197",
+        "type": "inject",
+        "z": "5bb232ee4f529f6f",
+        "name": "click to inject",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 500,
+        "wires": [
+            [
+                "6bc27428fb16adc4"
+            ]
+        ]
+    },
+    {
+        "id": "8db82ffe1e20d2e2",
+        "type": "file",
+        "z": "5bb232ee4f529f6f",
+        "name": "",
+        "filename": "C:\\Users\\cliveg\\.node-red\\projects\\snmp-interface\\examples\\test_snmp_walk",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 830,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2321f067eca41821",
+        "type": "comment",
+        "z": "5bb232ee4f529f6f",
+        "name": "snmp walk a device then write to file",
+        "info": "",
+        "x": 220,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "514e060bfa62c9c0",
+        "type": "comment",
+        "z": "5bb232ee4f529f6f",
+        "name": "select all from snmp_oids then console log",
+        "info": "",
+        "x": 240,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "46ebcdd33e44a258",
+        "type": "comment",
+        "z": "5bb232ee4f529f6f",
+        "name": "insert sample data",
+        "info": "",
+        "x": 170,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "4cc2605ac72562f6",
+        "type": "template",
+        "z": "5bb232ee4f529f6f",
+        "name": "sample data",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n    \"devicename\": \"Test Device\",\n    \"oid\": \"1.3.6.1.2.1.1.3.0\",\n    \"value\": \"Test Value\",\n    \"tstr\": \"OctetString\"\n}\n",
+        "output": "json",
+        "x": 370,
+        "y": 340,
+        "wires": [
+            [
+                "33111954372c649f"
+            ]
+        ]
+    },
+    {
+        "id": "2ba72c2a09ac172a",
+        "type": "comment",
+        "z": "5bb232ee4f529f6f",
+        "name": "edit sample data",
+        "info": "",
+        "x": 380,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "7a30bee5c3b466ff",
+        "type": "subflow:dd256e9dce8a99f6",
+        "z": "5bb232ee4f529f6f",
+        "name": "",
+        "x": 560,
+        "y": 180,
+        "wires": [
+            [
+                "2b645909dcf678ac"
+            ]
+        ]
+    },
+    {
+        "id": "33111954372c649f",
+        "type": "subflow:6dafd41e2e288cc7",
+        "z": "5bb232ee4f529f6f",
+        "name": "",
+        "x": 570,
+        "y": 340,
+        "wires": [
+            [
+                "04370c044d7c6204"
+            ]
+        ]
+    },
+    {
+        "id": "2b645909dcf678ac",
+        "type": "debug",
+        "z": "5bb232ee4f529f6f",
+        "name": "debug 20",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 180,
+        "wires": []
+    }
+]

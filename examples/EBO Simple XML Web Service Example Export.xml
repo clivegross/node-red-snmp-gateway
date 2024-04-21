@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ObjectSet ExportMode="Standard" Note="TypesFirst" SemanticsFilter="Standard" Version="4.0.1.86">
+  <MetaInformation>
+    <ExportMode Value="Standard"/>
+    <SemanticsFilter Value="None"/>
+    <RuntimeVersion Value="4.0.1.86"/>
+    <SourceVersion Value="4.0.1.86"/>
+    <ServerFullPath Value="/Server 1"/>
+  </MetaInformation>
+<ExportedObjects>
+  <OI NAME="Simple XML Web Service_4" TYPE="webservice.genericconsume.SimpleXml">
+    <PI Name="PollingInterval" Value="20"/>
+    <PI Name="URL" Value="http://localhost:1880/objects?devicename=DGS-12010-52MP&amp;format=deviceobjectname&amp;pollrate=60"/>
+    <OI NAME="DGS-12010-52MP_1.3.6.1.2.1.1.1.0" TYPE="webservice.genericconsume.point.StringValue">
+      <PI Name="XPath" Value="/root/body/objects/DGS-12010-52MP_1.3.6.1.2.1.1.1.0/text()"/>
+      <PI Name="Value" Value="DGS-1210-52MP/C1 4.00.064"/>
+    </OI>
+    <OI NAME="DGS-12010-52MP_sysUpTime" TYPE="webservice.genericconsume.point.AnalogValue">
+      <PI Name="XPath" Value="/root/body/objects/DGS-12010-52MP_sysUpTime/text()"/>
+      <PI Name="Value" Value="10473917"/>
+    </OI>
+    <OI NAME="DGS-12010-52MP_1.3.6.1.4.1.171.10.76.34.1.1.13.1.2.30" TYPE="webservice.genericconsume.point.AnalogValue">
+      <PI Name="XPath" Value="/root/body/objects/DGS-12010-52MP_1.3.6.1.4.1.171.10.76.34.1.1.13.1.2.30/text()"/>
+      <PI Name="Value" Value="6"/>
+    </OI>
+    <OI NAME="DGS-12010-52MP_1.3.6.1.4.1.171.10.76.34.1.1.13.1.7.36" TYPE="webservice.genericconsume.point.AnalogValue">
+      <PI Name="XPath" Value="/root/body/objects/DGS-12010-52MP_1.3.6.1.4.1.171.10.76.34.1.1.13.1.7.36/text()"/>
+      <PI Name="Value" Value="2"/>
+    </OI>
+    <OI NAME="Time Stamp Value" TYPE="webservice.genericconsume.point.TimeStampValue">
+      <PI Name="XPath" Value="/root/body/objects/DGS-12010-52MP_sysUpTime/@updated"/>
+      <PI Name="Value" Value="Tx061696835bc940b0"/>
+    </OI>
+  </OI>
+</ExportedObjects>
+
+</ObjectSet>
