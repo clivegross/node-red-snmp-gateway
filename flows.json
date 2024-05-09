@@ -1,8 +1,16 @@
 [
     {
+        "id": "3f90c4c31b85efd4",
+        "type": "tab",
+        "label": "Flow snmp fetch from config",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "d353a7da6ed8c594",
         "type": "tab",
-        "label": "Flow snmp fetch",
+        "label": "Flow snmp manual",
         "disabled": false,
         "info": "",
         "env": []
@@ -26,7 +34,7 @@
     {
         "id": "4cb39d2ff60de472",
         "type": "subflow",
-        "name": "snmp-authPriv-SHA-DES fetch and save",
+        "name": "snmp3-authPriv-SHA-DES fetch and save",
         "info": "",
         "category": "",
         "in": [
@@ -42,11 +50,11 @@
         ],
         "out": [
             {
-                "x": 780,
+                "x": 800,
                 "y": 140,
                 "wires": [
                     {
-                        "id": "09aa8e24b3ef72c3",
+                        "id": "7f34500f0087d89d",
                         "port": 0
                     }
                 ]
@@ -57,39 +65,6 @@
         "color": "#C7E9C0"
     },
     {
-        "id": "84a32bb3445a4f89",
-        "type": "subflow",
-        "name": "save snmp object values",
-        "info": "",
-        "category": "",
-        "in": [
-            {
-                "x": 100,
-                "y": 140,
-                "wires": [
-                    {
-                        "id": "f8e7ef94f7f058f1"
-                    }
-                ]
-            }
-        ],
-        "out": [
-            {
-                "x": 960,
-                "y": 140,
-                "wires": [
-                    {
-                        "id": "bc94f796713595aa",
-                        "port": 0
-                    }
-                ]
-            }
-        ],
-        "env": [],
-        "meta": {},
-        "color": "#FFCC66"
-    },
-    {
         "id": "85dbc6b35fde6078",
         "type": "subflow",
         "name": "initialise",
@@ -98,11 +73,11 @@
         "in": [],
         "out": [
             {
-                "x": 1300,
-                "y": 380,
+                "x": 1200,
+                "y": 420,
                 "wires": [
                     {
-                        "id": "37c499da6fc7f219",
+                        "id": "b2fcd36c1d611836",
                         "port": 0
                     }
                 ]
@@ -121,7 +96,7 @@
         "in": [
             {
                 "x": 100,
-                "y": 140,
+                "y": 360,
                 "wires": [
                     {
                         "id": "d36a4e79b3216b62"
@@ -131,11 +106,15 @@
         ],
         "out": [
             {
-                "x": 1520,
-                "y": 300,
+                "x": 1580,
+                "y": 340,
                 "wires": [
                     {
-                        "id": "da783329d90448fb",
+                        "id": "1ee588818b4b9ab9",
+                        "port": 0
+                    },
+                    {
+                        "id": "6ff3a75ba8142d67",
                         "port": 0
                     }
                 ]
@@ -215,38 +194,110 @@
         "icon": "node-red/leveldb.svg"
     },
     {
-        "id": "08d2f1bf95687a11",
+        "id": "fef427aa2bd2e850",
         "type": "subflow",
-        "name": "Subflow 1",
+        "name": "snmp3-authPriv-SHA-AES fetch and save",
         "info": "",
+        "category": "",
         "in": [
             {
                 "x": 100,
                 "y": 140,
                 "wires": [
                     {
-                        "id": "27fe39e5629549b8"
+                        "id": "cd96b9485f97d538"
                     }
                 ]
             }
         ],
         "out": [
             {
-                "x": 680,
+                "x": 800,
                 "y": 140,
                 "wires": [
                     {
-                        "id": "5bd2a91e30d37839",
+                        "id": "91c0427b03045782",
                         "port": 0
                     }
                 ]
             }
-        ]
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#C7E9C0"
     },
     {
-        "id": "a7a9f54e066c76aa",
+        "id": "d5d393300a7d91ca",
+        "type": "subflow",
+        "name": "db selectDevices",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 60,
+                "y": 120,
+                "wires": [
+                    {
+                        "id": "b92f0cfc7133568a"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 600,
+                "y": 120,
+                "wires": [
+                    {
+                        "id": "c38347e3c93cf8df",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#3FADB5",
+        "icon": "node-red/leveldb.svg"
+    },
+    {
+        "id": "af5716f8f7c32e34",
+        "type": "subflow",
+        "name": "snmp3 fetch and save",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 60,
+                "y": 240,
+                "wires": [
+                    {
+                        "id": "537965883b2a0489"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1440,
+                "y": 220,
+                "wires": [
+                    {
+                        "id": "47880256b859f8b2",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#C7E9C0"
+    },
+    {
+        "id": "929876902304719e",
         "type": "sqlitedb",
-        "db": "memory",
+        "z": "a1e4324b31a71af9",
+        "db": "db",
         "mode": "RWC"
     },
     {
@@ -261,24 +312,13 @@
         "authprot": "SHA",
         "privprot": "DES",
         "oids": "",
-        "name": "snmp-authPriv-SHA-DES",
-        "x": 310,
+        "name": "snmp3-authPriv-SHA-DES",
+        "x": 320,
         "y": 140,
         "wires": [
             [
-                "09aa8e24b3ef72c3"
+                "7f34500f0087d89d"
             ]
-        ]
-    },
-    {
-        "id": "09aa8e24b3ef72c3",
-        "type": "subflow:84a32bb3445a4f89",
-        "z": "4cb39d2ff60de472",
-        "name": "",
-        "x": 570,
-        "y": 140,
-        "wires": [
-            []
         ]
     },
     {
@@ -292,177 +332,15 @@
         "wires": []
     },
     {
-        "id": "f8e7ef94f7f058f1",
-        "type": "function",
-        "z": "84a32bb3445a4f89",
-        "name": "insert or update table",
-        "func": "// this query inserts a new record into snmp_oids table for each OID\n// unless there is an existing record with the same devicename and oid,\n// in which case this record is updated with the payload value and tstr\nmsg.topic = `\nINSERT INTO snmp_oids (devicename, oid, value, tstr, updated)\nVALUES ($devicename, $oid, $value, $tstr, CURRENT_TIMESTAMP)\nON CONFLICT(devicename, oid) DO UPDATE SET\nvalue = excluded.value,\ntstr = excluded.tstr,\nupdated = excluded.updated;\n`;\n\nmsg.payload = msg.payload.map(item => [\n    msg.devicename, \n    item.oid,\n    item.value ? item.value.toString() : null, // convert value to string if it's not null\n    item.tstr\n]);\n\nreturn msg;\n\n// this query inserts a new record into snmp_oids table for each OID\n// unless there is an existing record with the same devicename and oid,\n// in which case the record is deleted and replaced with a new one with the payload values\n// this isnt ideal as the id integer will autoincrement and the record id will increment up every time a poll is done\n// msg.topic = `\n// INSERT OR REPLACE INTO snmp_oids (devicename, oid, value, tstr, updated)\n// VALUES ($devicename, $oid, $value, $tstr, CURRENT_TIMESTAMP);\n// `;\n\n// msg.payload = msg.payload.map(item => [\n//     msg.devicename, \n//     item.oid,\n//     item.value ? item.value.toString() : null, // convert value to string if it's not null\n//     item.tstr\n// ]);\n\n// return msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 300,
-        "y": 140,
-        "wires": [
-            [
-                "bce49cd118afc893"
-            ]
-        ]
-    },
-    {
-        "id": "bce49cd118afc893",
-        "type": "split",
-        "z": "84a32bb3445a4f89",
+        "id": "7f34500f0087d89d",
+        "type": "subflow:6dafd41e2e288cc7",
+        "z": "4cb39d2ff60de472",
         "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 550,
-        "y": 140,
-        "wires": [
-            [
-                "bc94f796713595aa"
-            ]
-        ]
-    },
-    {
-        "id": "bc94f796713595aa",
-        "type": "sqlite",
-        "z": "84a32bb3445a4f89",
-        "mydb": "a7a9f54e066c76aa",
-        "sqlquery": "msg.topic",
-        "sql": "",
-        "name": "",
-        "x": 800,
+        "x": 570,
         "y": 140,
         "wires": [
             []
         ]
-    },
-    {
-        "id": "6d800bf9937a1756",
-        "type": "comment",
-        "z": "84a32bb3445a4f89",
-        "name": "build SQL query",
-        "info": "",
-        "x": 280,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "bcd93ee5503399cc",
-        "type": "comment",
-        "z": "84a32bb3445a4f89",
-        "name": "update db",
-        "info": "",
-        "x": 800,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "6ab833d13925a725",
-        "type": "comment",
-        "z": "84a32bb3445a4f89",
-        "name": "one query per oid",
-        "info": "",
-        "x": 580,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "f1212253639938a5",
-        "type": "sqlite",
-        "z": "85dbc6b35fde6078",
-        "mydb": "a7a9f54e066c76aa",
-        "sqlquery": "msg.topic",
-        "sql": "",
-        "name": "",
-        "x": 560,
-        "y": 140,
-        "wires": [
-            [
-                "ed01b660a70a595d"
-            ]
-        ]
-    },
-    {
-        "id": "ed01b660a70a595d",
-        "type": "function",
-        "z": "85dbc6b35fde6078",
-        "name": "create table",
-        "func": "msg.topic = `\nCREATE TABLE IF NOT EXISTS snmp_oids (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    devicename TEXT,\n    oid TEXT,\n    objectname TEXT,\n    value TEXT,\n    tstr TEXT,\n    updated DATETIME,\n    UNIQUE(devicename, oid)\n);\n`;\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 770,
-        "y": 140,
-        "wires": [
-            [
-                "5f0e0a9dd9691908"
-            ]
-        ]
-    },
-    {
-        "id": "e7d0a51970180c95",
-        "type": "function",
-        "z": "85dbc6b35fde6078",
-        "name": "delete table",
-        "func": "msg.topic = `\nDROP TABLE IF EXISTS snmp_oids;\n`;\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 350,
-        "y": 140,
-        "wires": [
-            [
-                "f1212253639938a5"
-            ]
-        ]
-    },
-    {
-        "id": "5f0e0a9dd9691908",
-        "type": "sqlite",
-        "z": "85dbc6b35fde6078",
-        "mydb": "a7a9f54e066c76aa",
-        "sqlquery": "msg.topic",
-        "sql": "",
-        "name": "",
-        "x": 980,
-        "y": 140,
-        "wires": [
-            [
-                "cf6d6e1cc9e62c7b",
-                "ace450be30c729e4"
-            ]
-        ]
-    },
-    {
-        "id": "cf6d6e1cc9e62c7b",
-        "type": "debug",
-        "z": "85dbc6b35fde6078",
-        "name": "debug 15",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1340,
-        "y": 260,
-        "wires": []
     },
     {
         "id": "8a560d462d8e6287",
@@ -470,8 +348,8 @@
         "z": "85dbc6b35fde6078",
         "name": "delete and rebuild empty db table every time flow starts",
         "info": "",
-        "x": 300,
-        "y": 100,
+        "x": 520,
+        "y": 60,
         "wires": []
     },
     {
@@ -479,14 +357,14 @@
         "type": "file in",
         "z": "85dbc6b35fde6078",
         "name": "",
-        "filename": "C:\\Users\\cliveg\\.node-red\\projects\\snmp-interface\\examples\\SNMPObjectList_combined.csv",
+        "filename": "C:\\ProgramData\\node-red\\projects\\node-red-snmp-fetcher-service\\examples\\SNMPObjectList.csv",
         "filenameType": "str",
         "format": "utf8",
         "chunk": false,
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 600,
+        "x": 440,
         "y": 260,
         "wires": [
             [
@@ -509,65 +387,12 @@
         "strings": true,
         "include_empty_strings": "",
         "include_null_values": "",
-        "x": 1010,
-        "y": 260,
+        "x": 210,
+        "y": 420,
         "wires": [
             [
-                "aabad54eeda50e39"
+                "45067b4482a64ee1"
             ]
-        ]
-    },
-    {
-        "id": "aabad54eeda50e39",
-        "type": "function",
-        "z": "85dbc6b35fde6078",
-        "name": "insert snmp object list",
-        "func": "// this query inserts a new record into snmp_oids table for each OID\n// unless there is an existing record with the same devicename and oid,\n// in which case this record is updated with the payload value and tstr\nmsg.topic = `\nINSERT INTO snmp_oids (devicename, oid, objectname)\nVALUES ($devicename, $oid, $objectname)\nON CONFLICT(devicename, oid) DO UPDATE SET\nobjectname = excluded.objectname\n`;\n\nmsg.payload = msg.payload.map(item => [\n    item.DeviceName, \n    item.OID,\n    item.FriendlyName\n]);\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 800,
-        "y": 380,
-        "wires": [
-            [
-                "287490e5228dcbb1"
-            ]
-        ]
-    },
-    {
-        "id": "287490e5228dcbb1",
-        "type": "split",
-        "z": "85dbc6b35fde6078",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 990,
-        "y": 380,
-        "wires": [
-            [
-                "37c499da6fc7f219"
-            ]
-        ]
-    },
-    {
-        "id": "37c499da6fc7f219",
-        "type": "sqlite",
-        "z": "85dbc6b35fde6078",
-        "mydb": "a7a9f54e066c76aa",
-        "sqlquery": "msg.topic",
-        "sql": "",
-        "name": "",
-        "x": 1140,
-        "y": 380,
-        "wires": [
-            []
         ]
     },
     {
@@ -576,15 +401,15 @@
         "z": "85dbc6b35fde6078",
         "name": "optional: set snmp object list file path",
         "info": "",
-        "x": 420,
-        "y": 220,
+        "x": 240,
+        "y": 300,
         "wires": []
     },
     {
         "id": "1f537f25276d6d68",
         "type": "inject",
         "z": "85dbc6b35fde6078",
-        "name": "",
+        "name": "inject once on start",
         "props": [
             {
                 "p": "payload"
@@ -601,28 +426,207 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 170,
+        "x": 190,
         "y": 140,
         "wires": [
             [
-                "e7d0a51970180c95"
+                "220835e01f1fad3a"
             ]
         ]
     },
     {
-        "id": "31b609f52483bee1",
+        "id": "f2c30889586fe20a",
+        "type": "comment",
+        "z": "85dbc6b35fde6078",
+        "name": "db",
+        "info": "",
+        "x": 610,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "c862aea5ae8d91da",
+        "type": "comment",
+        "z": "85dbc6b35fde6078",
+        "name": "db",
+        "info": "",
+        "x": 910,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "b06c7835c66a5f67",
+        "type": "subflow:a1e4324b31a71af9",
+        "z": "85dbc6b35fde6078",
+        "name": "",
+        "x": 630,
+        "y": 140,
+        "wires": [
+            [
+                "ace450be30c729e4"
+            ]
+        ]
+    },
+    {
+        "id": "220835e01f1fad3a",
+        "type": "change",
+        "z": "85dbc6b35fde6078",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "action",
+                "pt": "msg",
+                "to": "initialise",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 140,
+        "wires": [
+            [
+                "b06c7835c66a5f67"
+            ]
+        ],
+        "info": "upsertValues:\r\nloadObjects"
+    },
+    {
+        "id": "d3387bd2848feb8f",
+        "type": "comment",
+        "z": "85dbc6b35fde6078",
+        "name": "db operation: initialise",
+        "info": "",
+        "x": 420,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "b2fcd36c1d611836",
+        "type": "subflow:a1e4324b31a71af9",
+        "z": "85dbc6b35fde6078",
+        "name": "",
+        "x": 930,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1e7e38e8385fa24b",
+        "type": "change",
+        "z": "85dbc6b35fde6078",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "action",
+                "pt": "msg",
+                "to": "loadObjectList",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 420,
+        "wires": [
+            [
+                "b2fcd36c1d611836"
+            ]
+        ],
+        "info": "upsertValues:\r\nloadObjects"
+    },
+    {
+        "id": "3e2d5a9f29ae1c78",
+        "type": "comment",
+        "z": "85dbc6b35fde6078",
+        "name": "db operation: loadObjectList",
+        "info": "",
+        "x": 720,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "45067b4482a64ee1",
         "type": "function",
-        "z": "a1e4324b31a71af9",
-        "name": "insert or update table",
-        "func": "// this query inserts a new record into snmp_oids table for each OID\n// unless there is an existing record with the same devicename and oid,\n// in which case this record is updated with the payload value and tstr\nmsg.topic = `\nINSERT INTO snmp_oids (devicename, oid, value, tstr, updated)\nVALUES ($devicename, $oid, $value, $tstr, CURRENT_TIMESTAMP)\nON CONFLICT(devicename, oid) DO UPDATE SET\nvalue = excluded.value,\ntstr = excluded.tstr,\nupdated = excluded.updated;\n`;\n\n// check if payload is an array or single object\nif (Array.isArray(msg.payload)) {\n    msg.payload = msg.payload.map(item => [\n        msg.devicename,\n        item.oid,\n        item.value ? item.value.toString() : null, // convert value to string if it's not null\n        item.tstr\n    ]);\n} else {\n    msg.payload = [[\n        msg.payload.devicename,\n        msg.payload.oid,\n        msg.payload.value ? msg.payload.value.toString() : null, // convert value to string if it's not null\n        msg.payload.tstr\n    ]];\n}\n\nreturn msg;\n\n// this query inserts a new record into snmp_oids table for each OID\n// unless there is an existing record with the same devicename and oid,\n// in which case the record is deleted and replaced with a new one with the payload values\n// this isnt ideal as the id integer will autoincrement and the record id will increment up every time a poll is done\n// msg.topic = `\n// INSERT OR REPLACE INTO snmp_oids (devicename, oid, value, tstr, updated)\n// VALUES ($devicename, $oid, $value, $tstr, CURRENT_TIMESTAMP);\n// `;\n\n// msg.payload = msg.payload.map(item => [\n//     msg.devicename, \n//     item.oid,\n//     item.value ? item.value.toString() : null, // convert value to string if it's not null\n//     item.tstr\n// ]);\n\n// return msg;",
+        "z": "85dbc6b35fde6078",
+        "name": "remove spaces from keys",
+        "func": "var data = msg.payload;\n\n// get the column names form the first object in the array\nvar columns = Object.keys(data[0])\n\n// remove spaces from column names\nvar newData = data.map(function(row) {\n    var newRow = {};\n    columns.forEach(function(col) {\n        var newCol = col.trim().replace(/\\s+/g,'');\n        newRow[newCol] = row[col];\n    });\n    return newRow;\n});\n\n// set the new modofed data back to the payload\nmsg.payload = newData;\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 740,
-        "y": 300,
+        "x": 410,
+        "y": 420,
+        "wires": [
+            [
+                "1e7e38e8385fa24b",
+                "53186093ce1d2e9a"
+            ]
+        ]
+    },
+    {
+        "id": "53186093ce1d2e9a",
+        "type": "change",
+        "z": "85dbc6b35fde6078",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "action",
+                "pt": "msg",
+                "to": "loadDeviceList",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 500,
+        "wires": [
+            [
+                "b2fcd36c1d611836"
+            ]
+        ],
+        "info": "upsertValues:\r\nloadObjects"
+    },
+    {
+        "id": "86fa83bf819afdbf",
+        "type": "comment",
+        "z": "85dbc6b35fde6078",
+        "name": "db operation: loadDeviceList",
+        "info": "",
+        "x": 720,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "31b609f52483bee1",
+        "type": "function",
+        "z": "a1e4324b31a71af9",
+        "name": "insert into or update snmp_objects",
+        "func": "// this query inserts a new record into snmp_oids table for each OID\n// unless there is an existing record with the same devicename and oid,\n// in which case this record is updated with the payload value and tstr\nmsg.topic = `\nINSERT INTO snmp_objects (devicename, oid, value, tstr, updated)\nVALUES ($devicename, $oid, $value, $tstr, CURRENT_TIMESTAMP)\nON CONFLICT(devicename, oid) DO UPDATE SET\nvalue = excluded.value,\ntstr = excluded.tstr,\nupdated = excluded.updated;\n`;\n\n// check if payload is an array or single object\nif (Array.isArray(msg.payload)) {\n    msg.payload = msg.payload.map(item => [\n        msg.devicename,\n        item.oid,\n        item.value !== undefined ? item.value.toString() : null, // convert value to string if it's not null\n        item.tstr\n    ]);\n} else {\n    msg.payload = [[\n        msg.payload.devicename,\n        msg.payload.oid,\n        msg.payload.value !== undefined ? msg.payload.value.toString() : null, // convert value to string if it's not null\n        msg.payload.tstr\n    ]];\n}\n\nreturn msg;\n\n// this query inserts a new record into snmp_oids table for each OID\n// unless there is an existing record with the same devicename and oid,\n// in which case the record is deleted and replaced with a new one with the payload values\n// this isnt ideal as the id integer will autoincrement and the record id will increment up every time a poll is done\n// msg.topic = `\n// INSERT OR REPLACE INTO snmp_oids (devicename, oid, value, tstr, updated)\n// VALUES ($devicename, $oid, $value, $tstr, CURRENT_TIMESTAMP);\n// `;\n\n// msg.payload = msg.payload.map(item => [\n//     msg.devicename, \n//     item.oid,\n//     item.value ? item.value.toString() : null, // convert value to string if it's not null\n//     item.tstr\n// ]);\n\n// return msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 540,
         "wires": [
             [
                 "d6c7989734c411c6"
@@ -641,10 +645,10 @@
         "stream": false,
         "addname": "",
         "x": 990,
-        "y": 300,
+        "y": 540,
         "wires": [
             [
-                "da783329d90448fb"
+                "1ee588818b4b9ab9"
             ]
         ]
     },
@@ -655,7 +659,7 @@
         "name": "build SQL query",
         "info": "",
         "x": 720,
-        "y": 260,
+        "y": 500,
         "wires": []
     },
     {
@@ -665,7 +669,7 @@
         "name": "one query per oid",
         "info": "",
         "x": 1020,
-        "y": 260,
+        "y": 500,
         "wires": []
     },
     {
@@ -683,6 +687,11 @@
             },
             {
                 "t": "eq",
+                "v": "loadDeviceList",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
                 "v": "updateValues",
                 "vt": "str"
             },
@@ -692,24 +701,42 @@
                 "vt": "str"
             },
             {
+                "t": "eq",
+                "v": "selectDevices",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "initialise",
+                "vt": "str"
+            },
+            {
                 "t": "else"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 4,
+        "outputs": 7,
         "x": 250,
-        "y": 140,
+        "y": 360,
         "wires": [
             [
                 "739f820542ac8139"
             ],
             [
-                "31b609f52483bee1",
-                "1f505164e85928e0"
+                "8ca8538724a2b4d1"
+            ],
+            [
+                "31b609f52483bee1"
             ],
             [
                 "c17e5ff32bde3608"
+            ],
+            [
+                "781fabf11ee23c01"
+            ],
+            [
+                "92fa7b2c416c1c5f"
             ],
             [
                 "6ff3a75ba8142d67"
@@ -719,7 +746,10 @@
             "loadObjectList",
             "updateValues",
             "selectObjects",
-            null
+            "",
+            "",
+            "",
+            ""
         ]
     },
     {
@@ -729,7 +759,7 @@
         "name": "update object values",
         "info": "",
         "x": 730,
-        "y": 220,
+        "y": 460,
         "wires": []
     },
     {
@@ -737,7 +767,7 @@
         "type": "function",
         "z": "a1e4324b31a71af9",
         "name": "insert snmp object list",
-        "func": "// this query inserts a new record into snmp_oids table for each OID\n// unless there is an existing record with the same devicename and oid,\n// in which case this record is updated with the payload value and tstr\nmsg.topic = `\nINSERT INTO snmp_oids (devicename, oid, objectname)\nVALUES ($devicename, $oid, $objectname)\nON CONFLICT(devicename, oid) DO UPDATE SET\nobjectname = excluded.objectname\n`;\n\nmsg.payload = msg.payload.map(item => [\n    item.DeviceName, \n    item.OID,\n    item.FriendlyName\n]);\n\nreturn msg;",
+        "func": "// this query inserts a new record into snmp_oids table for each OID\n// unless there is an existing record with the same devicename and oid,\n// in which case this record is updated with the payload value and tstr\nmsg.topic = `\nINSERT INTO snmp_objects (devicename, oid, objectname)\nVALUES ($devicename, $oid, $objectname)\nON CONFLICT(devicename, oid) DO UPDATE SET\nobjectname = excluded.objectname\n`;\n\nmsg.payload = msg.payload.map(item => [\n    item.DeviceName, \n    item.OID,\n    item.FriendlyName\n]);\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -767,22 +797,8 @@
         "y": 140,
         "wires": [
             [
-                "da783329d90448fb"
+                "1ee588818b4b9ab9"
             ]
-        ]
-    },
-    {
-        "id": "da783329d90448fb",
-        "type": "sqlite",
-        "z": "a1e4324b31a71af9",
-        "mydb": "a7a9f54e066c76aa",
-        "sqlquery": "msg.topic",
-        "sql": "",
-        "name": "",
-        "x": 1360,
-        "y": 300,
-        "wires": [
-            []
         ]
     },
     {
@@ -821,27 +837,27 @@
         "z": "a1e4324b31a71af9",
         "name": "execute on db",
         "info": "",
-        "x": 1370,
-        "y": 260,
+        "x": 1430,
+        "y": 300,
         "wires": []
     },
     {
         "id": "c17e5ff32bde3608",
         "type": "function",
         "z": "a1e4324b31a71af9",
-        "name": "select from snmp_oids",
-        "func": "let sqlQuery = \"SELECT * FROM snmp_oids\";\nif (msg.payload.devicename) {\n    sqlQuery += \" WHERE devicename = $devicename\";\n}\nmsg.topic = sqlQuery;\nmsg.payload = [msg.payload.devicename];\nreturn msg;",
+        "name": "select from snmp_objects",
+        "func": "let sqlQuery = \"SELECT * FROM snmp_objects\";\nif (msg.payload.devicename) {\n    sqlQuery += \" WHERE devicename LIKE '%\" + msg.payload.devicename + \"%';\"\n}\nmsg.topic = sqlQuery;\nmsg.payload = [msg.payload.devicename];\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 740,
-        "y": 460,
+        "x": 750,
+        "y": 740,
         "wires": [
             [
-                "da783329d90448fb"
+                "1ee588818b4b9ab9"
             ]
         ]
     },
@@ -852,7 +868,7 @@
         "name": "fetch records from db, filter by query params",
         "info": "# query params\n -  devicename: filters objects where devicename like devicename",
         "x": 810,
-        "y": 420,
+        "y": 700,
         "wires": []
     },
     {
@@ -862,7 +878,7 @@
         "name": "fetch records",
         "info": "",
         "x": 710,
-        "y": 380,
+        "y": 660,
         "wires": []
     },
     {
@@ -871,38 +887,38 @@
         "z": "a1e4324b31a71af9",
         "name": "1. loadObjectList",
         "info": "",
-        "x": 400,
-        "y": 100,
+        "x": 540,
+        "y": 140,
         "wires": []
     },
     {
         "id": "21ed41b9cd5652f3",
         "type": "comment",
         "z": "a1e4324b31a71af9",
-        "name": "2. updateValues",
+        "name": "3. updateValues",
         "info": "",
-        "x": 400,
-        "y": 160,
+        "x": 540,
+        "y": 540,
         "wires": []
     },
     {
         "id": "c6721f1ac52008db",
         "type": "comment",
         "z": "a1e4324b31a71af9",
-        "name": "3. selectObjects",
+        "name": "4. selectObjects",
         "info": "",
-        "x": 400,
-        "y": 220,
+        "x": 540,
+        "y": 740,
         "wires": []
     },
     {
         "id": "9889b007cf0c4635",
         "type": "comment",
         "z": "a1e4324b31a71af9",
-        "name": "4. otherwise",
+        "name": "7. otherwise",
         "info": "",
-        "x": 390,
-        "y": 280,
+        "x": 550,
+        "y": 1300,
         "wires": []
     },
     {
@@ -919,7 +935,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1060,
-        "y": 580,
+        "y": 1300,
         "wires": []
     },
     {
@@ -942,7 +958,7 @@
         "to": "",
         "reg": false,
         "x": 710,
-        "y": 580,
+        "y": 1300,
         "wires": [
             [
                 "23aa4a6a697b7335"
@@ -950,21 +966,269 @@
         ]
     },
     {
-        "id": "1f505164e85928e0",
-        "type": "debug",
+        "id": "1ee588818b4b9ab9",
+        "type": "sqlite",
         "z": "a1e4324b31a71af9",
-        "name": "debug 17",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 400,
-        "y": 540,
+        "mydb": "929876902304719e",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 1410,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "617f9b09155f3d5c",
+        "type": "function",
+        "z": "a1e4324b31a71af9",
+        "name": "create snmp_objects table",
+        "func": "msg.topic = `\nCREATE TABLE IF NOT EXISTS snmp_objects (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    devicename TEXT,\n    oid TEXT,\n    objectname TEXT,\n    value TEXT,\n    tstr TEXT,\n    updated DATETIME,\n    UNIQUE(devicename, oid)\n);\n`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1090,
+        "y": 1140,
+        "wires": [
+            [
+                "5d40df115788d03a"
+            ]
+        ]
+    },
+    {
+        "id": "92fa7b2c416c1c5f",
+        "type": "function",
+        "z": "a1e4324b31a71af9",
+        "name": "delete tables",
+        "func": "msg.topic = `\nDROP TABLE IF EXISTS snmp_objects;\nDROP TABLE IF EXISTS snmp_devices;\n`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 1140,
+        "wires": [
+            [
+                "d991e1d8e77b5ab8"
+            ]
+        ]
+    },
+    {
+        "id": "ebdb4563f9e59e69",
+        "type": "comment",
+        "z": "a1e4324b31a71af9",
+        "name": "delete and rebuild empty db tables every time flow starts",
+        "info": "",
+        "x": 840,
+        "y": 1100,
         "wires": []
+    },
+    {
+        "id": "6c9bb5c4e31980fe",
+        "type": "comment",
+        "z": "a1e4324b31a71af9",
+        "name": "initialise db",
+        "info": "",
+        "x": 700,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "5d6c30775007404a",
+        "type": "comment",
+        "z": "a1e4324b31a71af9",
+        "name": "6. initialise",
+        "info": "",
+        "x": 560,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "d991e1d8e77b5ab8",
+        "type": "sqlite",
+        "z": "a1e4324b31a71af9",
+        "mydb": "929876902304719e",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 870,
+        "y": 1140,
+        "wires": [
+            [
+                "617f9b09155f3d5c"
+            ]
+        ]
+    },
+    {
+        "id": "919b07f1a3b474df",
+        "type": "comment",
+        "z": "a1e4324b31a71af9",
+        "name": "2. loadDeviceList",
+        "info": "",
+        "x": 540,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "8ca8538724a2b4d1",
+        "type": "function",
+        "z": "a1e4324b31a71af9",
+        "name": "insert snmp device list",
+        "func": "// this query inserts a new record into snmp_oids table for each OID\n// unless there is an existing record with the same devicename and oid,\n// in which case this record is updated with the payload value and tstr\nmsg.topic = `\nINSERT OR IGNORE INTO snmp_devices (\n    devicename,\n    ipaddress,\n    version,\n    securitylevel,\n    user,\n    authmode,\n    authpass,\n    privmode,\n    privpass,\n    community\n)\nVALUES (\n    $devicename,\n    $ipaddress,\n    $version,\n    $securitylevel,\n    $user,\n    $authmode,\n    $authpass,\n    $privmode,\n    $privpass,\n    $community\n)\n`;\n\nmsg.payload = msg.payload.map(item => [\n    item.DeviceName, \n    item.ServerIP,\n    item.Version,\n    item.SecurityLevel,\n    item.User,\n    item.AuthMode,\n    item.AuthPass,\n    item.PrivMode,\n    item.PrivPass,\n    item.Community\n]);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 340,
+        "wires": [
+            [
+                "b11c25572920cb8f"
+            ]
+        ]
+    },
+    {
+        "id": "010ba258ca798a98",
+        "type": "function",
+        "z": "a1e4324b31a71af9",
+        "name": "create snmp_devices table",
+        "func": "msg.topic = `\nCREATE TABLE IF NOT EXISTS snmp_devices (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    devicename TEXT,\n    ipaddress TEXT,\n    version TEXT,\n    securitylevel TEXT,\n    user TEXT,\n    authmode TEXT,\n    authpass TEXT,\n    privmode TEXT,\n    privpass TEXT,\n    community TEXT,\n    updated DATETIME,\n    UNIQUE(devicename, ipaddress)\n);\n`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1280,
+        "y": 1200,
+        "wires": [
+            [
+                "1ee588818b4b9ab9"
+            ]
+        ]
+    },
+    {
+        "id": "b11c25572920cb8f",
+        "type": "split",
+        "z": "a1e4324b31a71af9",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 990,
+        "y": 340,
+        "wires": [
+            [
+                "1ee588818b4b9ab9"
+            ]
+        ]
+    },
+    {
+        "id": "32fcec1675b54515",
+        "type": "comment",
+        "z": "a1e4324b31a71af9",
+        "name": "one query per row",
+        "info": "",
+        "x": 1030,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "893da269ac15632e",
+        "type": "comment",
+        "z": "a1e4324b31a71af9",
+        "name": "build SQL query",
+        "info": "",
+        "x": 720,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "66860197388fe72d",
+        "type": "comment",
+        "z": "a1e4324b31a71af9",
+        "name": "insert snmp devices",
+        "info": "",
+        "x": 730,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "781fabf11ee23c01",
+        "type": "function",
+        "z": "a1e4324b31a71af9",
+        "name": "select from snmp_devices",
+        "func": "let sqlQuery = \"SELECT * FROM snmp_devices\";\nif (msg.payload.devicename) {\n    sqlQuery += \" WHERE devicename = $devicename\";\n}\nmsg.topic = sqlQuery;\nmsg.payload = [msg.payload.devicename];\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 940,
+        "wires": [
+            [
+                "1ee588818b4b9ab9"
+            ]
+        ]
+    },
+    {
+        "id": "fd35fa72f361e391",
+        "type": "comment",
+        "z": "a1e4324b31a71af9",
+        "name": "fetch records from db, filter by query params",
+        "info": "# query params\n -  devicename: filters objects where devicename like devicename",
+        "x": 810,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "6c3d5f8890ee8e98",
+        "type": "comment",
+        "z": "a1e4324b31a71af9",
+        "name": "fetch records",
+        "info": "",
+        "x": 710,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "4e990398b7fd1fc9",
+        "type": "comment",
+        "z": "a1e4324b31a71af9",
+        "name": "5. selectDevices",
+        "info": "",
+        "x": 540,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "5d40df115788d03a",
+        "type": "sqlite",
+        "z": "a1e4324b31a71af9",
+        "mydb": "929876902304719e",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 1310,
+        "y": 1140,
+        "wires": [
+            [
+                "010ba258ca798a98"
+            ]
+        ]
     },
     {
         "id": "06a60aca83a65034",
@@ -1023,9 +1287,7 @@
         "x": 510,
         "y": 140,
         "wires": [
-            [
-                "1a33a8e9b6c7c4d0"
-            ]
+            []
         ]
     },
     {
@@ -1067,43 +1329,69 @@
         "wires": []
     },
     {
-        "id": "1a33a8e9b6c7c4d0",
-        "type": "debug",
-        "z": "dd256e9dce8a99f6",
-        "name": "debug 18",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 720,
-        "y": 220,
+        "id": "cd96b9485f97d538",
+        "type": "snmp",
+        "z": "fef427aa2bd2e850",
+        "host": "",
+        "version": "3",
+        "timeout": 5,
+        "community": "public",
+        "auth": "authPriv",
+        "authprot": "SHA",
+        "privprot": "AES",
+        "oids": "",
+        "name": "snmp3-authPriv-SHA-AES",
+        "x": 320,
+        "y": 140,
+        "wires": [
+            [
+                "91c0427b03045782"
+            ]
+        ]
+    },
+    {
+        "id": "a15f730d97a7c8d2",
+        "type": "comment",
+        "z": "fef427aa2bd2e850",
+        "name": "snmp fetch oids",
+        "info": "",
+        "x": 280,
+        "y": 100,
         "wires": []
     },
     {
-        "id": "5bd2a91e30d37839",
-        "type": "subflow:a1e4324b31a71af9",
-        "z": "08d2f1bf95687a11",
+        "id": "91c0427b03045782",
+        "type": "subflow:6dafd41e2e288cc7",
+        "z": "fef427aa2bd2e850",
         "name": "",
-        "x": 510,
+        "x": 570,
         "y": 140,
         "wires": [
             []
         ]
     },
     {
-        "id": "27fe39e5629549b8",
+        "id": "c38347e3c93cf8df",
+        "type": "subflow:a1e4324b31a71af9",
+        "z": "d5d393300a7d91ca",
+        "name": "",
+        "x": 440,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b92f0cfc7133568a",
         "type": "change",
-        "z": "08d2f1bf95687a11",
+        "z": "d5d393300a7d91ca",
         "name": "",
         "rules": [
             {
                 "t": "set",
                 "p": "action",
                 "pt": "msg",
-                "to": "selectObjects",
+                "to": "selectDevices",
                 "tot": "str"
             }
         ],
@@ -1112,24 +1400,621 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 280,
-        "y": 140,
+        "x": 210,
+        "y": 120,
         "wires": [
             [
-                "5bd2a91e30d37839"
+                "c38347e3c93cf8df"
             ]
         ],
         "info": "upsertValues:\r\nloadObjects"
     },
     {
-        "id": "f8bd70c3e444e4ab",
+        "id": "440a3c2a33cc7ec9",
         "type": "comment",
-        "z": "08d2f1bf95687a11",
-        "name": "db operation: selectObjects",
+        "z": "d5d393300a7d91ca",
+        "name": "db operation: selectDevices",
         "info": "",
-        "x": 310,
-        "y": 100,
+        "x": 250,
+        "y": 80,
         "wires": []
+    },
+    {
+        "id": "537965883b2a0489",
+        "type": "switch",
+        "z": "af5716f8f7c32e34",
+        "name": "securitylevel",
+        "property": "device.securitylevel",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Auth Priv",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "AuthPriv",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Auth NoPriv",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "AuthNoPriv",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "NoAuth NoPriv",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "NoAuthNoPriv",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 6,
+        "x": 210,
+        "y": 240,
+        "wires": [
+            [
+                "dda1eb8f180a4e0c"
+            ],
+            [
+                "dda1eb8f180a4e0c"
+            ],
+            [
+                "579b90dd4165b8e4"
+            ],
+            [
+                "579b90dd4165b8e4"
+            ],
+            [
+                "480521c06312e871"
+            ],
+            [
+                "480521c06312e871"
+            ]
+        ]
+    },
+    {
+        "id": "becca04501ef434d",
+        "type": "snmp",
+        "z": "af5716f8f7c32e34",
+        "host": "",
+        "version": "3",
+        "timeout": 5,
+        "community": "public",
+        "auth": "authPriv",
+        "authprot": "SHA",
+        "privprot": "AES",
+        "oids": "",
+        "name": "snmp3-authPriv-SHA-AES",
+        "x": 960,
+        "y": 140,
+        "wires": [
+            [
+                "47880256b859f8b2"
+            ]
+        ]
+    },
+    {
+        "id": "6da9b05ca85b70c9",
+        "type": "snmp",
+        "z": "af5716f8f7c32e34",
+        "host": "",
+        "version": "3",
+        "timeout": 5,
+        "community": "public",
+        "auth": "authPriv",
+        "authprot": "SHA",
+        "privprot": "DES",
+        "oids": "",
+        "name": "snmp3-authPriv-SHA-DES",
+        "x": 960,
+        "y": 180,
+        "wires": [
+            [
+                "47880256b859f8b2"
+            ]
+        ]
+    },
+    {
+        "id": "f278e0a861c7f322",
+        "type": "snmp",
+        "z": "af5716f8f7c32e34",
+        "host": "",
+        "version": "3",
+        "timeout": 5,
+        "community": "public",
+        "auth": "authNoPriv",
+        "authprot": "MD5",
+        "privprot": "DES",
+        "oids": "",
+        "name": "snmp3-authNoPriv-MD5",
+        "x": 950,
+        "y": 340,
+        "wires": [
+            [
+                "47880256b859f8b2"
+            ]
+        ]
+    },
+    {
+        "id": "8390055bc42b438d",
+        "type": "snmp",
+        "z": "af5716f8f7c32e34",
+        "host": "",
+        "version": "3",
+        "timeout": 5,
+        "community": "public",
+        "auth": "authNoPriv",
+        "authprot": "SHA",
+        "privprot": "DES",
+        "oids": "",
+        "name": "snmp3-authNoPriv-SHA",
+        "x": 950,
+        "y": 300,
+        "wires": [
+            [
+                "47880256b859f8b2"
+            ]
+        ]
+    },
+    {
+        "id": "dda1eb8f180a4e0c",
+        "type": "switch",
+        "z": "af5716f8f7c32e34",
+        "name": "authmode: SHA | MD5",
+        "property": "device.authmode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "SHA",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 460,
+        "y": 200,
+        "wires": [
+            [
+                "5b8b0a334ba46c99"
+            ],
+            [
+                "34fb82a84b180239"
+            ]
+        ]
+    },
+    {
+        "id": "480521c06312e871",
+        "type": "switch",
+        "z": "af5716f8f7c32e34",
+        "name": "noAuthNoPriv",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 440,
+        "y": 380,
+        "wires": [
+            [
+                "cfccfd0991517ccd"
+            ]
+        ]
+    },
+    {
+        "id": "08325ce1cbaaf1af",
+        "type": "snmp",
+        "z": "af5716f8f7c32e34",
+        "host": "",
+        "version": "3",
+        "timeout": 5,
+        "community": "public",
+        "auth": "authPriv",
+        "authprot": "MD5",
+        "privprot": "AES",
+        "oids": "",
+        "name": "snmp3-authPriv-MD5-AES",
+        "x": 960,
+        "y": 220,
+        "wires": [
+            [
+                "47880256b859f8b2"
+            ]
+        ]
+    },
+    {
+        "id": "abe830c2b473b7d4",
+        "type": "snmp",
+        "z": "af5716f8f7c32e34",
+        "host": "",
+        "version": "3",
+        "timeout": 5,
+        "community": "public",
+        "auth": "authPriv",
+        "authprot": "MD5",
+        "privprot": "DES",
+        "oids": "",
+        "name": "snmp3-authPriv-MD5-DES",
+        "x": 960,
+        "y": 260,
+        "wires": [
+            [
+                "47880256b859f8b2"
+            ]
+        ]
+    },
+    {
+        "id": "cfccfd0991517ccd",
+        "type": "snmp",
+        "z": "af5716f8f7c32e34",
+        "host": "",
+        "version": "3",
+        "timeout": 5,
+        "community": "public",
+        "auth": "noAuthNoPriv",
+        "authprot": "MD5",
+        "privprot": "DES",
+        "oids": "",
+        "name": "snmp3-noAuthNoPriv",
+        "x": 940,
+        "y": 380,
+        "wires": [
+            [
+                "47880256b859f8b2"
+            ]
+        ]
+    },
+    {
+        "id": "5b8b0a334ba46c99",
+        "type": "switch",
+        "z": "af5716f8f7c32e34",
+        "name": "privmode: AES | DES",
+        "property": "device.privmode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "AES",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 700,
+        "y": 180,
+        "wires": [
+            [
+                "becca04501ef434d"
+            ],
+            [
+                "6da9b05ca85b70c9"
+            ]
+        ]
+    },
+    {
+        "id": "34fb82a84b180239",
+        "type": "switch",
+        "z": "af5716f8f7c32e34",
+        "name": "privmode: AES | DES",
+        "property": "device.privmode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "AES",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 700,
+        "y": 220,
+        "wires": [
+            [
+                "08325ce1cbaaf1af"
+            ],
+            [
+                "abe830c2b473b7d4"
+            ]
+        ]
+    },
+    {
+        "id": "579b90dd4165b8e4",
+        "type": "switch",
+        "z": "af5716f8f7c32e34",
+        "name": "authmode: SHA | MD5",
+        "property": "device.authmode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "SHA",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 460,
+        "y": 300,
+        "wires": [
+            [
+                "8390055bc42b438d"
+            ],
+            [
+                "f278e0a861c7f322"
+            ]
+        ]
+    },
+    {
+        "id": "47880256b859f8b2",
+        "type": "subflow:6dafd41e2e288cc7",
+        "z": "af5716f8f7c32e34",
+        "name": "",
+        "x": 1270,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "70279bda47fdde84",
+        "type": "comment",
+        "z": "af5716f8f7c32e34",
+        "name": "SNMP security level switch",
+        "info": "",
+        "x": 270,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "651dc453d0411dd4",
+        "type": "comment",
+        "z": "3f90c4c31b85efd4",
+        "name": "periodically fetch device object values and update db",
+        "info": "",
+        "x": 270,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "53aac667d120fd1d",
+        "type": "subflow:d5d393300a7d91ca",
+        "z": "3f90c4c31b85efd4",
+        "name": "",
+        "x": 390,
+        "y": 100,
+        "wires": [
+            [
+                "a3dd2fc6fbe0f57b"
+            ]
+        ]
+    },
+    {
+        "id": "a3dd2fc6fbe0f57b",
+        "type": "split",
+        "z": "3f90c4c31b85efd4",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 570,
+        "y": 100,
+        "wires": [
+            [
+                "9ed39a51688a7551"
+            ]
+        ]
+    },
+    {
+        "id": "9937beba3e95905e",
+        "type": "inject",
+        "z": "3f90c4c31b85efd4",
+        "name": "every 2min",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "120",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "30",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 100,
+        "wires": [
+            [
+                "53aac667d120fd1d"
+            ]
+        ]
+    },
+    {
+        "id": "87e9b4d65bd74c70",
+        "type": "subflow:dd256e9dce8a99f6",
+        "z": "3f90c4c31b85efd4",
+        "name": "",
+        "x": 390,
+        "y": 240,
+        "wires": [
+            [
+                "834afc2720403846"
+            ]
+        ]
+    },
+    {
+        "id": "834afc2720403846",
+        "type": "function",
+        "z": "3f90c4c31b85efd4",
+        "name": "get oids",
+        "func": "var array = msg.payload;\n\nvar oidValues = array.map(function(obj) {\n    return obj.oid;\n});\n// prepare for node-red-node-snmp\n// msg.oid must contain a comma separted list of oids to search for (no spaces)\nmsg.oid = oidValues.join(',');\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 240,
+        "wires": [
+            [
+                "8d7065a41dbe8eec"
+            ]
+        ]
+    },
+    {
+        "id": "9ed39a51688a7551",
+        "type": "change",
+        "z": "3f90c4c31b85efd4",
+        "name": "set-snmp-config",
+        "rules": [
+            {
+                "t": "set",
+                "p": "host",
+                "pt": "msg",
+                "to": "payload.ipaddress",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "devicename",
+                "pt": "msg",
+                "to": "payload.devicename",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "username",
+                "pt": "msg",
+                "to": "payload.user",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "authkey",
+                "pt": "msg",
+                "to": "payload.authpass",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "privkey",
+                "pt": "msg",
+                "to": "msg.payload.privpass",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "device",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 740,
+        "y": 100,
+        "wires": [
+            [
+                "87e9b4d65bd74c70"
+            ]
+        ]
+    },
+    {
+        "id": "8d7065a41dbe8eec",
+        "type": "delay",
+        "z": "3f90c4c31b85efd4",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "2",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 750,
+        "y": 240,
+        "wires": [
+            [
+                "0ae4f8b7b55b2f37"
+            ]
+        ]
+    },
+    {
+        "id": "3144409829d9ff68",
+        "type": "debug",
+        "z": "3f90c4c31b85efd4",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1200,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "0ae4f8b7b55b2f37",
+        "type": "subflow:af5716f8f7c32e34",
+        "z": "3f90c4c31b85efd4",
+        "name": "",
+        "x": 960,
+        "y": 240,
+        "wires": [
+            [
+                "3144409829d9ff68"
+            ]
+        ]
     },
     {
         "id": "6d09ee4d9f58f9d9",
@@ -1180,7 +2065,7 @@
         "y": 260,
         "wires": [
             [
-                "d0d0baa64d24d079"
+                "37f7bef83a71a1b0"
             ]
         ]
     },
@@ -1275,7 +2160,7 @@
         "id": "cb5220cd77de1b1e",
         "type": "inject",
         "z": "d353a7da6ed8c594",
-        "name": "every 2min",
+        "name": "click to inject",
         "props": [
             {
                 "p": "payload"
@@ -1283,12 +2168,12 @@
         ],
         "repeat": "120",
         "crontab": "",
-        "once": true,
-        "onceDelay": "10",
+        "once": false,
+        "onceDelay": "30",
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 150,
+        "x": 160,
         "y": 260,
         "wires": [
             [
@@ -1321,7 +2206,7 @@
         "y": 320,
         "wires": [
             [
-                "85f22d7bd40230b6"
+                "14e63882f4c368ce"
             ]
         ]
     },
@@ -1346,7 +2231,7 @@
         "y": 380,
         "wires": [
             [
-                "a7496ab808c71819"
+                "620a49a07e10aea0"
             ]
         ]
     },
@@ -1370,9 +2255,7 @@
         "x": 380,
         "y": 440,
         "wires": [
-            [
-                "b518b153838657c9"
-            ]
+            []
         ]
     },
     {
@@ -1395,300 +2278,6 @@
         "x": 380,
         "y": 500,
         "wires": [
-            [
-                "b52f09f77357d3c0"
-            ]
-        ]
-    },
-    {
-        "id": "85f22d7bd40230b6",
-        "type": "change",
-        "z": "d353a7da6ed8c594",
-        "name": "device 2",
-        "rules": [
-            {
-                "t": "set",
-                "p": "host",
-                "pt": "msg",
-                "to": "10.1.1.112",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "oid",
-                "pt": "msg",
-                "to": "1.3.6.1.2.1.1.3.0,1.3.6.1.2.1.1.5.0,1.3.6.1.4.1.38446.1.3.4.1.6.1.1",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "devicename",
-                "pt": "msg",
-                "to": "device 2",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "username",
-                "pt": "msg",
-                "to": "testAuthPriv",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "authkey",
-                "pt": "msg",
-                "to": "test",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "privkey",
-                "pt": "msg",
-                "to": "test",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 580,
-        "y": 320,
-        "wires": [
-            [
-                "62945eb7804bd31d"
-            ]
-        ]
-    },
-    {
-        "id": "a7496ab808c71819",
-        "type": "change",
-        "z": "d353a7da6ed8c594",
-        "name": "device 3",
-        "rules": [
-            {
-                "t": "set",
-                "p": "host",
-                "pt": "msg",
-                "to": "10.1.1.112",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "oid",
-                "pt": "msg",
-                "to": "1.3.6.1.2.1.1.3.0,1.3.6.1.2.1.1.5.0,1.3.6.1.4.1.38446.1.3.4.1.6.1.1",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "devicename",
-                "pt": "msg",
-                "to": "device 3",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "username",
-                "pt": "msg",
-                "to": "testAuthPriv",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "authkey",
-                "pt": "msg",
-                "to": "test",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "privkey",
-                "pt": "msg",
-                "to": "test",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 580,
-        "y": 380,
-        "wires": [
-            [
-                "8fd6ee2fbb8f8542"
-            ]
-        ]
-    },
-    {
-        "id": "b518b153838657c9",
-        "type": "change",
-        "z": "d353a7da6ed8c594",
-        "name": "device 4",
-        "rules": [
-            {
-                "t": "set",
-                "p": "host",
-                "pt": "msg",
-                "to": "10.1.1.112",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "oid",
-                "pt": "msg",
-                "to": "1.3.6.1.2.1.1.3.0,1.3.6.1.2.1.1.5.0,1.3.6.1.4.1.38446.1.3.4.1.6.1.1",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "devicename",
-                "pt": "msg",
-                "to": "device 4",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "username",
-                "pt": "msg",
-                "to": "testAuthPriv",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "authkey",
-                "pt": "msg",
-                "to": "test",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "privkey",
-                "pt": "msg",
-                "to": "test",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 580,
-        "y": 440,
-        "wires": [
-            [
-                "324ec5854e6639db"
-            ]
-        ]
-    },
-    {
-        "id": "b52f09f77357d3c0",
-        "type": "change",
-        "z": "d353a7da6ed8c594",
-        "name": "test offline device",
-        "rules": [
-            {
-                "t": "set",
-                "p": "host",
-                "pt": "msg",
-                "to": "10.1.1.113",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "oid",
-                "pt": "msg",
-                "to": "1.3.6.1.2.1.1.3.0,1.3.6.1.2.1.1.5.0,1.3.6.1.4.1.38446.1.3.4.1.6.1.1",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "devicename",
-                "pt": "msg",
-                "to": "test offline device",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "username",
-                "pt": "msg",
-                "to": "somebody",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "authkey",
-                "pt": "msg",
-                "to": "",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "privkey",
-                "pt": "msg",
-                "to": "",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 610,
-        "y": 500,
-        "wires": [
-            [
-                "5efee4d4a45bf2ae"
-            ]
-        ]
-    },
-    {
-        "id": "62945eb7804bd31d",
-        "type": "subflow:4cb39d2ff60de472",
-        "z": "d353a7da6ed8c594",
-        "name": "",
-        "x": 1000,
-        "y": 320,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "8fd6ee2fbb8f8542",
-        "type": "subflow:4cb39d2ff60de472",
-        "z": "d353a7da6ed8c594",
-        "name": "",
-        "x": 1000,
-        "y": 380,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "324ec5854e6639db",
-        "type": "subflow:4cb39d2ff60de472",
-        "z": "d353a7da6ed8c594",
-        "name": "",
-        "x": 1000,
-        "y": 440,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "5efee4d4a45bf2ae",
-        "type": "subflow:4cb39d2ff60de472",
-        "z": "d353a7da6ed8c594",
-        "name": "",
-        "x": 1000,
-        "y": 500,
-        "wires": [
             []
         ]
     },
@@ -1696,7 +2285,7 @@
         "id": "d0d0baa64d24d079",
         "type": "debug",
         "z": "d353a7da6ed8c594",
-        "name": "debug 11",
+        "name": "debug snmp fetch",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -1705,8 +2294,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1340,
-        "y": 260,
+        "x": 1550,
+        "y": 320,
         "wires": []
     },
     {
@@ -1717,7 +2306,9 @@
         "x": 130,
         "y": 140,
         "wires": [
-            []
+            [
+                "a1120ad54d6d7bea"
+            ]
         ]
     },
     {
@@ -1729,6 +2320,275 @@
         "x": 680,
         "y": 100,
         "wires": []
+    },
+    {
+        "id": "14e63882f4c368ce",
+        "type": "change",
+        "z": "d353a7da6ed8c594",
+        "name": "T1-L00-DC1-A10-PDU-A",
+        "rules": [
+            {
+                "t": "set",
+                "p": "host",
+                "pt": "msg",
+                "to": "10.32.144.30",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "oid",
+                "pt": "msg",
+                "to": "1.3.6.1.2.1.1.3.0,1.3.6.1.4.1.38446.1.3.4.1.6.1.1,1.3.6.1.4.1.38446.1.2.4.1.4.1,1.3.6.1.4.1.38446.1.2.4.1.5.1,1.3.6.1.4.1.38446.1.2.4.1.6.1,1.3.6.1.4.1.38446.1.2.4.1.9.1,1.3.6.1.4.1.38446.1.6.4.1.8.1.1,1.3.6.1.4.1.38446.1.6.4.1.8.1.2,1.3.6.1.4.1.38446.1.1.2.1.11.1,1.3.6.1.4.1.38446.1.1.2.1.12.1",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "devicename",
+                "pt": "msg",
+                "to": "T1-L00-DC1-A10-PDU-A",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "username",
+                "pt": "msg",
+                "to": "test",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "authkey",
+                "pt": "msg",
+                "to": "test",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "privkey",
+                "pt": "msg",
+                "to": "test",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 630,
+        "y": 340,
+        "wires": [
+            [
+                "7fb157d9668588c9",
+                "892823261cd90337"
+            ]
+        ]
+    },
+    {
+        "id": "7fb157d9668588c9",
+        "type": "snmp",
+        "z": "d353a7da6ed8c594",
+        "host": "",
+        "version": "3",
+        "timeout": 5,
+        "community": "public",
+        "auth": "authPriv",
+        "authprot": "SHA",
+        "privprot": "AES",
+        "oids": "",
+        "name": "snmp3-authPriv-SHA-AES",
+        "x": 920,
+        "y": 300,
+        "wires": [
+            [
+                "37f7bef83a71a1b0"
+            ]
+        ]
+    },
+    {
+        "id": "5263bb55eecd1b17",
+        "type": "snmp",
+        "z": "d353a7da6ed8c594",
+        "host": "",
+        "version": "3",
+        "timeout": 5,
+        "community": "public",
+        "auth": "authPriv",
+        "authprot": "SHA",
+        "privprot": "DES",
+        "oids": "",
+        "name": "snmp3-authPriv-SHA-DES",
+        "x": 920,
+        "y": 440,
+        "wires": [
+            [
+                "37f7bef83a71a1b0"
+            ]
+        ]
+    },
+    {
+        "id": "620a49a07e10aea0",
+        "type": "change",
+        "z": "d353a7da6ed8c594",
+        "name": "T1-L00-DC1-IRC-A1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "host",
+                "pt": "msg",
+                "to": "10.32.144.100",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "oid",
+                "pt": "msg",
+                "to": "1.3.6.1.2.1.1.3.0,1.3.6.1.4.1.13400.2.385.1.2.0,1.3.6.1.4.1.13400.2.385.2.2.1.0,1.3.6.1.4.1.13400.2.385.2.2.2.0,1.3.6.1.4.1.13400.2.385.2.2.3.0,1.3.6.1.4.1.13400.2.385.2.2.4.0,1.3.6.1.4.1.13400.2.385.2.2.5.0,1.3.6.1.4.1.13400.2.385.2.2.6.0,1.3.6.1.4.1.13400.2.385.2.2.7.0,1.3.6.1.4.1.13400.2.385.2.2.8.0,1.3.6.1.4.1.13400.2.385.2.2.9.0,1.3.6.1.4.1.13400.2.385.2.2.10.0,1.3.6.1.4.1.13400.2.385.2.2.11.0,1.3.6.1.4.1.13400.2.385.2.2.12.0,1.3.6.1.4.1.13400.2.385.2.2.13.0,1.3.6.1.4.1.13400.2.385.2.2.17.0,1.3.6.1.4.1.13400.2.385.2.2.18.0,1.3.6.1.4.1.13400.2.385.2.2.19.0,1.3.6.1.4.1.13400.2.385.2.2.20.0,1.3.6.1.4.1.13400.2.385.2.2.27.0,1.3.6.1.4.1.13400.2.385.2.2.28.0,1.3.6.1.4.1.13400.2.385.2.2.29.0,1.3.6.1.4.1.13400.2.385.2.2.30.0,1.3.6.1.4.1.13400.2.385.2.2.31.0,1.3.6.1.4.1.13400.2.385.2.2.32.0,1.3.6.1.4.1.13400.2.385.2.2.33.0,1.3.6.1.4.1.13400.2.385.2.2.34.0,1.3.6.1.4.1.13400.2.385.2.2.35.0,1.3.6.1.4.1.13400.2.385.2.2.36.0,1.3.6.1.4.1.13400.2.385.2.2.37.0,1.3.6.1.4.1.13400.2.385.2.2.38.0,1.3.6.1.4.1.13400.2.385.2.2.39.0,1.3.6.1.4.1.13400.2.385.2.2.40.0,1.3.6.1.4.1.13400.2.385.2.2.41.0,1.3.6.1.4.1.13400.2.385.2.2.42.0,1.3.6.1.4.1.13400.2.385.2.2.43.0,1.3.6.1.4.1.13400.2.385.2.2.44.0,1.3.6.1.4.1.13400.2.385.2.2.45.0,1.3.6.1.4.1.13400.2.385.2.2.46.0,1.3.6.1.4.1.13400.2.385.2.2.47.0,1.3.6.1.4.1.13400.2.385.2.2.48.0,1.3.6.1.4.1.13400.2.385.2.2.49.0,1.3.6.1.4.1.13400.2.385.2.2.52.0,1.3.6.1.4.1.13400.2.385.2.2.53.0,1.3.6.1.4.1.13400.2.385.2.2.54.0,1.3.6.1.4.1.13400.2.385.2.2.55.0,1.3.6.1.4.1.13400.2.385.2.2.56.0,1.3.6.1.4.1.13400.2.385.2.2.57.0,1.3.6.1.4.1.13400.2.385.2.2.58.0,1.3.6.1.4.1.13400.2.385.2.2.59.0,1.3.6.1.4.1.13400.2.385.2.2.60.0,1.3.6.1.4.1.13400.2.385.2.2.64.0,1.3.6.1.4.1.13400.2.385.2.2.65.0,1.3.6.1.4.1.13400.2.385.2.2.66.0,1.3.6.1.4.1.13400.2.385.2.2.67.0,1.3.6.1.4.1.13400.2.385.2.2.68.0,1.3.6.1.4.1.13400.2.385.2.2.69.0,1.3.6.1.4.1.13400.2.385.2.2.70.0,1.3.6.1.4.1.13400.2.385.2.2.71.0,1.3.6.1.4.1.13400.2.385.2.2.72.0,1.3.6.1.4.1.13400.2.385.2.2.73.0,1.3.6.1.4.1.13400.2.385.2.4.1.0,1.3.6.1.4.1.13400.2.385.2.4.2.0,1.3.6.1.4.1.13400.2.385.2.4.3.0,1.3.6.1.4.1.13400.2.385.2.4.5.0,1.3.6.1.4.1.13400.2.385.2.2.80.0,1.3.6.1.4.1.13400.2.385.2.2.81.0,1.3.6.1.4.1.13400.2.385.2.2.82.0,1.3.6.1.4.1.13400.2.385.2.2.83.0,1.3.6.1.4.1.13400.2.385.2.2.84.0,1.3.6.1.4.1.13400.2.385.2.2.85.0,1.3.6.1.4.1.13400.2.385.2.2.86.0,1.3.6.1.4.1.13400.2.385.2.2.87.0,1.3.6.1.4.1.13400.2.385.2.2.92.0,1.3.6.1.4.1.13400.2.385.2.2.95.0,1.3.6.1.4.1.13400.2.385.2.2.98.0,1.3.6.1.4.1.13400.2.385.2.2.114.0,1.3.6.1.4.1.13400.2.385.2.2.130.0,1.3.6.1.4.1.13400.2.385.2.2.131.0,1.3.6.1.4.1.13400.2.385.2.2.137.0",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "devicename",
+                "pt": "msg",
+                "to": "T1-L00-DC1-IRC-A1",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "username",
+                "pt": "msg",
+                "to": "test",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "authkey",
+                "pt": "msg",
+                "to": "test",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "privkey",
+                "pt": "msg",
+                "to": "test",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 400,
+        "wires": [
+            [
+                "5263bb55eecd1b17",
+                "f79cc80932d9825f"
+            ]
+        ]
+    },
+    {
+        "id": "f79cc80932d9825f",
+        "type": "subflow:4cb39d2ff60de472",
+        "z": "d353a7da6ed8c594",
+        "name": "",
+        "x": 960,
+        "y": 400,
+        "wires": [
+            [
+                "37f7bef83a71a1b0"
+            ]
+        ]
+    },
+    {
+        "id": "892823261cd90337",
+        "type": "subflow:fef427aa2bd2e850",
+        "z": "d353a7da6ed8c594",
+        "name": "",
+        "x": 980,
+        "y": 340,
+        "wires": [
+            [
+                "37f7bef83a71a1b0"
+            ]
+        ]
+    },
+    {
+        "id": "0ece72f1b5b8b969",
+        "type": "debug",
+        "z": "d353a7da6ed8c594",
+        "name": "debug initialise output",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "37f7bef83a71a1b0",
+        "type": "switch",
+        "z": "d353a7da6ed8c594",
+        "name": "",
+        "property": "payload.debug",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "true",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1330,
+        "y": 340,
+        "wires": [
+            [
+                "d0d0baa64d24d079"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a1120ad54d6d7bea",
+        "type": "switch",
+        "z": "d353a7da6ed8c594",
+        "name": "",
+        "property": "payload.debug",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "true",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 290,
+        "y": 140,
+        "wires": [
+            [
+                "0ece72f1b5b8b969"
+            ],
+            []
+        ]
     },
     {
         "id": "f9b646efad1b1957",
@@ -1831,21 +2691,64 @@
         ]
     },
     {
-        "id": "04370c044d7c6204",
-        "type": "debug",
-        "z": "5bb232ee4f529f6f",
-        "name": "debug 3",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1040,
-        "y": 340,
+        "id": "146482eac493b372",
+        "type": "http in",
+        "z": "8902b921da4a441e",
+        "name": "",
+        "url": "/devices",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 260,
+        "wires": [
+            [
+                "4c630145ad81245f"
+            ]
+        ]
+    },
+    {
+        "id": "27e420ebab7a4e44",
+        "type": "http response",
+        "z": "8902b921da4a441e",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 1080,
+        "y": 260,
         "wires": []
+    },
+    {
+        "id": "5b80a7c901049286",
+        "type": "template",
+        "z": "8902b921da4a441e",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<root>\n    <header/>\n    <body>\n        <queryparams>\n        </queryparams>\n        <devices>\n            {{#payload}}\n            <{{devicename}}\n                id=\"{{id}}\"\n                deviceName=\"{{devicename}}\"\n                ipaddress=\"{{ipaddress}}\"\n                version=\"{{version}}\"\n                securitylevel=\"{{securitylevel}}\"\n                updated=\"{{updated}}\"\n            />\n            {{/payload}}\n        </devices>\n    </body>\n</root>",
+        "output": "str",
+        "x": 840,
+        "y": 260,
+        "wires": [
+            [
+                "27e420ebab7a4e44"
+            ]
+        ]
+    },
+    {
+        "id": "4c630145ad81245f",
+        "type": "subflow:d5d393300a7d91ca",
+        "z": "8902b921da4a441e",
+        "name": "",
+        "x": 390,
+        "y": 260,
+        "wires": [
+            [
+                "5b80a7c901049286"
+            ]
+        ]
     },
     {
         "id": "9a6eec210a2296b9",
@@ -1869,7 +2772,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 150,
-        "y": 340,
+        "y": 380,
         "wires": [
             [
                 "4cc2605ac72562f6"
@@ -1909,9 +2812,9 @@
         "id": "3b985bd271bdbd11",
         "type": "comment",
         "z": "5bb232ee4f529f6f",
-        "name": "tests",
+        "name": "DB controller tests",
         "info": "",
-        "x": 130,
+        "x": 170,
         "y": 100,
         "wires": []
     },
@@ -1928,8 +2831,8 @@
         "privprot": "DES",
         "oids": "1.3.6.1.4.1.171.10.76.34",
         "name": "",
-        "x": 410,
-        "y": 500,
+        "x": 430,
+        "y": 880,
         "wires": [
             [
                 "9a7fbd1493744cfc",
@@ -1941,7 +2844,7 @@
         "id": "9a7fbd1493744cfc",
         "type": "debug",
         "z": "5bb232ee4f529f6f",
-        "name": "debug 10",
+        "name": "debug snmp tests",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -1950,8 +2853,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1040,
-        "y": 500,
+        "x": 1090,
+        "y": 880,
         "wires": []
     },
     {
@@ -1975,8 +2878,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 150,
-        "y": 500,
+        "x": 170,
+        "y": 880,
         "wires": [
             [
                 "6bc27428fb16adc4"
@@ -1988,14 +2891,14 @@
         "type": "file",
         "z": "5bb232ee4f529f6f",
         "name": "",
-        "filename": "C:\\Users\\cliveg\\.node-red\\projects\\snmp-interface\\examples\\test_snmp_walk",
+        "filename": "C:\\ProgramData\\node-red\\projects\\node-red-snmp-fetcher-service\\examples\\test_snmp_walk",
         "filenameType": "str",
         "appendNewline": true,
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 830,
-        "y": 580,
+        "x": 480,
+        "y": 960,
         "wires": [
             []
         ]
@@ -2006,17 +2909,17 @@
         "z": "5bb232ee4f529f6f",
         "name": "snmp walk a device then write to file",
         "info": "",
-        "x": 220,
-        "y": 460,
+        "x": 240,
+        "y": 840,
         "wires": []
     },
     {
         "id": "514e060bfa62c9c0",
         "type": "comment",
         "z": "5bb232ee4f529f6f",
-        "name": "select all from snmp_oids then console log",
+        "name": "select all from snmp_objects then console log",
         "info": "",
-        "x": 240,
+        "x": 250,
         "y": 140,
         "wires": []
     },
@@ -2026,8 +2929,8 @@
         "z": "5bb232ee4f529f6f",
         "name": "insert sample data",
         "info": "",
-        "x": 170,
-        "y": 300,
+        "x": 180,
+        "y": 340,
         "wires": []
     },
     {
@@ -2041,8 +2944,8 @@
         "syntax": "mustache",
         "template": "{\n    \"devicename\": \"Test Device\",\n    \"oid\": \"1.3.6.1.2.1.1.3.0\",\n    \"value\": \"Test Value\",\n    \"tstr\": \"OctetString\"\n}\n",
         "output": "json",
-        "x": 370,
-        "y": 340,
+        "x": 380,
+        "y": 380,
         "wires": [
             [
                 "33111954372c649f"
@@ -2055,8 +2958,8 @@
         "z": "5bb232ee4f529f6f",
         "name": "edit sample data",
         "info": "",
-        "x": 380,
-        "y": 300,
+        "x": 390,
+        "y": 340,
         "wires": []
     },
     {
@@ -2077,11 +2980,11 @@
         "type": "subflow:6dafd41e2e288cc7",
         "z": "5bb232ee4f529f6f",
         "name": "",
-        "x": 570,
-        "y": 340,
+        "x": 580,
+        "y": 380,
         "wires": [
             [
-                "04370c044d7c6204"
+                "2b645909dcf678ac"
             ]
         ]
     },
@@ -2089,16 +2992,513 @@
         "id": "2b645909dcf678ac",
         "type": "debug",
         "z": "5bb232ee4f529f6f",
-        "name": "debug 20",
+        "name": "debug db controller tests",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1040,
-        "y": 180,
+        "x": 1110,
+        "y": 280,
         "wires": []
+    },
+    {
+        "id": "f78fec70aee8ebbb",
+        "type": "change",
+        "z": "5bb232ee4f529f6f",
+        "name": "T1-L00-DC1-A10-PDU-A",
+        "rules": [
+            {
+                "t": "set",
+                "p": "host",
+                "pt": "msg",
+                "to": "10.32.144.30",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "oid",
+                "pt": "msg",
+                "to": "1.3.6.1.2.1.1.3.0,1.3.6.1.4.1.38446.1.3.4.1.6.1.1,1.3.6.1.4.1.38446.1.2.4.1.4.1,1.3.6.1.4.1.38446.1.2.4.1.5.1,1.3.6.1.4.1.38446.1.2.4.1.6.1,1.3.6.1.4.1.38446.1.2.4.1.9.1,1.3.6.1.4.1.38446.1.6.4.1.8.1.1,1.3.6.1.4.1.38446.1.6.4.1.8.1.2,1.3.6.1.4.1.38446.1.1.2.1.11.1,1.3.6.1.4.1.38446.1.1.2.1.12.1",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "devicename",
+                "pt": "msg",
+                "to": "T1-L00-DC1-A10-PDU-A",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "username",
+                "pt": "msg",
+                "to": "test",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "authkey",
+                "pt": "msg",
+                "to": "test",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "privkey",
+                "pt": "msg",
+                "to": "test",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 430,
+        "y": 1060,
+        "wires": [
+            [
+                "171755a4a749e417",
+                "4e3a0039768fea12"
+            ]
+        ]
+    },
+    {
+        "id": "3ce15292f0bad3a9",
+        "type": "inject",
+        "z": "5bb232ee4f529f6f",
+        "name": "click to inject",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "10",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 1060,
+        "wires": [
+            [
+                "f78fec70aee8ebbb"
+            ]
+        ]
+    },
+    {
+        "id": "171755a4a749e417",
+        "type": "snmp",
+        "z": "5bb232ee4f529f6f",
+        "host": "",
+        "version": "3",
+        "timeout": 5,
+        "community": "public",
+        "auth": "authPriv",
+        "authprot": "SHA",
+        "privprot": "AES",
+        "oids": "",
+        "name": "snmp3-authPriv-SHA-AES",
+        "x": 720,
+        "y": 1060,
+        "wires": [
+            [
+                "9a7fbd1493744cfc"
+            ]
+        ]
+    },
+    {
+        "id": "efcddf92fced959a",
+        "type": "snmp",
+        "z": "5bb232ee4f529f6f",
+        "host": "",
+        "version": "3",
+        "timeout": 5,
+        "community": "public",
+        "auth": "authPriv",
+        "authprot": "SHA",
+        "privprot": "DES",
+        "oids": "",
+        "name": "snmp3-authPriv-SHA-DES",
+        "x": 720,
+        "y": 1160,
+        "wires": [
+            [
+                "9a7fbd1493744cfc"
+            ]
+        ]
+    },
+    {
+        "id": "5b36d8b34e1c9ee3",
+        "type": "change",
+        "z": "5bb232ee4f529f6f",
+        "name": "T1-L00-DC1-IRC-A1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "host",
+                "pt": "msg",
+                "to": "10.32.144.100",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "oid",
+                "pt": "msg",
+                "to": "1.3.6.1.2.1.1.3.0,1.3.6.1.4.1.13400.2.385.1.2.0,1.3.6.1.4.1.13400.2.385.2.2.1.0,1.3.6.1.4.1.13400.2.385.2.2.2.0,1.3.6.1.4.1.13400.2.385.2.2.3.0,1.3.6.1.4.1.13400.2.385.2.2.4.0,1.3.6.1.4.1.13400.2.385.2.2.5.0,1.3.6.1.4.1.13400.2.385.2.2.6.0,1.3.6.1.4.1.13400.2.385.2.2.7.0,1.3.6.1.4.1.13400.2.385.2.2.8.0,1.3.6.1.4.1.13400.2.385.2.2.9.0,1.3.6.1.4.1.13400.2.385.2.2.10.0,1.3.6.1.4.1.13400.2.385.2.2.11.0,1.3.6.1.4.1.13400.2.385.2.2.12.0,1.3.6.1.4.1.13400.2.385.2.2.13.0,1.3.6.1.4.1.13400.2.385.2.2.17.0,1.3.6.1.4.1.13400.2.385.2.2.18.0,1.3.6.1.4.1.13400.2.385.2.2.19.0,1.3.6.1.4.1.13400.2.385.2.2.20.0,1.3.6.1.4.1.13400.2.385.2.2.27.0,1.3.6.1.4.1.13400.2.385.2.2.28.0,1.3.6.1.4.1.13400.2.385.2.2.29.0,1.3.6.1.4.1.13400.2.385.2.2.30.0,1.3.6.1.4.1.13400.2.385.2.2.31.0,1.3.6.1.4.1.13400.2.385.2.2.32.0,1.3.6.1.4.1.13400.2.385.2.2.33.0,1.3.6.1.4.1.13400.2.385.2.2.34.0,1.3.6.1.4.1.13400.2.385.2.2.35.0,1.3.6.1.4.1.13400.2.385.2.2.36.0,1.3.6.1.4.1.13400.2.385.2.2.37.0,1.3.6.1.4.1.13400.2.385.2.2.38.0,1.3.6.1.4.1.13400.2.385.2.2.39.0,1.3.6.1.4.1.13400.2.385.2.2.40.0,1.3.6.1.4.1.13400.2.385.2.2.41.0,1.3.6.1.4.1.13400.2.385.2.2.42.0,1.3.6.1.4.1.13400.2.385.2.2.43.0,1.3.6.1.4.1.13400.2.385.2.2.44.0,1.3.6.1.4.1.13400.2.385.2.2.45.0,1.3.6.1.4.1.13400.2.385.2.2.46.0,1.3.6.1.4.1.13400.2.385.2.2.47.0,1.3.6.1.4.1.13400.2.385.2.2.48.0,1.3.6.1.4.1.13400.2.385.2.2.49.0,1.3.6.1.4.1.13400.2.385.2.2.52.0,1.3.6.1.4.1.13400.2.385.2.2.53.0,1.3.6.1.4.1.13400.2.385.2.2.54.0,1.3.6.1.4.1.13400.2.385.2.2.55.0,1.3.6.1.4.1.13400.2.385.2.2.56.0,1.3.6.1.4.1.13400.2.385.2.2.57.0,1.3.6.1.4.1.13400.2.385.2.2.58.0,1.3.6.1.4.1.13400.2.385.2.2.59.0,1.3.6.1.4.1.13400.2.385.2.2.60.0,1.3.6.1.4.1.13400.2.385.2.2.64.0,1.3.6.1.4.1.13400.2.385.2.2.65.0,1.3.6.1.4.1.13400.2.385.2.2.66.0,1.3.6.1.4.1.13400.2.385.2.2.67.0,1.3.6.1.4.1.13400.2.385.2.2.68.0,1.3.6.1.4.1.13400.2.385.2.2.69.0,1.3.6.1.4.1.13400.2.385.2.2.70.0,1.3.6.1.4.1.13400.2.385.2.2.71.0,1.3.6.1.4.1.13400.2.385.2.2.72.0,1.3.6.1.4.1.13400.2.385.2.2.73.0,1.3.6.1.4.1.13400.2.385.2.4.1.0,1.3.6.1.4.1.13400.2.385.2.4.2.0,1.3.6.1.4.1.13400.2.385.2.4.3.0,1.3.6.1.4.1.13400.2.385.2.4.5.0,1.3.6.1.4.1.13400.2.385.2.2.80.0,1.3.6.1.4.1.13400.2.385.2.2.81.0,1.3.6.1.4.1.13400.2.385.2.2.82.0,1.3.6.1.4.1.13400.2.385.2.2.83.0,1.3.6.1.4.1.13400.2.385.2.2.84.0,1.3.6.1.4.1.13400.2.385.2.2.85.0,1.3.6.1.4.1.13400.2.385.2.2.86.0,1.3.6.1.4.1.13400.2.385.2.2.87.0,1.3.6.1.4.1.13400.2.385.2.2.92.0,1.3.6.1.4.1.13400.2.385.2.2.95.0,1.3.6.1.4.1.13400.2.385.2.2.98.0,1.3.6.1.4.1.13400.2.385.2.2.114.0,1.3.6.1.4.1.13400.2.385.2.2.130.0,1.3.6.1.4.1.13400.2.385.2.2.131.0,1.3.6.1.4.1.13400.2.385.2.2.137.0",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "devicename",
+                "pt": "msg",
+                "to": "T1-L00-DC1-IRC-A1",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "username",
+                "pt": "msg",
+                "to": "test",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "authkey",
+                "pt": "msg",
+                "to": "test",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "privkey",
+                "pt": "msg",
+                "to": "test",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 1160,
+        "wires": [
+            [
+                "efcddf92fced959a",
+                "a82247f423b48711"
+            ]
+        ]
+    },
+    {
+        "id": "94ef10a894955709",
+        "type": "inject",
+        "z": "5bb232ee4f529f6f",
+        "name": "click to inject",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "10",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 1160,
+        "wires": [
+            [
+                "5b36d8b34e1c9ee3"
+            ]
+        ]
+    },
+    {
+        "id": "b928e7b258e0f491",
+        "type": "inject",
+        "z": "5bb232ee4f529f6f",
+        "name": "click to inject",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 280,
+        "wires": [
+            [
+                "97ff57a013409d63"
+            ]
+        ]
+    },
+    {
+        "id": "966b5c113aef506b",
+        "type": "comment",
+        "z": "5bb232ee4f529f6f",
+        "name": "select all from snmp_devices then console log",
+        "info": "",
+        "x": 250,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "98cce393c1a980ee",
+        "type": "inject",
+        "z": "5bb232ee4f529f6f",
+        "name": "click to inject",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 480,
+        "wires": [
+            [
+                "1669c8a1f8d50f82"
+            ]
+        ]
+    },
+    {
+        "id": "4cb2dadee3b0c116",
+        "type": "comment",
+        "z": "5bb232ee4f529f6f",
+        "name": "insert invalid action and confirm debug message",
+        "info": "",
+        "x": 270,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "518064ee0e115a48",
+        "type": "subflow:a1e4324b31a71af9",
+        "z": "5bb232ee4f529f6f",
+        "name": "",
+        "x": 770,
+        "y": 480,
+        "wires": [
+            [
+                "2b645909dcf678ac"
+            ]
+        ]
+    },
+    {
+        "id": "1669c8a1f8d50f82",
+        "type": "change",
+        "z": "5bb232ee4f529f6f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "action",
+                "pt": "msg",
+                "to": "badOperation",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 480,
+        "wires": [
+            [
+                "518064ee0e115a48"
+            ]
+        ],
+        "info": "upsertValues:\r\nloadObjects"
+    },
+    {
+        "id": "c0ccbe3e907419f7",
+        "type": "comment",
+        "z": "5bb232ee4f529f6f",
+        "name": "db operation: badOperation",
+        "info": "",
+        "x": 570,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "7bfdb101e4b8ef63",
+        "type": "comment",
+        "z": "5bb232ee4f529f6f",
+        "name": "snmp tests",
+        "info": "",
+        "x": 160,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "cfeefd23b0c6ec6d",
+        "type": "comment",
+        "z": "5bb232ee4f529f6f",
+        "name": "snmp poll a device",
+        "info": "",
+        "x": 190,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "41756cd15201c95f",
+        "type": "inject",
+        "z": "5bb232ee4f529f6f",
+        "name": "click to inject",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 580,
+        "wires": [
+            [
+                "016c988a9759af12"
+            ]
+        ]
+    },
+    {
+        "id": "54e61afb0da8fc4c",
+        "type": "comment",
+        "z": "5bb232ee4f529f6f",
+        "name": "initialise empty db",
+        "info": "",
+        "x": 190,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "970bce2e26003ee1",
+        "type": "subflow:a1e4324b31a71af9",
+        "z": "5bb232ee4f529f6f",
+        "name": "",
+        "x": 780,
+        "y": 580,
+        "wires": [
+            [
+                "2b645909dcf678ac"
+            ]
+        ]
+    },
+    {
+        "id": "016c988a9759af12",
+        "type": "change",
+        "z": "5bb232ee4f529f6f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "action",
+                "pt": "msg",
+                "to": "initialise",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 550,
+        "y": 580,
+        "wires": [
+            [
+                "970bce2e26003ee1"
+            ]
+        ],
+        "info": "upsertValues:\r\nloadObjects"
+    },
+    {
+        "id": "d0c136135aba4326",
+        "type": "comment",
+        "z": "5bb232ee4f529f6f",
+        "name": "db operation: initialise",
+        "info": "",
+        "x": 570,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "a82247f423b48711",
+        "type": "subflow:4cb39d2ff60de472",
+        "z": "5bb232ee4f529f6f",
+        "name": "",
+        "x": 760,
+        "y": 1220,
+        "wires": [
+            [
+                "9a7fbd1493744cfc"
+            ]
+        ]
+    },
+    {
+        "id": "4e3a0039768fea12",
+        "type": "subflow:fef427aa2bd2e850",
+        "z": "5bb232ee4f529f6f",
+        "name": "",
+        "x": 760,
+        "y": 1100,
+        "wires": [
+            [
+                "9a7fbd1493744cfc"
+            ]
+        ]
+    },
+    {
+        "id": "97ff57a013409d63",
+        "type": "subflow:d5d393300a7d91ca",
+        "z": "5bb232ee4f529f6f",
+        "name": "",
+        "x": 570,
+        "y": 280,
+        "wires": [
+            [
+                "2b645909dcf678ac"
+            ]
+        ]
     }
 ]
