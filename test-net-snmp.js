@@ -1,3 +1,4 @@
+// run `node test-net-snmp.js` to test the code
 const snmp = require("net-snmp");
 
 // SNMP v3 options

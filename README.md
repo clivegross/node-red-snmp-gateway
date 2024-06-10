@@ -1,23 +1,147 @@
-# Node-RED SNMP Fetcher Service
+# Node-RED SNMP Gateway
 
-This Node-RED project is a middleware service used to fetch SNMP object values from devices, store them in a SQLite database, and serve them over HTTP. The application does 3 things:
+This Node-RED project is a middleware service used to fetch SNMP objects from devices, store them in a local SQLite database, and serve the data over HTTP.
 
-1. Initialise: On startup, creates a SQLite table (deletes the table first if it exists) and optionally populates it with an snmp object list, loaded from a csv file.
-2. Fetch values: Fetches object values from SNMP devices and inserts/updates the database.
-3. HTTP serve: Listens on a http endpoint and responds with SNMP object data and values from the database.
+In summary, the application does 3 things:
 
-## Setup
+1. Initialise: On startup, creates a SQLite database (or drops and recreates the tables if it already exists) and optionally populates it with an snmp object list and device list, loaded from a user defined csv file.
+2. Fetch snmp values: Continually fetches object values from SNMP devices and inserts/updates the database.
+3. HTTP serve XML: Provides a basic XML web API. Listens on a http endpoint and responds with SNMP object and device data from the database in an XML format.
 
-To set up the project:
+Note that while the application provides nodes to serve the SNMP data as an XML web service (3), all the snmp data is written to and read from a SQLite database, so this interface could easily be swapped out for any other protocol, eg Modbus TCP, JSON API etc.
 
-1. Import the project into your Node-RED instance.
-2. Install dependencies.
-3. Configure the SNMP devices as needed, .
+## Quick start
 
-### Dependencies
+To set up in your existing Node-RED instance:
 
-- node-red-node-snmp
-- node-red-node-sqlite
+1. Enable [projects](https://nodered.org/docs/user-guide/projects/) in your Node-RED instance if they arent already.
+2. Clone the project into your Node-RED `projects` directory.
+2. Install dependency nodes.
+3. Start the server, open the flow and configure the SNMP devices, web service and database as required.
+
+## Dependencies
+
+- Node.js (if SNMPv3 DES Privacy algorithm, install Node.js v16 or less, see below)
+- Node-RED
+- Git (optional, for running as a [Node-RED Project](https://nodered.org/docs/user-guide/projects/))
+- pm2-installer & pm2 (optional, for running Node-RED on Windows as a service)
+- Node-RED nodes:
+    - node-red-node-snmp
+    - node-red-node-sqlite (optional, for storing data in sqlite)
+
+## Configure flow
+
+The `node-red-snmp-gateway`
+
+### 1. Initialise
+
+Prepare CSV config file
+
+### 2. Fetch SNMP values
+
+xxx
+
+### 3. HTTP serve XML
+
+xxx
+
+## Deploy Node-RED to production as a Windows service
+
+In a standard Node.js install, node modules (including Node-RED) are installed in the current users `%APPDATA%`. The Node-RED `userDir` is installed in the current users `~\.node-red` directory. This wont work well if the flow is to run in production as a service and handle server restarts and faults.
+
+Instead, npm and node-red can be installed in %PROGRAMDATA%, ie:
+
+- C:\
+  - ProgramData
+   - npm
+   - node-red
+     - projects
+       - node-red-snmp-fetcher-service
+         - flows.json
+     - settings.js
+
+The node, npm and pm2 installation/configuration can be handled using This can be achieved using [pm2-installer](https://github.com/jessety/pm2-installer), see below.
+
+1. Install Node.js (note Node.js v16 or lower required if support for SNMPv3 DES Privacy algorithm is required in `node-red-node-snmp`)
+2. Install and configure pm2-installer
+3. Install Git for Windows
+4. Install and configure Node-RED
+5. Install node-red-snmp-fetcher-service dependency nodes
+6. Install and configure node-red-snmp-fetcher service
+
+### Install Node.js
+Download and install [Node.js for Windows, following instructions on the site](https://nodejs.org/en/download/current).
+
+Note: If SNMPv3 DES Privacy algorithm, install Node.js v16. [Here's why](https://github.com/node-red/node-red-nodes/issues/1034#issuecomment-2067512877).
+
+### Install and configure pm2-installer
+This is required to run node and pm2 as local system user and install modules in %PROGRAMDATA% instead of user %%APPDATA%.
+
+Download and install [pm2-installer, following the instructions on the site.](https://github.com/jessety/pm2-installer).
+
+### Install Git for Windows
+
+Node-RED SNMP Fetcher Service is ideally run as a [Node-RED Project](https://nodered.org/docs/user-guide/projects/). Node-RED Projects requires Git. Download and install [Git for Windows](https://git-scm.com/download/win). The application doesn't have to be run as a Node-RED Project, so this step can be skipped if you know what you're doing.
+
+### Install and configure Node-RED
+
+Install Node-RED using npm [following installation on Windows instructions on Node-RED site](https://nodered.org/docs/getting-started/windows).
+
+```
+npm install -g --unsafe-perm node-red
+```
+
+```
+mkdir %PROGRAMDATA%\node-red
+cd %PROGRAMDATA%\node-red
+!!! copy settings.js into %PROGRAMDATA%\node-red
+node-red --settings ./settings.js
+```
+Nodes must be installed globally, using `-g` switch
+
+Add `NODE_RED_HOME` to system environment variable, otherwise node-red home directory will default to `C:\Users\{{current user}}\.node-red`.
+
+![NODE_RED_HOME](./images/add-node_red_home.png)
+
+### Clone repository
+
+Clone this repository into %PROGRAMDATA%/node-red/projects
+
+### Install Node-RED nodes
+
+#### node-red-node-sqlite
+
+`node-red-node-sqlite` depends on modules that require Python 3, so install `python3` first. Either download and install following instructions on [official Python website](https://www.python.org/downloads/windows/) or install using your orgainsations Software Centre:
+
+![Software Centre](./images/install-python-from-software-centre.png)
+
+The path to python.exe must be added to the `PATH` system environment variable. Also `PYTHONPATH` must be added as a system environment variable. This may or may not have been completed during installation. If not, add them manually. To permanently modify the default environment variables, click Start and search for 'edit environment variables', or open System properties, Advanced system settings and click the Environment Variables button.
+
+![edit system environment variables](./images/edit-system-env-variables.png)
+![Add python to PATH](./images/update-path.png)
+![Add PYTHONPATH](./images/add-pythonpath.png)
+
+### Logging
+
+If running the `node-red-snmp-gateway` as a Windows service using `pm2`, logging is handled automatically using `pm2-logrotate`, which is automatically installed with `pm2-installer`. Any `node-red` console logs will be written to `%PROGRAMDATA%\pm2\home\logs`.
+
+You will probably want to configure `pm2-logrotate` to suit your needs, open a powershell terminal as Administrator:
+
+```
+# install pm2-logrotate if it isnt already
+pm2 install pm2-logrotate
+# view pm2 and pm2-logrotate config
+pm2 conf
+# configure pm2-logrotate using
+# pm2 set pm2-logrotate:<param> <value>
+# rotate logs daily at midnight
+pm2 set pm2-logrotate:rotateInterval '0 0 * * *'
+# limit max log file size
+pm2 set pm2-logrotate:max_size 1M
+# set log retention (number of files to keep)
+pm2 set pm2-logrotate:retain 500
+```
+
 
 ## Project Structure
 
