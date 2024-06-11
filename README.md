@@ -12,12 +12,13 @@ Note that while the application provides nodes to serve the SNMP data as an XML 
 
 ## Quick start
 
-To set up in your existing Node-RED instance:
+To deploy in your existing Node-RED instance:
 
-1. Enable [projects](https://nodered.org/docs/user-guide/projects/) in your Node-RED instance if they arent already.
-2. Clone the project into your Node-RED `projects` directory.
-2. Install dependency nodes.
-3. Start the server, open the flow and configure the SNMP devices, web service and database as required.
+1. Enable [projects](https://nodered.org/docs/user-guide/projects/) in your Node-RED instance if they aren't already.
+1. Download and unzip this project into your Node-RED `projects` directory.
+1. Install dependency nodes, see [below](#dependencies).
+1. Configure the SNMP objects csv file, see [below](#configure-flow).
+1. Start the server, open the flow and configure filepaths, web service and database as required.
 
 ## Dependencies
 
