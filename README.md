@@ -20,6 +20,8 @@ To deploy in your existing Node-RED instance:
 1. Configure the SNMP objects csv file, see [below](#configure-flow).
 1. Start the server, open the flow and configure filepaths, web service and database as required.
 
+If you'd like to deploy Node-RED and `node-red-snmp-gateway` to production on a Windows machine, see [below](#deploy-to-production-on-windows)
+
 ## Dependencies
 
 - Node.js (if SNMPv3 DES Privacy algorithm, install Node.js v16 or less, see below)
@@ -46,45 +48,52 @@ xxx
 
 xxx
 
-## Deploy Node-RED to production as a Windows service
+## Deploy to production on Windows
 
-In a standard Node.js install, node modules (including Node-RED) are installed in the current users `%APPDATA%`. The Node-RED `userDir` is installed in the current users `~\.node-red` directory. This wont work well if the flow is to run in production as a service and handle server restarts and faults.
+In a default Node.js install, node modules (including Node-RED) are installed in the current users `%APPDATA%`. In a default Node-RED install, the Node-RED `userDir` is installed in the current users `~\.node-red` directory. Neither of these will work well if the flow is to run in production as a service, independently of user login, and handle server restarts and faults.
 
-Instead, npm and node-red can be installed in %PROGRAMDATA%, ie:
+Instead, [pm2-installer](https://github.com/jessety/pm2-installer) shall be used to install `npm` and `node-red` in `%PROGRAMDATA%`, ie:
 
+```
 - C:\
   - ProgramData
    - npm
    - node-red
      - projects
-       - node-red-snmp-fetcher-service
+       - node-red-snmp-gateway
          - flows.json
+         - data
+           - SNMPObjectList.csv
+           - db
      - settings.js
+```
 
-The node, npm and pm2 installation/configuration can be handled using This can be achieved using [pm2-installer](https://github.com/jessety/pm2-installer), see below.
+`pm2-installer` also enables the `node-red` instance to be run as a Windows service using `PM2`.
 
-1. Install Node.js (note Node.js v16 or lower required if support for SNMPv3 DES Privacy algorithm is required in `node-red-node-snmp`)
+In summary, deployment to production on Windows requires the following steps:
+
+1. Install Node.js
 2. Install and configure pm2-installer
 3. Install Git for Windows
 4. Install and configure Node-RED
-5. Install node-red-snmp-fetcher-service dependency nodes
-6. Install and configure node-red-snmp-fetcher service
+5. Install dependency nodes
+6. Install and configure Node-RED SNMP Gateway
 
-### Install Node.js
-Download and install [Node.js for Windows, following instructions on the site](https://nodejs.org/en/download/current).
+### 1. Install Node.js
+Download and install [Node.js for Windows, following instructions on the site](https://nodejs.org/en/download/prebuilt-installer/current).
 
 Note: If SNMPv3 DES Privacy algorithm, install Node.js v16. [Here's why](https://github.com/node-red/node-red-nodes/issues/1034#issuecomment-2067512877).
 
-### Install and configure pm2-installer
-This is required to run node and pm2 as local system user and install modules in %PROGRAMDATA% instead of user %%APPDATA%.
+### 2. Install and configure pm2-installer
+This is required to run `node` and `pm2` as local system user and install modules in `%PROGRAMDATA%` instead of user `%APPDATA%`.
 
 Download and install [pm2-installer, following the instructions on the site.](https://github.com/jessety/pm2-installer).
 
-### Install Git for Windows
+### 3. Install Git for Windows
 
-Node-RED SNMP Fetcher Service is ideally run as a [Node-RED Project](https://nodered.org/docs/user-guide/projects/). Node-RED Projects requires Git. Download and install [Git for Windows](https://git-scm.com/download/win). The application doesn't have to be run as a Node-RED Project, so this step can be skipped if you know what you're doing.
+Node-RED SNMP Gateway is ideally run as a [Node-RED Project](https://nodered.org/docs/user-guide/projects/). Node-RED Projects requires Git. Download and install [Git for Windows](https://git-scm.com/download/win). The application doesn't have to be run as a Node-RED Project, so this step can be skipped if you know what you're doing.
 
-### Install and configure Node-RED
+### 4. Install and configure Node-RED
 
 Install Node-RED using npm [following installation on Windows instructions on Node-RED site](https://nodered.org/docs/getting-started/windows).
 
@@ -104,11 +113,8 @@ Add `NODE_RED_HOME` to system environment variable, otherwise node-red home dire
 
 ![NODE_RED_HOME](./images/add-node_red_home.png)
 
-### Clone repository
 
-Clone this repository into %PROGRAMDATA%/node-red/projects
-
-### Install Node-RED nodes
+### 5. Install Node-RED dependency nodes
 
 #### node-red-node-sqlite
 
@@ -121,6 +127,10 @@ The path to python.exe must be added to the `PATH` system environment variable. 
 ![edit system environment variables](./images/edit-system-env-variables.png)
 ![Add python to PATH](./images/update-path.png)
 ![Add PYTHONPATH](./images/add-pythonpath.png)
+
+### 6. Install and ocnfigure Node-RED SNMP Gateway
+
+Download and unzip or clone this repository into `%PROGRAMDATA%/node-red/projects`
 
 ### Logging
 
