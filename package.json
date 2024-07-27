@@ -2,7 +2,10 @@
     "name": "snmp-interface",
     "description": "A middleware project to SNMP poll and transform to data other interfaces",
     "version": "0.0.1",
-    "dependencies": {},
+    "dependencies": {
+        "node-red-node-snmp": "^0.1.0",
+        "node-red-node-sqlite": "^0.3.0"
+    },
     "node-red": {
         "settings": {
             "flowFile": "flows.json",
