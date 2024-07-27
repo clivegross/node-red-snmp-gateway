@@ -109,7 +109,7 @@ node-red --settings ./settings.js
 ```
 Nodes must be installed globally, using `-g` switch
 
-Add `NODE_RED_HOME` to system environment variables, otherwise node-red home directory will default to `C:\Users\{{current user}}\.node-red`.
+Add `NODE_RED_HOME` to system environment variables, otherwise node-red home directory will default to `C:\Users\{{current user}}\.node-red`. ie:
 
 `NODE_RED_HOME: C:\ProgramData\node-red`
 
@@ -124,13 +124,18 @@ Add `NODE_RED_HOME` to system environment variables, otherwise node-red home dir
 
 ![Software Centre](./images/install-python-from-software-centre.png)
 
-The path to python.exe must be added to the `PATH` system environment variable. Also `PYTHONPATH` must be added as a system environment variable. This may or may not have been completed during installation. If not, add them manually. To permanently modify the default environment variables, click Start and search for 'edit environment variables', or open System properties, Advanced system settings and click the Environment Variables button.
+The path to python.exe must be added to the `PATH` system environment variable. Also `PYTHONPATH` must be added as a system environment variable. This may or may not have been completed during installation. If not, add them manually. To permanently modify the default environment variables, click Start and search for 'edit environment variables', or open System properties, Advanced system settings and click the Environment Variables button. ie:
+
+```
+PATH: ...C:\Program Files\Python312,
+PYTHONPATH: C:\Program Files\Python312
+```
 
 ![edit system environment variables](./images/edit-system-env-variables.png)
 ![Add python to PATH](./images/update-path.png)
 ![Add PYTHONPATH](./images/add-pythonpath.png)
 
-### 6. Install and ocnfigure Node-RED SNMP Gateway
+### 6. Install and configure Node-RED SNMP Gateway
 
 Download and unzip or clone this repository into `%PROGRAMDATA%/node-red/projects`
 
