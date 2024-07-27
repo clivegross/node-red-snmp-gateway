@@ -109,7 +109,9 @@ node-red --settings ./settings.js
 ```
 Nodes must be installed globally, using `-g` switch
 
-Add `NODE_RED_HOME` to system environment variable, otherwise node-red home directory will default to `C:\Users\{{current user}}\.node-red`.
+Add `NODE_RED_HOME` to system environment variables, otherwise node-red home directory will default to `C:\Users\{{current user}}\.node-red`.
+
+`NODE_RED_HOME: C:\ProgramData\node-red`
 
 ![NODE_RED_HOME](./images/add-node_red_home.png)
 
