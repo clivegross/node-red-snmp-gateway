@@ -1,0 +1,874 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@8.19.4
+2 info using node@v16.20.2
+3 timing npm:load:whichnode Completed in 0ms
+4 timing config:load:defaults Completed in 2ms
+5 timing config:load:file:C:\Program Files\nodejs\node_modules\npm\npmrc Completed in 4ms
+6 timing config:load:builtin Completed in 4ms
+7 timing config:load:cli Completed in 2ms
+8 timing config:load:env Completed in 1ms
+9 timing config:load:project Completed in 4ms
+10 timing config:load:file:C:\Users\svc_bnep_ibams_app\.npmrc Completed in 0ms
+11 timing config:load:user Completed in 0ms
+12 timing config:load:file:C:\Users\svc_bnep_ibams_app\AppData\Roaming\npm\etc\npmrc Completed in 0ms
+13 timing config:load:global Completed in 1ms
+14 timing config:load:validate Completed in 0ms
+15 timing config:load:credentials Completed in 1ms
+16 timing config:load:setEnvs Completed in 1ms
+17 timing config:load Completed in 18ms
+18 timing npm:load:configload Completed in 18ms
+19 timing npm:load:mkdirpcache Completed in 0ms
+20 timing npm:load:mkdirplogs Completed in 1ms
+21 verbose title npm install node-red-node-sqlite
+22 verbose argv "install" "--global" "--unsafe-perm" "node-red-node-sqlite"
+23 timing npm:load:setTitle Completed in 1ms
+24 timing config:load:flatten Completed in 3ms
+25 timing npm:load:display Completed in 5ms
+26 verbose logfile logs-max:10 dir:C:\ProgramData\npm\npm-cache\_logs
+27 verbose logfile C:\ProgramData\npm\npm-cache\_logs\2024-07-27T07_04_40_627Z-debug-0.log
+28 timing npm:load:logFile Completed in 8ms
+29 timing npm:load:timers Completed in 0ms
+30 timing npm:load:configScope Completed in 0ms
+31 timing npm:load Completed in 34ms
+32 timing arborist:ctor Completed in 1ms
+33 silly logfile start cleaning logs, removing 2 files
+34 timing idealTree:init Completed in 6ms
+35 timing idealTree:userRequests Completed in 3ms
+36 silly idealTree buildDeps
+37 silly fetch manifest node-red-node-sqlite@*
+38 silly logfile done cleaning log files
+39 http fetch GET 200 https://registry.npmjs.org/node-red-node-sqlite 21ms (cache hit)
+40 silly placeDep ROOT node-red-node-sqlite@1.1.0 OK for:  want: *
+41 silly fetch manifest sqlite3@^5.1.6
+42 http fetch GET 200 https://registry.npmjs.org/sqlite3 9ms (cache hit)
+43 timing idealTree:#root Completed in 45ms
+44 silly placeDep node_modules/node-red-node-sqlite sqlite3@5.1.7 OK for: node-red-node-sqlite@1.1.0 want: ^5.1.6
+45 silly fetch manifest bindings@^1.5.0
+46 silly fetch manifest node-addon-api@^7.0.0
+47 silly fetch manifest prebuild-install@^7.1.1
+48 silly fetch manifest tar@^6.1.11
+49 silly fetch manifest node-gyp@8.x
+50 http fetch GET 200 https://registry.npmjs.org/node-addon-api 18ms (cache hit)
+51 http fetch GET 200 https://registry.npmjs.org/prebuild-install 22ms (cache hit)
+52 http fetch GET 200 https://registry.npmjs.org/tar 23ms (cache hit)
+53 http fetch GET 200 https://registry.npmjs.org/bindings 28ms (cache hit)
+54 http fetch GET 200 https://registry.npmjs.org/node-gyp 26ms (cache hit)
+55 timing idealTree:node_modules/node-red-node-sqlite Completed in 38ms
+56 silly placeDep node_modules/node-red-node-sqlite bindings@1.5.0 OK for: sqlite3@5.1.7 want: ^1.5.0
+57 silly placeDep node_modules/node-red-node-sqlite node-addon-api@7.1.1 OK for: sqlite3@5.1.7 want: ^7.0.0
+58 silly placeDep node_modules/node-red-node-sqlite node-gyp@8.4.1 OK for: sqlite3@5.1.7 want: 8.x
+59 silly placeDep node_modules/node-red-node-sqlite prebuild-install@7.1.2 OK for: sqlite3@5.1.7 want: ^7.1.1
+60 silly placeDep node_modules/node-red-node-sqlite tar@6.2.1 OK for: sqlite3@5.1.7 want: ^6.1.11
+61 silly fetch manifest file-uri-to-path@1.0.0
+62 silly fetch manifest glob@^7.1.4
+63 silly fetch manifest nopt@^5.0.0
+64 silly fetch manifest which@^2.0.2
+65 silly fetch manifest npmlog@^6.0.0
+66 silly fetch manifest rimraf@^3.0.2
+67 silly fetch manifest semver@^7.3.5
+68 silly fetch manifest env-paths@^2.2.0
+69 silly fetch manifest graceful-fs@^4.2.6
+70 silly fetch manifest make-fetch-happen@^9.1.0
+71 silly fetch manifest detect-libc@^2.0.0
+72 silly fetch manifest expand-template@^2.0.3
+73 silly fetch manifest github-from-package@0.0.0
+74 silly fetch manifest minimist@^1.2.3
+75 silly fetch manifest mkdirp-classic@^0.5.3
+76 silly fetch manifest napi-build-utils@^1.0.1
+77 silly fetch manifest node-abi@^3.3.0
+78 silly fetch manifest pump@^3.0.0
+79 silly fetch manifest rc@^1.2.7
+80 silly fetch manifest simple-get@^4.0.0
+81 silly fetch manifest tar-fs@^2.0.0
+82 silly fetch manifest tunnel-agent@^0.6.0
+83 silly fetch manifest chownr@^2.0.0
+84 silly fetch manifest mkdirp@^1.0.3
+85 silly fetch manifest yallist@^4.0.0
+86 silly fetch manifest minipass@^5.0.0
+87 silly fetch manifest minizlib@^2.1.1
+88 silly fetch manifest fs-minipass@^2.0.0
+89 http fetch GET 200 https://registry.npmjs.org/file-uri-to-path 78ms (cache hit)
+90 http fetch GET 200 https://registry.npmjs.org/npmlog 78ms (cache hit)
+91 http fetch GET 200 https://registry.npmjs.org/make-fetch-happen 78ms (cache hit)
+92 http fetch GET 200 https://registry.npmjs.org/nopt 83ms (cache hit)
+93 http fetch GET 200 https://registry.npmjs.org/glob 85ms (cache hit)
+94 http fetch GET 200 https://registry.npmjs.org/github-from-package 82ms (cache hit)
+95 http fetch GET 200 https://registry.npmjs.org/semver 86ms (cache hit)
+96 http fetch GET 200 https://registry.npmjs.org/which 88ms (cache hit)
+97 http fetch GET 200 https://registry.npmjs.org/detect-libc 86ms (cache hit)
+98 http fetch GET 200 https://registry.npmjs.org/napi-build-utils 84ms (cache hit)
+99 http fetch GET 200 https://registry.npmjs.org/env-paths 89ms (cache hit)
+100 http fetch GET 200 https://registry.npmjs.org/graceful-fs 92ms (cache hit)
+101 http fetch GET 200 https://registry.npmjs.org/mkdirp-classic 90ms (cache hit)
+102 http fetch GET 200 https://registry.npmjs.org/rimraf 95ms (cache hit)
+103 http fetch GET 200 https://registry.npmjs.org/expand-template 97ms (cache hit)
+104 http fetch GET 200 https://registry.npmjs.org/minimist 96ms (cache hit)
+105 http fetch GET 200 https://registry.npmjs.org/pump 94ms (cache hit)
+106 http fetch GET 200 https://registry.npmjs.org/tar-fs 93ms (cache hit)
+107 http fetch GET 200 https://registry.npmjs.org/chownr 93ms (cache hit)
+108 http fetch GET 200 https://registry.npmjs.org/tunnel-agent 95ms (cache hit)
+109 http fetch GET 200 https://registry.npmjs.org/node-abi 99ms (cache hit)
+110 http fetch GET 200 https://registry.npmjs.org/rc 99ms (cache hit)
+111 http fetch GET 200 https://registry.npmjs.org/mkdirp 97ms (cache hit)
+112 http fetch GET 200 https://registry.npmjs.org/simple-get 100ms (cache hit)
+113 http fetch GET 200 https://registry.npmjs.org/minipass 99ms (cache hit)
+114 http fetch GET 200 https://registry.npmjs.org/fs-minipass 98ms (cache hit)
+115 http fetch GET 200 https://registry.npmjs.org/yallist 101ms (cache hit)
+116 http fetch GET 200 https://registry.npmjs.org/minizlib 101ms (cache hit)
+117 timing idealTree:node_modules/node-red-node-sqlite/node_modules/sqlite3 Completed in 129ms
+118 silly placeDep node_modules/node-red-node-sqlite file-uri-to-path@1.0.0 OK for: bindings@1.5.0 want: 1.0.0
+119 timing idealTree:node_modules/node-red-node-sqlite/node_modules/bindings Completed in 3ms
+120 timing idealTree:node_modules/node-red-node-sqlite/node_modules/file-uri-to-path Completed in 0ms
+121 timing idealTree:node_modules/node-red-node-sqlite/node_modules/node-addon-api Completed in 0ms
+122 silly placeDep node_modules/node-red-node-sqlite env-paths@2.2.1 OK for: node-gyp@8.4.1 want: ^2.2.0
+123 silly placeDep node_modules/node-red-node-sqlite glob@7.2.3 OK for: node-gyp@8.4.1 want: ^7.1.4
+124 silly placeDep node_modules/node-red-node-sqlite graceful-fs@4.2.11 OK for: node-gyp@8.4.1 want: ^4.2.6
+125 silly placeDep node_modules/node-red-node-sqlite make-fetch-happen@9.1.0 OK for: node-gyp@8.4.1 want: ^9.1.0
+126 silly placeDep node_modules/node-red-node-sqlite nopt@5.0.0 OK for: node-gyp@8.4.1 want: ^5.0.0
+127 silly placeDep node_modules/node-red-node-sqlite npmlog@6.0.2 OK for: node-gyp@8.4.1 want: ^6.0.0
+128 silly placeDep node_modules/node-red-node-sqlite rimraf@3.0.2 OK for: node-gyp@8.4.1 want: ^3.0.2
+129 silly placeDep node_modules/node-red-node-sqlite semver@7.6.3 OK for: node-gyp@8.4.1 want: ^7.3.5
+130 silly placeDep node_modules/node-red-node-sqlite which@2.0.2 OK for: node-gyp@8.4.1 want: ^2.0.2
+131 silly fetch manifest once@^1.3.0
+132 silly fetch manifest inflight@^1.0.4
+133 silly fetch manifest inherits@2
+134 silly fetch manifest minimatch@^3.1.1
+135 silly fetch manifest fs.realpath@^1.0.0
+136 silly fetch manifest path-is-absolute@^1.0.0
+137 silly fetch manifest ssri@^8.0.0
+138 silly fetch manifest cacache@^15.2.0
+139 silly fetch manifest minipass@^3.1.3
+140 silly fetch manifest is-lambda@^1.0.1
+141 silly fetch manifest lru-cache@^6.0.0
+142 silly fetch manifest negotiator@^0.6.2
+143 silly fetch manifest promise-retry@^2.0.1
+144 silly fetch manifest agentkeepalive@^4.1.3
+145 silly fetch manifest minipass-fetch@^1.3.2
+146 silly fetch manifest minipass-flush@^1.0.5
+147 silly fetch manifest http-proxy-agent@^4.0.1
+148 silly fetch manifest minipass-collect@^1.0.2
+149 silly fetch manifest https-proxy-agent@^5.0.0
+150 silly fetch manifest minipass-pipeline@^1.2.4
+151 silly fetch manifest socks-proxy-agent@^6.0.0
+152 silly fetch manifest http-cache-semantics@^4.1.0
+153 silly fetch manifest abbrev@1
+154 silly fetch manifest gauge@^4.0.3
+155 silly fetch manifest set-blocking@^2.0.0
+156 silly fetch manifest are-we-there-yet@^3.0.0
+157 silly fetch manifest console-control-strings@^1.1.0
+158 silly fetch manifest isexe@^2.0.0
+159 http fetch GET 200 https://registry.npmjs.org/minimatch 95ms (cache hit)
+160 http fetch GET 200 https://registry.npmjs.org/inherits 100ms (cache hit)
+161 http fetch GET 200 https://registry.npmjs.org/path-is-absolute 98ms (cache hit)
+162 http fetch GET 200 https://registry.npmjs.org/once 103ms (cache hit)
+163 http fetch GET 200 https://registry.npmjs.org/is-lambda 97ms (cache hit)
+164 http fetch GET 200 https://registry.npmjs.org/ssri 98ms (cache hit)
+165 http fetch GET 200 https://registry.npmjs.org/fs.realpath 101ms (cache hit)
+166 http fetch GET 200 https://registry.npmjs.org/inflight 105ms (cache hit)
+167 http fetch GET 200 https://registry.npmjs.org/cacache 100ms (cache hit)
+168 http fetch GET 200 https://registry.npmjs.org/agentkeepalive 98ms (cache hit)
+169 http fetch GET 200 https://registry.npmjs.org/minipass-flush 97ms (cache hit)
+170 http fetch GET 200 https://registry.npmjs.org/promise-retry 100ms (cache hit)
+171 http fetch GET 200 https://registry.npmjs.org/http-proxy-agent 97ms (cache hit)
+172 http fetch GET 200 https://registry.npmjs.org/negotiator 102ms (cache hit)
+173 http fetch GET 200 https://registry.npmjs.org/minipass-collect 97ms (cache hit)
+174 http fetch GET 200 https://registry.npmjs.org/lru-cache 104ms (cache hit)
+175 http fetch GET 200 https://registry.npmjs.org/abbrev 98ms (cache hit)
+176 http fetch GET 200 https://registry.npmjs.org/minipass-fetch 105ms (cache hit)
+177 http fetch GET 200 https://registry.npmjs.org/socks-proxy-agent 101ms (cache hit)
+178 http fetch GET 200 https://registry.npmjs.org/are-we-there-yet 100ms (cache hit)
+179 http fetch GET 200 https://registry.npmjs.org/minipass-pipeline 105ms (cache hit)
+180 http fetch GET 200 https://registry.npmjs.org/https-proxy-agent 107ms (cache hit)
+181 http fetch GET 200 https://registry.npmjs.org/http-cache-semantics 106ms (cache hit)
+182 http fetch GET 200 https://registry.npmjs.org/set-blocking 105ms (cache hit)
+183 http fetch GET 200 https://registry.npmjs.org/gauge 106ms (cache hit)
+184 http fetch GET 200 https://registry.npmjs.org/console-control-strings 104ms (cache hit)
+185 http fetch GET 200 https://registry.npmjs.org/isexe 105ms (cache hit)
+186 timing idealTree:node_modules/node-red-node-sqlite/node_modules/node-gyp Completed in 139ms
+187 timing idealTree:node_modules/node-red-node-sqlite/node_modules/env-paths Completed in 1ms
+188 silly placeDep node_modules/node-red-node-sqlite fs.realpath@1.0.0 OK for: glob@7.2.3 want: ^1.0.0
+189 silly placeDep node_modules/node-red-node-sqlite inflight@1.0.6 OK for: glob@7.2.3 want: ^1.0.4
+190 silly placeDep node_modules/node-red-node-sqlite inherits@2.0.4 OK for: glob@7.2.3 want: 2
+191 silly placeDep node_modules/node-red-node-sqlite minimatch@3.1.2 OK for: glob@7.2.3 want: ^3.1.1
+192 silly placeDep node_modules/node-red-node-sqlite once@1.4.0 OK for: glob@7.2.3 want: ^1.3.0
+193 silly placeDep node_modules/node-red-node-sqlite path-is-absolute@1.0.1 OK for: glob@7.2.3 want: ^1.0.0
+194 silly fetch manifest wrappy@1
+195 silly fetch manifest brace-expansion@^1.1.7
+196 http fetch GET 200 https://registry.npmjs.org/wrappy 21ms (cache hit)
+197 http fetch GET 200 https://registry.npmjs.org/brace-expansion 20ms (cache hit)
+198 timing idealTree:node_modules/node-red-node-sqlite/node_modules/glob Completed in 32ms
+199 timing idealTree:node_modules/node-red-node-sqlite/node_modules/fs.realpath Completed in 0ms
+200 timing idealTree:node_modules/node-red-node-sqlite/node_modules/graceful-fs Completed in 0ms
+201 silly placeDep node_modules/node-red-node-sqlite wrappy@1.0.2 OK for: inflight@1.0.6 want: 1
+202 timing idealTree:node_modules/node-red-node-sqlite/node_modules/inflight Completed in 1ms
+203 timing idealTree:node_modules/node-red-node-sqlite/node_modules/inherits Completed in 0ms
+204 silly placeDep node_modules/node-red-node-sqlite agentkeepalive@4.5.0 OK for: make-fetch-happen@9.1.0 want: ^4.1.3
+205 silly placeDep node_modules/node-red-node-sqlite cacache@15.3.0 OK for: make-fetch-happen@9.1.0 want: ^15.2.0
+206 silly placeDep node_modules/node-red-node-sqlite http-cache-semantics@4.1.1 OK for: make-fetch-happen@9.1.0 want: ^4.1.0
+207 silly placeDep node_modules/node-red-node-sqlite http-proxy-agent@4.0.1 OK for: make-fetch-happen@9.1.0 want: ^4.0.1
+208 silly placeDep node_modules/node-red-node-sqlite https-proxy-agent@5.0.1 OK for: make-fetch-happen@9.1.0 want: ^5.0.0
+209 silly placeDep node_modules/node-red-node-sqlite is-lambda@1.0.1 OK for: make-fetch-happen@9.1.0 want: ^1.0.1
+210 silly placeDep node_modules/node-red-node-sqlite lru-cache@6.0.0 OK for: make-fetch-happen@9.1.0 want: ^6.0.0
+211 silly placeDep node_modules/node-red-node-sqlite minipass@3.3.6 OK for: make-fetch-happen@9.1.0 want: ^3.1.3
+212 silly placeDep node_modules/node-red-node-sqlite minipass-collect@1.0.2 OK for: make-fetch-happen@9.1.0 want: ^1.0.2
+213 silly placeDep node_modules/node-red-node-sqlite minipass-fetch@1.4.1 OK for: make-fetch-happen@9.1.0 want: ^1.3.2
+214 silly placeDep node_modules/node-red-node-sqlite minipass-flush@1.0.5 OK for: make-fetch-happen@9.1.0 want: ^1.0.5
+215 silly placeDep node_modules/node-red-node-sqlite minipass-pipeline@1.2.4 OK for: make-fetch-happen@9.1.0 want: ^1.2.4
+216 silly placeDep node_modules/node-red-node-sqlite negotiator@0.6.3 OK for: make-fetch-happen@9.1.0 want: ^0.6.2
+217 silly placeDep node_modules/node-red-node-sqlite promise-retry@2.0.1 OK for: make-fetch-happen@9.1.0 want: ^2.0.1
+218 silly placeDep node_modules/node-red-node-sqlite socks-proxy-agent@6.2.1 OK for: make-fetch-happen@9.1.0 want: ^6.0.0
+219 silly placeDep node_modules/node-red-node-sqlite ssri@8.0.1 OK for: make-fetch-happen@9.1.0 want: ^8.0.0
+220 silly fetch manifest humanize-ms@^1.2.1
+221 silly fetch manifest p-map@^4.0.0
+222 silly fetch manifest @npmcli/fs@^1.0.0
+223 silly fetch manifest infer-owner@^1.0.4
+224 silly fetch manifest unique-filename@^1.1.1
+225 silly fetch manifest promise-inflight@^1.0.1
+226 silly fetch manifest @npmcli/move-file@^1.0.1
+227 silly fetch manifest @tootallnate/once@1
+228 silly fetch manifest agent-base@6
+229 silly fetch manifest debug@4
+230 silly fetch manifest minizlib@^2.0.0
+231 silly fetch manifest minipass-sized@^1.0.3
+232 silly fetch manifest encoding@^0.1.12
+233 silly fetch manifest err-code@^2.0.2
+234 silly fetch manifest retry@^0.12.0
+235 silly fetch manifest debug@^4.3.3
+236 silly fetch manifest socks@^2.6.2
+237 silly fetch manifest agent-base@^6.0.2
+238 http fetch GET 200 https://registry.npmjs.org/@npmcli%2ffs 53ms (cache hit)
+239 http fetch GET 200 https://registry.npmjs.org/promise-inflight 52ms (cache hit)
+240 http fetch GET 200 https://registry.npmjs.org/@tootallnate%2fonce 50ms (cache hit)
+241 http fetch GET 200 https://registry.npmjs.org/humanize-ms 57ms (cache hit)
+242 http fetch GET 200 https://registry.npmjs.org/infer-owner 54ms (cache hit)
+243 http fetch GET 200 https://registry.npmjs.org/unique-filename 54ms (cache hit)
+244 http fetch GET 200 https://registry.npmjs.org/@npmcli%2fmove-file 53ms (cache hit)
+245 http fetch GET 200 https://registry.npmjs.org/debug 52ms (cache hit)
+246 http fetch GET 200 https://registry.npmjs.org/agent-base 52ms (cache hit)
+247 http fetch GET 200 https://registry.npmjs.org/p-map 59ms (cache hit)
+248 http fetch GET 200 https://registry.npmjs.org/err-code 51ms (cache hit)
+249 http fetch GET 200 https://registry.npmjs.org/encoding 52ms (cache hit)
+250 http fetch GET 200 https://registry.npmjs.org/agent-base 49ms (cache hit)
+251 http fetch GET 200 https://registry.npmjs.org/debug 52ms (cache hit)
+252 http fetch GET 200 https://registry.npmjs.org/minipass-sized 54ms (cache hit)
+253 http fetch GET 200 https://registry.npmjs.org/socks 52ms (cache hit)
+254 http fetch GET 200 https://registry.npmjs.org/retry 53ms (cache hit)
+255 timing idealTree:node_modules/node-red-node-sqlite/node_modules/make-fetch-happen Completed in 84ms
+256 silly placeDep node_modules/node-red-node-sqlite humanize-ms@1.2.1 OK for: agentkeepalive@4.5.0 want: ^1.2.1
+257 silly fetch manifest ms@^2.0.0
+258 http fetch GET 200 https://registry.npmjs.org/ms 8ms (cache hit)
+259 timing idealTree:node_modules/node-red-node-sqlite/node_modules/agentkeepalive Completed in 11ms
+260 silly placeDep node_modules/node-red-node-sqlite @npmcli/fs@1.1.1 OK for: cacache@15.3.0 want: ^1.0.0
+261 silly placeDep node_modules/node-red-node-sqlite @npmcli/move-file@1.1.2 OK for: cacache@15.3.0 want: ^1.0.1
+262 silly placeDep node_modules/node-red-node-sqlite chownr@2.0.0 OK for: cacache@15.3.0 want: ^2.0.0
+263 silly placeDep node_modules/node-red-node-sqlite fs-minipass@2.1.0 OK for: cacache@15.3.0 want: ^2.0.0
+264 silly placeDep node_modules/node-red-node-sqlite infer-owner@1.0.4 OK for: cacache@15.3.0 want: ^1.0.4
+265 silly placeDep node_modules/node-red-node-sqlite mkdirp@1.0.4 OK for: cacache@15.3.0 want: ^1.0.3
+266 silly placeDep node_modules/node-red-node-sqlite p-map@4.0.0 OK for: cacache@15.3.0 want: ^4.0.0
+267 silly placeDep node_modules/node-red-node-sqlite promise-inflight@1.0.1 OK for: cacache@15.3.0 want: ^1.0.1
+268 silly placeDep node_modules/node-red-node-sqlite unique-filename@1.1.1 OK for: cacache@15.3.0 want: ^1.1.1
+269 silly fetch manifest @gar/promisify@^1.0.1
+270 silly fetch manifest aggregate-error@^3.0.0
+271 silly fetch manifest unique-slug@^2.0.0
+272 http fetch GET 200 https://registry.npmjs.org/unique-slug 13ms (cache hit)
+273 http fetch GET 200 https://registry.npmjs.org/aggregate-error 14ms (cache hit)
+274 http fetch GET 200 https://registry.npmjs.org/@gar%2fpromisify 17ms (cache hit)
+275 timing idealTree:node_modules/node-red-node-sqlite/node_modules/cacache Completed in 27ms
+276 silly placeDep node_modules/node-red-node-sqlite @gar/promisify@1.1.3 OK for: @npmcli/fs@1.1.1 want: ^1.0.1
+277 timing idealTree:node_modules/node-red-node-sqlite/node_modules/@npmcli/fs Completed in 1ms
+278 timing idealTree:node_modules/node-red-node-sqlite/node_modules/@gar/promisify Completed in 1ms
+279 timing idealTree:node_modules/node-red-node-sqlite/node_modules/@npmcli/move-file Completed in 0ms
+280 timing idealTree:node_modules/node-red-node-sqlite/node_modules/chownr Completed in 0ms
+281 timing idealTree:node_modules/node-red-node-sqlite/node_modules/fs-minipass Completed in 0ms
+282 timing idealTree:node_modules/node-red-node-sqlite/node_modules/http-cache-semantics Completed in 0ms
+283 silly placeDep node_modules/node-red-node-sqlite @tootallnate/once@1.1.2 OK for: http-proxy-agent@4.0.1 want: 1
+284 silly placeDep node_modules/node-red-node-sqlite agent-base@6.0.2 OK for: http-proxy-agent@4.0.1 want: 6
+285 silly placeDep node_modules/node-red-node-sqlite debug@4.3.5 OK for: http-proxy-agent@4.0.1 want: 4
+286 silly fetch manifest ms@2.1.2
+287 timing idealTree:node_modules/node-red-node-sqlite/node_modules/http-proxy-agent Completed in 5ms
+288 timing idealTree:node_modules/node-red-node-sqlite/node_modules/@tootallnate/once Completed in 0ms
+289 timing idealTree:node_modules/node-red-node-sqlite/node_modules/agent-base Completed in 0ms
+290 silly placeDep node_modules/node-red-node-sqlite ms@2.1.2 OK for: debug@4.3.5 want: 2.1.2
+291 timing idealTree:node_modules/node-red-node-sqlite/node_modules/debug Completed in 2ms
+292 timing idealTree:node_modules/node-red-node-sqlite/node_modules/https-proxy-agent Completed in 0ms
+293 timing idealTree:node_modules/node-red-node-sqlite/node_modules/humanize-ms Completed in 0ms
+294 timing idealTree:node_modules/node-red-node-sqlite/node_modules/infer-owner Completed in 0ms
+295 timing idealTree:node_modules/node-red-node-sqlite/node_modules/is-lambda Completed in 0ms
+296 silly placeDep node_modules/node-red-node-sqlite yallist@4.0.0 OK for: lru-cache@6.0.0 want: ^4.0.0
+297 timing idealTree:node_modules/node-red-node-sqlite/node_modules/lru-cache Completed in 1ms
+298 silly placeDep node_modules/node-red-node-sqlite brace-expansion@1.1.11 OK for: minimatch@3.1.2 want: ^1.1.7
+299 silly fetch manifest balanced-match@^1.0.0
+300 silly fetch manifest concat-map@0.0.1
+301 http fetch GET 200 https://registry.npmjs.org/concat-map 8ms (cache hit)
+302 http fetch GET 200 https://registry.npmjs.org/balanced-match 9ms (cache hit)
+303 timing idealTree:node_modules/node-red-node-sqlite/node_modules/minimatch Completed in 11ms
+304 silly placeDep node_modules/node-red-node-sqlite balanced-match@1.0.2 OK for: brace-expansion@1.1.11 want: ^1.0.0
+305 silly placeDep node_modules/node-red-node-sqlite concat-map@0.0.1 OK for: brace-expansion@1.1.11 want: 0.0.1
+306 timing idealTree:node_modules/node-red-node-sqlite/node_modules/brace-expansion Completed in 3ms
+307 timing idealTree:node_modules/node-red-node-sqlite/node_modules/balanced-match Completed in 0ms
+308 timing idealTree:node_modules/node-red-node-sqlite/node_modules/concat-map Completed in 0ms
+309 timing idealTree:node_modules/node-red-node-sqlite/node_modules/minipass Completed in 0ms
+310 timing idealTree:node_modules/node-red-node-sqlite/node_modules/minipass-collect Completed in 0ms
+311 silly placeDep node_modules/node-red-node-sqlite encoding@0.1.13 OK for: minipass-fetch@1.4.1 want: ^0.1.12
+312 silly placeDep node_modules/node-red-node-sqlite minipass-sized@1.0.3 OK for: minipass-fetch@1.4.1 want: ^1.0.3
+313 silly placeDep node_modules/node-red-node-sqlite minizlib@2.1.2 OK for: minipass-fetch@1.4.1 want: ^2.0.0
+314 silly fetch manifest iconv-lite@^0.6.2
+315 http fetch GET 200 https://registry.npmjs.org/iconv-lite 7ms (cache hit)
+316 timing idealTree:node_modules/node-red-node-sqlite/node_modules/minipass-fetch Completed in 11ms
+317 silly placeDep node_modules/node-red-node-sqlite iconv-lite@0.6.3 OK for: encoding@0.1.13 want: ^0.6.2
+318 silly fetch manifest safer-buffer@>= 2.1.2 < 3.0.0
+319 http fetch GET 200 https://registry.npmjs.org/safer-buffer 8ms (cache hit)
+320 timing idealTree:node_modules/node-red-node-sqlite/node_modules/encoding Completed in 9ms
+321 silly placeDep node_modules/node-red-node-sqlite safer-buffer@2.1.2 OK for: iconv-lite@0.6.3 want: >= 2.1.2 < 3.0.0
+322 timing idealTree:node_modules/node-red-node-sqlite/node_modules/iconv-lite Completed in 1ms
+323 timing idealTree:node_modules/node-red-node-sqlite/node_modules/minipass-flush Completed in 0ms
+324 timing idealTree:node_modules/node-red-node-sqlite/node_modules/minipass-pipeline Completed in 0ms
+325 timing idealTree:node_modules/node-red-node-sqlite/node_modules/minipass-sized Completed in 0ms
+326 timing idealTree:node_modules/node-red-node-sqlite/node_modules/minizlib Completed in 0ms
+327 timing idealTree:node_modules/node-red-node-sqlite/node_modules/mkdirp Completed in 0ms
+328 timing idealTree:node_modules/node-red-node-sqlite/node_modules/ms Completed in 0ms
+329 timing idealTree:node_modules/node-red-node-sqlite/node_modules/negotiator Completed in 0ms
+330 silly placeDep node_modules/node-red-node-sqlite abbrev@1.1.1 OK for: nopt@5.0.0 want: 1
+331 timing idealTree:node_modules/node-red-node-sqlite/node_modules/nopt Completed in 1ms
+332 timing idealTree:node_modules/node-red-node-sqlite/node_modules/abbrev Completed in 0ms
+333 silly placeDep node_modules/node-red-node-sqlite are-we-there-yet@3.0.1 OK for: npmlog@6.0.2 want: ^3.0.0
+334 silly placeDep node_modules/node-red-node-sqlite console-control-strings@1.1.0 OK for: npmlog@6.0.2 want: ^1.1.0
+335 silly placeDep node_modules/node-red-node-sqlite gauge@4.0.4 OK for: npmlog@6.0.2 want: ^4.0.3
+336 silly placeDep node_modules/node-red-node-sqlite set-blocking@2.0.0 OK for: npmlog@6.0.2 want: ^2.0.0
+337 silly fetch manifest delegates@^1.0.0
+338 silly fetch manifest readable-stream@^3.6.0
+339 silly fetch manifest aproba@^1.0.3 || ^2.0.0
+340 silly fetch manifest strip-ansi@^6.0.1
+341 silly fetch manifest wide-align@^1.1.5
+342 silly fetch manifest has-unicode@^2.0.1
+343 silly fetch manifest signal-exit@^3.0.7
+344 silly fetch manifest string-width@^4.2.3
+345 silly fetch manifest color-support@^1.1.3
+346 http fetch GET 200 https://registry.npmjs.org/aproba 23ms (cache hit)
+347 http fetch GET 200 https://registry.npmjs.org/strip-ansi 24ms (cache hit)
+348 http fetch GET 200 https://registry.npmjs.org/wide-align 24ms (cache hit)
+349 http fetch GET 200 https://registry.npmjs.org/readable-stream 26ms (cache hit)
+350 http fetch GET 200 https://registry.npmjs.org/string-width 26ms (cache hit)
+351 http fetch GET 200 https://registry.npmjs.org/delegates 32ms (cache hit)
+352 http fetch GET 200 https://registry.npmjs.org/has-unicode 28ms (cache hit)
+353 http fetch GET 200 https://registry.npmjs.org/signal-exit 28ms (cache hit)
+354 http fetch GET 200 https://registry.npmjs.org/color-support 28ms (cache hit)
+355 timing idealTree:node_modules/node-red-node-sqlite/node_modules/npmlog Completed in 38ms
+356 silly placeDep node_modules/node-red-node-sqlite delegates@1.0.0 OK for: are-we-there-yet@3.0.1 want: ^1.0.0
+357 silly placeDep node_modules/node-red-node-sqlite readable-stream@3.6.2 OK for: are-we-there-yet@3.0.1 want: ^3.6.0
+358 silly fetch manifest string_decoder@^1.1.1
+359 silly fetch manifest util-deprecate@^1.0.1
+360 http fetch GET 200 https://registry.npmjs.org/util-deprecate 8ms (cache hit)
+361 http fetch GET 200 https://registry.npmjs.org/string_decoder 9ms (cache hit)
+362 timing idealTree:node_modules/node-red-node-sqlite/node_modules/are-we-there-yet Completed in 13ms
+363 timing idealTree:node_modules/node-red-node-sqlite/node_modules/console-control-strings Completed in 0ms
+364 timing idealTree:node_modules/node-red-node-sqlite/node_modules/delegates Completed in 0ms
+365 silly placeDep node_modules/node-red-node-sqlite aproba@2.0.0 OK for: gauge@4.0.4 want: ^1.0.3 || ^2.0.0
+366 silly placeDep node_modules/node-red-node-sqlite color-support@1.1.3 OK for: gauge@4.0.4 want: ^1.1.3
+367 silly placeDep node_modules/node-red-node-sqlite has-unicode@2.0.1 OK for: gauge@4.0.4 want: ^2.0.1
+368 silly placeDep node_modules/node-red-node-sqlite signal-exit@3.0.7 OK for: gauge@4.0.4 want: ^3.0.7
+369 silly placeDep node_modules/node-red-node-sqlite string-width@4.2.3 OK for: gauge@4.0.4 want: ^4.2.3
+370 silly placeDep node_modules/node-red-node-sqlite strip-ansi@6.0.1 OK for: gauge@4.0.4 want: ^6.0.1
+371 silly placeDep node_modules/node-red-node-sqlite wide-align@1.1.5 OK for: gauge@4.0.4 want: ^1.1.5
+372 silly fetch manifest emoji-regex@^8.0.0
+373 silly fetch manifest is-fullwidth-code-point@^3.0.0
+374 silly fetch manifest ansi-regex@^5.0.1
+375 http fetch GET 200 https://registry.npmjs.org/is-fullwidth-code-point 12ms (cache hit)
+376 http fetch GET 200 https://registry.npmjs.org/emoji-regex 14ms (cache hit)
+377 http fetch GET 200 https://registry.npmjs.org/ansi-regex 14ms (cache hit)
+378 timing idealTree:node_modules/node-red-node-sqlite/node_modules/gauge Completed in 22ms
+379 timing idealTree:node_modules/node-red-node-sqlite/node_modules/aproba Completed in 0ms
+380 timing idealTree:node_modules/node-red-node-sqlite/node_modules/color-support Completed in 0ms
+381 timing idealTree:node_modules/node-red-node-sqlite/node_modules/has-unicode Completed in 0ms
+382 timing idealTree:node_modules/node-red-node-sqlite/node_modules/once Completed in 0ms
+383 silly placeDep node_modules/node-red-node-sqlite aggregate-error@3.1.0 OK for: p-map@4.0.0 want: ^3.0.0
+384 silly fetch manifest clean-stack@^2.0.0
+385 silly fetch manifest indent-string@^4.0.0
+386 http fetch GET 200 https://registry.npmjs.org/clean-stack 7ms (cache hit)
+387 http fetch GET 200 https://registry.npmjs.org/indent-string 8ms (cache hit)
+388 timing idealTree:node_modules/node-red-node-sqlite/node_modules/p-map Completed in 11ms
+389 silly placeDep node_modules/node-red-node-sqlite clean-stack@2.2.0 OK for: aggregate-error@3.1.0 want: ^2.0.0
+390 silly placeDep node_modules/node-red-node-sqlite indent-string@4.0.0 OK for: aggregate-error@3.1.0 want: ^4.0.0
+391 timing idealTree:node_modules/node-red-node-sqlite/node_modules/aggregate-error Completed in 3ms
+392 timing idealTree:node_modules/node-red-node-sqlite/node_modules/clean-stack Completed in 0ms
+393 timing idealTree:node_modules/node-red-node-sqlite/node_modules/indent-string Completed in 0ms
+394 timing idealTree:node_modules/node-red-node-sqlite/node_modules/path-is-absolute Completed in 0ms
+395 silly placeDep node_modules/node-red-node-sqlite detect-libc@2.0.3 OK for: prebuild-install@7.1.2 want: ^2.0.0
+396 silly placeDep node_modules/node-red-node-sqlite expand-template@2.0.3 OK for: prebuild-install@7.1.2 want: ^2.0.3
+397 silly placeDep node_modules/node-red-node-sqlite github-from-package@0.0.0 OK for: prebuild-install@7.1.2 want: 0.0.0
+398 silly placeDep node_modules/node-red-node-sqlite minimist@1.2.8 OK for: prebuild-install@7.1.2 want: ^1.2.3
+399 silly placeDep node_modules/node-red-node-sqlite mkdirp-classic@0.5.3 OK for: prebuild-install@7.1.2 want: ^0.5.3
+400 silly placeDep node_modules/node-red-node-sqlite napi-build-utils@1.0.2 OK for: prebuild-install@7.1.2 want: ^1.0.1
+401 silly placeDep node_modules/node-red-node-sqlite node-abi@3.65.0 OK for: prebuild-install@7.1.2 want: ^3.3.0
+402 silly placeDep node_modules/node-red-node-sqlite pump@3.0.0 OK for: prebuild-install@7.1.2 want: ^3.0.0
+403 silly placeDep node_modules/node-red-node-sqlite rc@1.2.8 OK for: prebuild-install@7.1.2 want: ^1.2.7
+404 silly placeDep node_modules/node-red-node-sqlite simple-get@4.0.1 OK for: prebuild-install@7.1.2 want: ^4.0.0
+405 silly placeDep node_modules/node-red-node-sqlite tar-fs@2.1.1 OK for: prebuild-install@7.1.2 want: ^2.0.0
+406 silly placeDep node_modules/node-red-node-sqlite tunnel-agent@0.6.0 OK for: prebuild-install@7.1.2 want: ^0.6.0
+407 silly fetch manifest end-of-stream@^1.1.0
+408 silly fetch manifest deep-extend@^0.6.0
+409 silly fetch manifest ini@~1.3.0
+410 silly fetch manifest strip-json-comments@~2.0.1
+411 silly fetch manifest decompress-response@^6.0.0
+412 silly fetch manifest simple-concat@^1.0.0
+413 silly fetch manifest chownr@^1.1.1
+414 silly fetch manifest tar-stream@^2.1.4
+415 silly fetch manifest safe-buffer@^5.0.1
+416 http fetch GET 200 https://registry.npmjs.org/ini 20ms (cache hit)
+417 http fetch GET 200 https://registry.npmjs.org/simple-concat 20ms (cache hit)
+418 http fetch GET 200 https://registry.npmjs.org/decompress-response 21ms (cache hit)
+419 http fetch GET 200 https://registry.npmjs.org/end-of-stream 25ms (cache hit)
+420 http fetch GET 200 https://registry.npmjs.org/tar-stream 22ms (cache hit)
+421 http fetch GET 200 https://registry.npmjs.org/strip-json-comments 26ms (cache hit)
+422 http fetch GET 200 https://registry.npmjs.org/deep-extend 27ms (cache hit)
+423 http fetch GET 200 https://registry.npmjs.org/safe-buffer 24ms (cache hit)
+424 timing idealTree:node_modules/node-red-node-sqlite/node_modules/prebuild-install Completed in 39ms
+425 timing idealTree:node_modules/node-red-node-sqlite/node_modules/detect-libc Completed in 0ms
+426 timing idealTree:node_modules/node-red-node-sqlite/node_modules/expand-template Completed in 0ms
+427 timing idealTree:node_modules/node-red-node-sqlite/node_modules/github-from-package Completed in 0ms
+428 timing idealTree:node_modules/node-red-node-sqlite/node_modules/minimist Completed in 0ms
+429 timing idealTree:node_modules/node-red-node-sqlite/node_modules/mkdirp-classic Completed in 0ms
+430 timing idealTree:node_modules/node-red-node-sqlite/node_modules/napi-build-utils Completed in 0ms
+431 timing idealTree:node_modules/node-red-node-sqlite/node_modules/node-abi Completed in 0ms
+432 timing idealTree:node_modules/node-red-node-sqlite/node_modules/promise-inflight Completed in 0ms
+433 silly placeDep node_modules/node-red-node-sqlite err-code@2.0.3 OK for: promise-retry@2.0.1 want: ^2.0.2
+434 silly placeDep node_modules/node-red-node-sqlite retry@0.12.0 OK for: promise-retry@2.0.1 want: ^0.12.0
+435 timing idealTree:node_modules/node-red-node-sqlite/node_modules/promise-retry Completed in 2ms
+436 timing idealTree:node_modules/node-red-node-sqlite/node_modules/err-code Completed in 0ms
+437 silly placeDep node_modules/node-red-node-sqlite end-of-stream@1.4.4 OK for: pump@3.0.0 want: ^1.1.0
+438 timing idealTree:node_modules/node-red-node-sqlite/node_modules/pump Completed in 1ms
+439 timing idealTree:node_modules/node-red-node-sqlite/node_modules/end-of-stream Completed in 0ms
+440 silly placeDep node_modules/node-red-node-sqlite deep-extend@0.6.0 OK for: rc@1.2.8 want: ^0.6.0
+441 silly placeDep node_modules/node-red-node-sqlite ini@1.3.8 OK for: rc@1.2.8 want: ~1.3.0
+442 silly placeDep node_modules/node-red-node-sqlite strip-json-comments@2.0.1 OK for: rc@1.2.8 want: ~2.0.1
+443 timing idealTree:node_modules/node-red-node-sqlite/node_modules/rc Completed in 2ms
+444 timing idealTree:node_modules/node-red-node-sqlite/node_modules/deep-extend Completed in 0ms
+445 timing idealTree:node_modules/node-red-node-sqlite/node_modules/ini Completed in 0ms
+446 silly placeDep node_modules/node-red-node-sqlite string_decoder@1.3.0 OK for: readable-stream@3.6.2 want: ^1.1.1
+447 silly placeDep node_modules/node-red-node-sqlite util-deprecate@1.0.2 OK for: readable-stream@3.6.2 want: ^1.0.1
+448 silly fetch manifest safe-buffer@~5.2.0
+449 timing idealTree:node_modules/node-red-node-sqlite/node_modules/readable-stream Completed in 1ms
+450 timing idealTree:node_modules/node-red-node-sqlite/node_modules/retry Completed in 0ms
+451 timing idealTree:node_modules/node-red-node-sqlite/node_modules/rimraf Completed in 0ms
+452 timing idealTree:node_modules/node-red-node-sqlite/node_modules/safer-buffer Completed in 0ms
+453 timing idealTree:node_modules/node-red-node-sqlite/node_modules/semver Completed in 0ms
+454 timing idealTree:node_modules/node-red-node-sqlite/node_modules/set-blocking Completed in 0ms
+455 timing idealTree:node_modules/node-red-node-sqlite/node_modules/signal-exit Completed in 0ms
+456 silly placeDep node_modules/node-red-node-sqlite decompress-response@6.0.0 OK for: simple-get@4.0.1 want: ^6.0.0
+457 silly placeDep node_modules/node-red-node-sqlite simple-concat@1.0.1 OK for: simple-get@4.0.1 want: ^1.0.0
+458 silly fetch manifest mimic-response@^3.1.0
+459 http fetch GET 200 https://registry.npmjs.org/mimic-response 6ms (cache hit)
+460 timing idealTree:node_modules/node-red-node-sqlite/node_modules/simple-get Completed in 8ms
+461 silly placeDep node_modules/node-red-node-sqlite mimic-response@3.1.0 OK for: decompress-response@6.0.0 want: ^3.1.0
+462 timing idealTree:node_modules/node-red-node-sqlite/node_modules/decompress-response Completed in 1ms
+463 timing idealTree:node_modules/node-red-node-sqlite/node_modules/mimic-response Completed in 0ms
+464 timing idealTree:node_modules/node-red-node-sqlite/node_modules/simple-concat Completed in 0ms
+465 silly placeDep node_modules/node-red-node-sqlite socks@2.8.3 OK for: socks-proxy-agent@6.2.1 want: ^2.6.2
+466 silly fetch manifest ip-address@^9.0.5
+467 silly fetch manifest smart-buffer@^4.2.0
+468 http fetch GET 200 https://registry.npmjs.org/smart-buffer 7ms (cache hit)
+469 http fetch GET 200 https://registry.npmjs.org/ip-address 9ms (cache hit)
+470 timing idealTree:node_modules/node-red-node-sqlite/node_modules/socks-proxy-agent Completed in 12ms
+471 silly placeDep node_modules/node-red-node-sqlite ip-address@9.0.5 OK for: socks@2.8.3 want: ^9.0.5
+472 silly placeDep node_modules/node-red-node-sqlite smart-buffer@4.2.0 OK for: socks@2.8.3 want: ^4.2.0
+473 silly fetch manifest jsbn@1.1.0
+474 silly fetch manifest sprintf-js@^1.1.3
+475 http fetch GET 200 https://registry.npmjs.org/sprintf-js 11ms (cache hit)
+476 http fetch GET 200 https://registry.npmjs.org/jsbn 12ms (cache hit)
+477 timing idealTree:node_modules/node-red-node-sqlite/node_modules/socks Completed in 15ms
+478 silly placeDep node_modules/node-red-node-sqlite jsbn@1.1.0 OK for: ip-address@9.0.5 want: 1.1.0
+479 silly placeDep node_modules/node-red-node-sqlite sprintf-js@1.1.3 OK for: ip-address@9.0.5 want: ^1.1.3
+480 timing idealTree:node_modules/node-red-node-sqlite/node_modules/ip-address Completed in 2ms
+481 timing idealTree:node_modules/node-red-node-sqlite/node_modules/jsbn Completed in 0ms
+482 timing idealTree:node_modules/node-red-node-sqlite/node_modules/smart-buffer Completed in 0ms
+483 timing idealTree:node_modules/node-red-node-sqlite/node_modules/sprintf-js Completed in 0ms
+484 timing idealTree:node_modules/node-red-node-sqlite/node_modules/ssri Completed in 0ms
+485 silly placeDep node_modules/node-red-node-sqlite safe-buffer@5.2.1 OK for: string_decoder@1.3.0 want: ~5.2.0
+486 timing idealTree:node_modules/node-red-node-sqlite/node_modules/string_decoder Completed in 0ms
+487 timing idealTree:node_modules/node-red-node-sqlite/node_modules/safe-buffer Completed in 0ms
+488 silly placeDep node_modules/node-red-node-sqlite emoji-regex@8.0.0 OK for: string-width@4.2.3 want: ^8.0.0
+489 silly placeDep node_modules/node-red-node-sqlite is-fullwidth-code-point@3.0.0 OK for: string-width@4.2.3 want: ^3.0.0
+490 timing idealTree:node_modules/node-red-node-sqlite/node_modules/string-width Completed in 1ms
+491 timing idealTree:node_modules/node-red-node-sqlite/node_modules/emoji-regex Completed in 0ms
+492 timing idealTree:node_modules/node-red-node-sqlite/node_modules/is-fullwidth-code-point Completed in 0ms
+493 silly placeDep node_modules/node-red-node-sqlite ansi-regex@5.0.1 OK for: strip-ansi@6.0.1 want: ^5.0.1
+494 timing idealTree:node_modules/node-red-node-sqlite/node_modules/strip-ansi Completed in 1ms
+495 timing idealTree:node_modules/node-red-node-sqlite/node_modules/ansi-regex Completed in 0ms
+496 timing idealTree:node_modules/node-red-node-sqlite/node_modules/strip-json-comments Completed in 0ms
+497 silly placeDep node_modules/node-red-node-sqlite/node_modules/tar minipass@5.0.0 OK for: tar@6.2.1 want: ^5.0.0
+498 timing idealTree:node_modules/node-red-node-sqlite/node_modules/tar Completed in 4ms
+499 silly placeDep node_modules/node-red-node-sqlite/node_modules/tar-fs chownr@1.1.4 OK for: tar-fs@2.1.1 want: ^1.1.1
+500 silly placeDep node_modules/node-red-node-sqlite tar-stream@2.2.0 OK for: tar-fs@2.1.1 want: ^2.1.4
+501 silly fetch manifest bl@^4.0.3
+502 silly fetch manifest fs-constants@^1.0.0
+503 http fetch GET 200 https://registry.npmjs.org/bl 9ms (cache hit)
+504 http fetch GET 200 https://registry.npmjs.org/fs-constants 11ms (cache hit)
+505 timing idealTree:node_modules/node-red-node-sqlite/node_modules/tar-fs Completed in 15ms
+506 silly placeDep node_modules/node-red-node-sqlite bl@4.1.0 OK for: tar-stream@2.2.0 want: ^4.0.3
+507 silly placeDep node_modules/node-red-node-sqlite fs-constants@1.0.0 OK for: tar-stream@2.2.0 want: ^1.0.0
+508 silly fetch manifest buffer@^5.5.0
+509 http fetch GET 200 https://registry.npmjs.org/buffer 7ms (cache hit)
+510 timing idealTree:node_modules/node-red-node-sqlite/node_modules/tar-stream Completed in 13ms
+511 silly placeDep node_modules/node-red-node-sqlite buffer@5.7.1 OK for: bl@4.1.0 want: ^5.5.0
+512 silly fetch manifest base64-js@^1.3.1
+513 silly fetch manifest ieee754@^1.1.13
+514 http fetch GET 200 https://registry.npmjs.org/ieee754 8ms (cache hit)
+515 http fetch GET 200 https://registry.npmjs.org/base64-js 10ms (cache hit)
+516 timing idealTree:node_modules/node-red-node-sqlite/node_modules/bl Completed in 12ms
+517 silly placeDep node_modules/node-red-node-sqlite base64-js@1.5.1 OK for: buffer@5.7.1 want: ^1.3.1
+518 silly placeDep node_modules/node-red-node-sqlite ieee754@1.2.1 OK for: buffer@5.7.1 want: ^1.1.13
+519 timing idealTree:node_modules/node-red-node-sqlite/node_modules/buffer Completed in 2ms
+520 timing idealTree:node_modules/node-red-node-sqlite/node_modules/base64-js Completed in 0ms
+521 timing idealTree:node_modules/node-red-node-sqlite/node_modules/fs-constants Completed in 0ms
+522 timing idealTree:node_modules/node-red-node-sqlite/node_modules/ieee754 Completed in 0ms
+523 timing idealTree:node_modules/node-red-node-sqlite/node_modules/tunnel-agent Completed in 0ms
+524 silly placeDep node_modules/node-red-node-sqlite unique-slug@2.0.2 OK for: unique-filename@1.1.1 want: ^2.0.0
+525 silly fetch manifest imurmurhash@^0.1.4
+526 http fetch GET 200 https://registry.npmjs.org/imurmurhash 9ms (cache hit)
+527 timing idealTree:node_modules/node-red-node-sqlite/node_modules/unique-filename Completed in 11ms
+528 silly placeDep node_modules/node-red-node-sqlite imurmurhash@0.1.4 OK for: unique-slug@2.0.2 want: ^0.1.4
+529 timing idealTree:node_modules/node-red-node-sqlite/node_modules/unique-slug Completed in 2ms
+530 timing idealTree:node_modules/node-red-node-sqlite/node_modules/imurmurhash Completed in 0ms
+531 timing idealTree:node_modules/node-red-node-sqlite/node_modules/util-deprecate Completed in 0ms
+532 silly placeDep node_modules/node-red-node-sqlite isexe@2.0.0 OK for: which@2.0.2 want: ^2.0.0
+533 timing idealTree:node_modules/node-red-node-sqlite/node_modules/which Completed in 1ms
+534 timing idealTree:node_modules/node-red-node-sqlite/node_modules/isexe Completed in 0ms
+535 timing idealTree:node_modules/node-red-node-sqlite/node_modules/wide-align Completed in 0ms
+536 timing idealTree:node_modules/node-red-node-sqlite/node_modules/wrappy Completed in 0ms
+537 timing idealTree:node_modules/node-red-node-sqlite/node_modules/yallist Completed in 0ms
+538 timing idealTree:node_modules/node-red-node-sqlite/node_modules/tar-fs/node_modules/chownr Completed in 0ms
+539 timing idealTree:node_modules/node-red-node-sqlite/node_modules/tar/node_modules/minipass Completed in 0ms
+540 timing idealTree:buildDeps Completed in 801ms
+541 timing idealTree:fixDepFlags Completed in 1ms
+542 timing idealTree Completed in 813ms
+543 timing reify:loadTrees Completed in 817ms
+544 timing reify:diffTrees Completed in 3ms
+545 silly reify moves {}
+546 timing reify:retireShallow Completed in 1ms
+547 timing reify:createSparse Completed in 62ms
+548 timing reify:loadBundles Completed in 0ms
+549 silly audit bulk request {
+549 silly audit   'node-red-node-sqlite': [ '1.1.0' ],
+549 silly audit   sqlite3: [ '5.1.7' ],
+549 silly audit   bindings: [ '1.5.0' ],
+549 silly audit   'node-addon-api': [ '7.1.1' ],
+549 silly audit   'node-gyp': [ '8.4.1' ],
+549 silly audit   'prebuild-install': [ '7.1.2' ],
+549 silly audit   tar: [ '6.2.1' ],
+549 silly audit   'file-uri-to-path': [ '1.0.0' ],
+549 silly audit   'env-paths': [ '2.2.1' ],
+549 silly audit   glob: [ '7.2.3' ],
+549 silly audit   'graceful-fs': [ '4.2.11' ],
+549 silly audit   'make-fetch-happen': [ '9.1.0' ],
+549 silly audit   nopt: [ '5.0.0' ],
+549 silly audit   npmlog: [ '6.0.2' ],
+549 silly audit   rimraf: [ '3.0.2' ],
+549 silly audit   semver: [ '7.6.3' ],
+549 silly audit   which: [ '2.0.2' ],
+549 silly audit   'fs.realpath': [ '1.0.0' ],
+549 silly audit   inflight: [ '1.0.6' ],
+549 silly audit   inherits: [ '2.0.4' ],
+549 silly audit   minimatch: [ '3.1.2' ],
+549 silly audit   once: [ '1.4.0' ],
+549 silly audit   'path-is-absolute': [ '1.0.1' ],
+549 silly audit   wrappy: [ '1.0.2' ],
+549 silly audit   agentkeepalive: [ '4.5.0' ],
+549 silly audit   cacache: [ '15.3.0' ],
+549 silly audit   'http-cache-semantics': [ '4.1.1' ],
+549 silly audit   'http-proxy-agent': [ '4.0.1' ],
+549 silly audit   'https-proxy-agent': [ '5.0.1' ],
+549 silly audit   'is-lambda': [ '1.0.1' ],
+549 silly audit   'lru-cache': [ '6.0.0' ],
+549 silly audit   minipass: [ '3.3.6', '5.0.0' ],
+549 silly audit   'minipass-collect': [ '1.0.2' ],
+549 silly audit   'minipass-fetch': [ '1.4.1' ],
+549 silly audit   'minipass-flush': [ '1.0.5' ],
+549 silly audit   'minipass-pipeline': [ '1.2.4' ],
+549 silly audit   negotiator: [ '0.6.3' ],
+549 silly audit   'promise-retry': [ '2.0.1' ],
+549 silly audit   'socks-proxy-agent': [ '6.2.1' ],
+549 silly audit   ssri: [ '8.0.1' ],
+549 silly audit   'humanize-ms': [ '1.2.1' ],
+549 silly audit   '@npmcli/fs': [ '1.1.1' ],
+549 silly audit   '@npmcli/move-file': [ '1.1.2' ],
+549 silly audit   chownr: [ '2.0.0', '1.1.4' ],
+549 silly audit   'fs-minipass': [ '2.1.0' ],
+549 silly audit   'infer-owner': [ '1.0.4' ],
+549 silly audit   mkdirp: [ '1.0.4' ],
+549 silly audit   'p-map': [ '4.0.0' ],
+549 silly audit   'promise-inflight': [ '1.0.1' ],
+549 silly audit   'unique-filename': [ '1.1.1' ],
+549 silly audit   '@gar/promisify': [ '1.1.3' ],
+549 silly audit   '@tootallnate/once': [ '1.1.2' ],
+549 silly audit   'agent-base': [ '6.0.2' ],
+549 silly audit   debug: [ '4.3.5' ],
+549 silly audit   ms: [ '2.1.2' ],
+549 silly audit   yallist: [ '4.0.0' ],
+549 silly audit   'brace-expansion': [ '1.1.11' ],
+549 silly audit   'balanced-match': [ '1.0.2' ],
+549 silly audit   'concat-map': [ '0.0.1' ],
+549 silly audit   encoding: [ '0.1.13' ],
+549 silly audit   'minipass-sized': [ '1.0.3' ],
+549 silly audit   minizlib: [ '2.1.2' ],
+549 silly audit   'iconv-lite': [ '0.6.3' ],
+549 silly audit   'safer-buffer': [ '2.1.2' ],
+549 silly audit   abbrev: [ '1.1.1' ],
+549 silly audit   'are-we-there-yet': [ '3.0.1' ],
+549 silly audit   'console-control-strings': [ '1.1.0' ],
+549 silly audit   gauge: [ '4.0.4' ],
+549 silly audit   'set-blocking': [ '2.0.0' ],
+549 silly audit   delegates: [ '1.0.0' ],
+549 silly audit   'readable-stream': [ '3.6.2' ],
+549 silly audit   aproba: [ '2.0.0' ],
+549 silly audit   'color-support': [ '1.1.3' ],
+549 silly audit   'has-unicode': [ '2.0.1' ],
+549 silly audit   'signal-exit': [ '3.0.7' ],
+549 silly audit   'string-width': [ '4.2.3' ],
+549 silly audit   'strip-ansi': [ '6.0.1' ],
+549 silly audit   'wide-align': [ '1.1.5' ],
+549 silly audit   'aggregate-error': [ '3.1.0' ],
+549 silly audit   'clean-stack': [ '2.2.0' ],
+549 silly audit   'indent-string': [ '4.0.0' ],
+549 silly audit   'detect-libc': [ '2.0.3' ],
+549 silly audit   'expand-template': [ '2.0.3' ],
+549 silly audit   'github-from-package': [ '0.0.0' ],
+549 silly audit   minimist: [ '1.2.8' ],
+549 silly audit   'mkdirp-classic': [ '0.5.3' ],
+549 silly audit   'napi-build-utils': [ '1.0.2' ],
+549 silly audit   'node-abi': [ '3.65.0' ],
+549 silly audit   pump: [ '3.0.0' ],
+549 silly audit   rc: [ '1.2.8' ],
+549 silly audit   'simple-get': [ '4.0.1' ],
+549 silly audit   'tar-fs': [ '2.1.1' ],
+549 silly audit   'tunnel-agent': [ '0.6.0' ],
+549 silly audit   'err-code': [ '2.0.3' ],
+549 silly audit   retry: [ '0.12.0' ],
+549 silly audit   'end-of-stream': [ '1.4.4' ],
+549 silly audit   'deep-extend': [ '0.6.0' ],
+549 silly audit   ini: [ '1.3.8' ],
+549 silly audit   'strip-json-comments': [ '2.0.1' ],
+549 silly audit   string_decoder: [ '1.3.0' ],
+549 silly audit   'util-deprecate': [ '1.0.2' ],
+549 silly audit   'decompress-response': [ '6.0.0' ],
+549 silly audit   'simple-concat': [ '1.0.1' ],
+549 silly audit   'mimic-response': [ '3.1.0' ],
+549 silly audit   socks: [ '2.8.3' ],
+549 silly audit   'ip-address': [ '9.0.5' ],
+549 silly audit   'smart-buffer': [ '4.2.0' ],
+549 silly audit   jsbn: [ '1.1.0' ],
+549 silly audit   'sprintf-js': [ '1.1.3' ],
+549 silly audit   'safe-buffer': [ '5.2.1' ],
+549 silly audit   'emoji-regex': [ '8.0.0' ],
+549 silly audit   'is-fullwidth-code-point': [ '3.0.0' ],
+549 silly audit   'ansi-regex': [ '5.0.1' ],
+549 silly audit   'tar-stream': [ '2.2.0' ],
+549 silly audit   bl: [ '4.1.0' ],
+549 silly audit   'fs-constants': [ '1.0.0' ],
+549 silly audit   buffer: [ '5.7.1' ],
+549 silly audit   'base64-js': [ '1.5.1' ],
+549 silly audit   ieee754: [ '1.2.1' ],
+549 silly audit   'unique-slug': [ '2.0.2' ],
+549 silly audit   imurmurhash: [ '0.1.4' ],
+549 silly audit   isexe: [ '2.0.0' ]
+549 silly audit }
+550 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 450ms
+551 timing auditReport:getReport Completed in 455ms
+552 silly audit report {}
+553 timing auditReport:init Completed in 0ms
+554 timing reify:audit Completed in 457ms
+555 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/imurmurhash Completed in 490ms
+556 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/ini Completed in 488ms
+557 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/strip-json-comments Completed in 489ms
+558 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/end-of-stream Completed in 489ms
+559 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/tar-fs/node_modules/chownr Completed in 489ms
+560 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/mkdirp-classic Completed in 489ms
+561 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/has-unicode Completed in 489ms
+562 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/wide-align Completed in 489ms
+563 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/abbrev Completed in 489ms
+564 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/ms Completed in 489ms
+565 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/brace-expansion Completed in 490ms
+566 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/@gar/promisify Completed in 490ms
+567 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/promise-inflight Completed in 490ms
+568 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/chownr Completed in 490ms
+569 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/infer-owner Completed in 490ms
+570 warn deprecated @npmcli/move-file@1.1.2: This functionality has been moved to @npmcli/fs
+571 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/@npmcli/move-file Completed in 493ms
+572 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/minipass-pipeline Completed in 494ms
+573 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/minipass-collect Completed in 495ms
+574 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/minipass-flush Completed in 495ms
+575 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/path-is-absolute Completed in 494ms
+576 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/once Completed in 494ms
+577 warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+578 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/inflight Completed in 496ms
+579 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/wrappy Completed in 498ms
+580 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/tunnel-agent Completed in 503ms
+581 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/bindings Completed in 498ms
+582 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/lru-cache Completed in 501ms
+583 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/@tootallnate/once Completed in 503ms
+584 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/fs-minipass Completed in 503ms
+585 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/string_decoder Completed in 519ms
+586 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/http-cache-semantics Completed in 517ms
+587 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/minimatch Completed in 517ms
+588 warn deprecated npmlog@6.0.2: This package is no longer supported.
+589 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/npmlog Completed in 538ms
+590 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/fs-constants Completed in 544ms
+591 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/ansi-regex Completed in 545ms
+592 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/ieee754 Completed in 545ms
+593 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/is-fullwidth-code-point Completed in 545ms
+594 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/mimic-response Completed in 545ms
+595 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/decompress-response Completed in 545ms
+596 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/strip-ansi Completed in 546ms
+597 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/node-abi Completed in 547ms
+598 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/indent-string Completed in 546ms
+599 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/clean-stack Completed in 547ms
+600 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/aggregate-error Completed in 547ms
+601 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/aproba Completed in 547ms
+602 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/signal-exit Completed in 548ms
+603 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/set-blocking Completed in 548ms
+604 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/string-width Completed in 548ms
+605 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/console-control-strings Completed in 548ms
+606 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/p-map Completed in 547ms
+607 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/humanize-ms Completed in 550ms
+608 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/inherits Completed in 549ms
+609 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/env-paths Completed in 550ms
+610 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/napi-build-utils Completed in 557ms
+611 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/balanced-match Completed in 555ms
+612 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/yallist Completed in 556ms
+613 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/minizlib Completed in 557ms
+614 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/fs.realpath Completed in 559ms
+615 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/safe-buffer Completed in 566ms
+616 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/ssri Completed in 566ms
+617 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/socks-proxy-agent Completed in 569ms
+618 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/minipass Completed in 576ms
+619 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/base64-js Completed in 581ms
+620 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/util-deprecate Completed in 582ms
+621 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/expand-template Completed in 583ms
+622 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/unique-slug Completed in 589ms
+623 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/color-support Completed in 586ms
+624 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/deep-extend Completed in 591ms
+625 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/simple-concat Completed in 592ms
+626 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/which Completed in 593ms
+627 warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+628 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/rimraf Completed in 595ms
+629 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/nopt Completed in 606ms
+630 warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+631 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/glob Completed in 607ms
+632 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/pump Completed in 613ms
+633 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/is-lambda Completed in 613ms
+634 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/simple-get Completed in 619ms
+635 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/graceful-fs Completed in 617ms
+636 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/tar/node_modules/minipass Completed in 621ms
+637 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/buffer Completed in 627ms
+638 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/safer-buffer Completed in 626ms
+639 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/encoding Completed in 626ms
+640 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/concat-map Completed in 626ms
+641 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/debug Completed in 626ms
+642 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/detect-libc Completed in 629ms
+643 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/delegates Completed in 646ms
+644 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/http-proxy-agent Completed in 644ms
+645 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/isexe Completed in 651ms
+646 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/promise-retry Completed in 648ms
+647 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/tar-stream Completed in 651ms
+648 warn deprecated are-we-there-yet@3.0.1: This package is no longer supported.
+649 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/are-we-there-yet Completed in 654ms
+650 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/emoji-regex Completed in 657ms
+651 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/minipass-sized Completed in 662ms
+652 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/jsbn Completed in 674ms
+653 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/negotiator Completed in 676ms
+654 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/err-code Completed in 679ms
+655 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/file-uri-to-path Completed in 679ms
+656 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/agentkeepalive Completed in 693ms
+657 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/bl Completed in 699ms
+658 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/agent-base Completed in 699ms
+659 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/https-proxy-agent Completed in 705ms
+660 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/sprintf-js Completed in 709ms
+661 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/mkdirp Completed in 711ms
+662 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/minipass-fetch Completed in 718ms
+663 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/rc Completed in 720ms
+664 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/github-from-package Completed in 722ms
+665 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/make-fetch-happen Completed in 733ms
+666 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/prebuild-install Completed in 739ms
+667 timing reifyNode:node_modules/node-red-node-sqlite Completed in 745ms
+668 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/smart-buffer Completed in 748ms
+669 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/unique-filename Completed in 757ms
+670 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/retry Completed in 764ms
+671 warn deprecated gauge@4.0.4: This package is no longer supported.
+672 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/gauge Completed in 773ms
+673 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/tar-fs Completed in 790ms
+674 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/cacache Completed in 801ms
+675 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/@npmcli/fs Completed in 809ms
+676 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/node-addon-api Completed in 809ms
+677 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/minimist Completed in 816ms
+678 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/readable-stream Completed in 822ms
+679 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/tar Completed in 839ms
+680 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/socks Completed in 853ms
+681 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/iconv-lite Completed in 860ms
+682 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/ip-address Completed in 883ms
+683 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/semver Completed in 884ms
+684 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/sqlite3 Completed in 891ms
+685 timing reifyNode:node_modules/node-red-node-sqlite/node_modules/node-gyp Completed in 1277ms
+686 timing reify:unpack Completed in 1283ms
+687 timing reify:unretire Completed in 0ms
+688 timing build:queue Completed in 5ms
+689 timing build:link:node_modules/node-red-node-sqlite/node_modules/nopt Completed in 20ms
+690 timing build:link:node_modules/node-red-node-sqlite/node_modules/mkdirp Completed in 20ms
+691 timing build:link:node_modules/node-red-node-sqlite/node_modules/color-support Completed in 21ms
+692 timing build:link:node_modules/node-red-node-sqlite/node_modules/semver Completed in 19ms
+693 timing build:link:node_modules/node-red-node-sqlite/node_modules/rc Completed in 19ms
+694 timing build:link:node_modules/node-red-node-sqlite/node_modules/prebuild-install Completed in 20ms
+695 timing build:link:node_modules/node-red-node-sqlite/node_modules/rimraf Completed in 19ms
+696 timing build:link:node_modules/node-red-node-sqlite/node_modules/which Completed in 19ms
+697 timing build:link:node_modules/node-red-node-sqlite/node_modules/node-gyp Completed in 21ms
+698 timing build:link Completed in 22ms
+699 info run sqlite3@5.1.7 install node_modules/node-red-node-sqlite/node_modules/sqlite3 prebuild-install -r napi || node-gyp rebuild
+700 info run sqlite3@5.1.7 install { code: 1, signal: null }
+701 timing reify:rollback:createSparse Completed in 336ms
+702 timing reify:rollback:retireShallow Completed in 0ms
+703 timing command:install Completed in 3687ms
+704 verbose stack Error: command failed
+704 verbose stack     at ChildProcess.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\promise-spawn\lib\index.js:63:27)
+704 verbose stack     at ChildProcess.emit (node:events:513:28)
+704 verbose stack     at maybeClose (node:internal/child_process:1100:16)
+704 verbose stack     at Process.ChildProcess._handle.onexit (node:internal/child_process:304:5)
+705 verbose pkgid sqlite3@5.1.7
+706 verbose cwd C:\ProgramData\node-red
+707 verbose Windows_NT 10.0.17763
+708 verbose node v16.20.2
+709 verbose npm  v8.19.4
+710 error code 1
+711 error path C:\ProgramData\npm\npm\node_modules\node-red-node-sqlite\node_modules\sqlite3
+712 error command failed
+713 error command C:\Windows\system32\cmd.exe /d /s /c prebuild-install -r napi || node-gyp rebuild
+714 error prebuild-install warn install read ECONNRESET
+714 error gyp info it worked if it ends with ok
+714 error gyp info using node-gyp@8.4.1
+714 error gyp info using node@16.20.2 | win32 | x64
+714 error gyp info find Python using Python version 3.12.2 found at "C:\Program Files\Python312\python.exe"
+714 error gyp http GET https://nodejs.org/download/release/v16.20.2/node-v16.20.2-headers.tar.gz
+714 error gyp WARN install got an error, rolling back install
+714 error gyp ERR! configure error 
+714 error gyp ERR! stack FetchError: request to https://nodejs.org/download/release/v16.20.2/node-v16.20.2-headers.tar.gz failed, reason: read ECONNRESET
+714 error gyp ERR! stack     at ClientRequest.<anonymous> (C:\ProgramData\npm\npm\node_modules\node-red-node-sqlite\node_modules\minipass-fetch\lib\index.js:110:14)
+714 error gyp ERR! stack     at ClientRequest.emit (node:events:513:28)
+714 error gyp ERR! stack     at TLSSocket.socketErrorListener (node:_http_client:494:9)
+714 error gyp ERR! stack     at TLSSocket.emit (node:events:525:35)
+714 error gyp ERR! stack     at emitErrorNT (node:internal/streams/destroy:157:8)
+714 error gyp ERR! stack     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
+714 error gyp ERR! stack     at processTicksAndRejections (node:internal/process/task_queues:83:21)
+714 error gyp ERR! System Windows_NT 10.0.17763
+714 error gyp ERR! command "C:\\Program Files\\nodejs\\node.exe" "C:\\ProgramData\\npm\\npm\\node_modules\\node-red-node-sqlite\\node_modules\\node-gyp\\bin\\node-gyp.js" "rebuild"
+714 error gyp ERR! cwd C:\ProgramData\npm\npm\node_modules\node-red-node-sqlite\node_modules\sqlite3
+714 error gyp ERR! node -v v16.20.2
+714 error gyp ERR! node-gyp -v v8.4.1
+714 error gyp ERR! not ok
+715 verbose exit 1
+716 timing npm Completed in 3885ms
+717 verbose unfinished npm timer reify 1722063880811
+718 verbose unfinished npm timer reify:build 1722063882997
+719 verbose unfinished npm timer build 1722063882997
+720 verbose unfinished npm timer build:deps 1722063882998
+721 verbose unfinished npm timer build:run:install 1722063883025
+722 verbose unfinished npm timer build:run:install:node_modules/node-red-node-sqlite/node_modules/sqlite3 1722063883025
+723 verbose code 1
+724 error A complete log of this run can be found in:
+724 error     C:\ProgramData\npm\npm-cache\_logs\2024-07-27T07_04_40_627Z-debug-0.log
