@@ -137,7 +137,14 @@ PYTHONPATH: C:\Program Files\Python312
 
 ### 6. Install and configure Node-RED SNMP Gateway
 
-Download and unzip or clone this repository into `%PROGRAMDATA%/node-red/projects`
+1. Download and unzip or clone this repository into `%PROGRAMDATA%/node-red/projects`
+2. In powershell or cmd, change directory into `%PROGRAMDATA%/node-red`:
+```
+> cd C:\ProgramData\node-red\
+C:\ProgramData\node-red> node-red --settings ./settings.js
+```
+3. 
+4. 
 
 ### Logging
 
