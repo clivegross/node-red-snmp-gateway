@@ -25,7 +25,7 @@ If you'd like to deploy Node-RED and `node-red-snmp-gateway` to production on a 
 ## Dependencies
 
 - Node.js (if SNMPv3 DES Privacy algorithm, install Node.js v16 or less, see below)
-- Node-RED
+- Node-RED (tested with v3.1.9)
 - Git (optional, for running as a [Node-RED Project](https://nodered.org/docs/user-guide/projects/))
 - pm2-installer & pm2 (optional, for running Node-RED on Windows as a service)
 - Node-RED nodes:
@@ -98,7 +98,8 @@ Node-RED SNMP Gateway is ideally run as a [Node-RED Project](https://nodered.org
 Install Node-RED using npm [following installation on Windows instructions on Node-RED site](https://nodered.org/docs/getting-started/windows).
 
 ```
-npm install -g --unsafe-perm node-red
+<!-- tested on 3.1.9 -->
+npm install -g --unsafe-perm node-red@3.1.9
 ```
 
 ```
@@ -144,7 +145,11 @@ PYTHONPATH: C:\Program Files\Python312
 C:\ProgramData\node-red> node-red --settings ./settings.js
 ```
 3. Then open Node-RED in web browser at http://127.0.0.1:1880/
-4. When prompted, select 'open existing project', then select 'node-red-snmp-gateway'.
+4. When prompted, select 'Open existing project', then select 'node-red-snmp-gateway'.
+
+![Open existing](./images/node-red-open-existing-project.png)
+![Open project](./images/node-red-open-project.png)
+
 5. Then install the missing dependencies when prompted.
 
 ![Manage project dependencies](./images/node-red-manage-project-dependencies.png)
