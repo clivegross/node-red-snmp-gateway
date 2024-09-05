@@ -17,14 +17,16 @@ To deploy in your existing Node-RED instance:
 1. Enable [projects](https://nodered.org/docs/user-guide/projects/) in your Node-RED instance if they aren't already.
 1. Download and unzip this project into your Node-RED `projects` directory.
 1. Install dependency nodes, see [below](#dependencies).
-1. Configure the SNMP objects csv file, see [below](#configure-flow).
-1. Start the server, open the flow and configure filepaths, web service and database as required.
+1. Configure the SNMP object list csv file, see [below](#snmp-object-list-csv).
+1. Start the server, open the flow and configure the [configuration nodes, see below](#configuration-nodes), web service and database as required.
 
-If you'd like to deploy Node-RED and `node-red-snmp-gateway` to production on a Windows machine, see [below](#deploy-to-production-on-windows)
+If you'd like to deploy Node-RED and `node-red-snmp-gateway` to production on a Windows machine, see [below](#deploy-to-production-on-windows).
+
+![flow](./images/node-red-snmp-gateway-flow.png)
 
 ## Dependencies
 
-- Node.js (if SNMPv3 DES Privacy algorithm, install Node.js v16 or less, see below)
+- Node.js (if SNMPv3 DES Privacy algorithm is required, install Node.js v16 or less, see below)
 - Node-RED (tested with v3.1.9)
 - Git (optional, for running as a [Node-RED Project](https://nodered.org/docs/user-guide/projects/))
 - pm2-installer & pm2 (optional, for running Node-RED on Windows as a service)
@@ -32,21 +34,121 @@ If you'd like to deploy Node-RED and `node-red-snmp-gateway` to production on a 
     - node-red-node-snmp
     - node-red-node-sqlite (optional, for storing data in sqlite)
 
-## Configure flow
+## Configuration nodes
 
-The `node-red-snmp-gateway`
+### sqlite db
+Set the path to where the SQLite database is to be stored. Default `C:\ProgramData\node-red\projects\node-red-snmp-gateway\data\db`
 
-### 1. Initialise
+![sqlite db location](./images/sqlite-db.png)
 
-Prepare CSV config file
+### global config
+Set the global environment varibales here:
+- `LOG_LEVEL`: currently does nothing.
+- `SNMP_OBJECT_LIST`: The path to the SNMP object list CSV file, see [below](#snmp-object-list-csv). Default `C:\ProgramData\node-red\projects\node-red-snmp-gateway\data\SNMPObjectList.csv`
 
-### 2. Fetch SNMP values
+![global config node](./images/global-config-node.png)
 
-xxx
+## Subflows
 
-### 3. HTTP serve XML
+### db initialise
 
-xxx
+Initialises the SQLite database at start of flow or whenever data needs to be reset/reloaded. Interfaces with `db controller`.
+
+- Drops and recreates empty `snmp_devices` and `snmp_objects` tables.
+- Optionally loads SNMP device and object data into database from global environment variable `global.env.SNMP_OBJECT_LIST` csv file. Defaults to `C:\\ProgramData\\node-red\\projects\\node-red-snmp-gateway\\data\\SNMPObjectList.csv`. csv should contain a list of all snmp objects, with the following the following headers:
+  - DeviceName
+  - OID
+  - Server IP
+  - Version
+  - User
+  - AuthPass
+  - PrivPass
+  - SecurityLevel
+  - AuthMode
+  - PrivMode
+  - Community
+  - FriendlyName
+  
+**Input:** Trigger once at start of flow.
+
+**Output:** `msg.payload` contains the response from SQLite node.
+
+### db controller
+
+Database controller node, interfaces with the SQLite DB (create/read/update/delete). All flows should interface with a `db controller` node rather than the `db` directly.
+
+**Input:** The input message requires the following data:
+- `msg.action`: (string enum: `loadObjectList` | `loadDeviceList` | `updateValues` | `selectObjects` | `selectDevices` | `initialise` | `updateDeviceUpdated`) see below. The database action to carry out using the message.
+- `msg.payload`: (array | object) SQL Query parameters to send to the `node-red-node-sqlite` node.
+
+**Query parameters (optional):**
+- `msg.devicename`: filters the table by matching `devicename`.
+  - `msg.devicename` may be a substring within the `devicename`, eg `msg.devicename` = \"T1-L00-DC1-A1-PDU\" will return \"T1-L00-DC1-A1-PDU-A\" and \"T1-L00-DC1-A1-PDU-B\"
+  - `msg.devicename` may include \"%\" as a wildcard, eg `msg.devicename` = \"T1-L00-DC1-A%-PDU-A\" will return \"T1-L00-DC1-A1-PDU-A\" and \"T1-L00-DC1-A2-PDU-A\"
+
+**Output:** `msg.payload` contains the response from SQLite node.
+
+**msg.action:**
+Defines the type of database action:
+- `loadObjectList`: inserts data into `snmp_objects` table. Expects array of `snmp_objects` in `msg.payload`.
+- `loadDeviceList`: inserts data into `snmp_devices` table. Expects array of `snmp_devices` in `msg.payload`.
+- `updateValues`: updates `values` field in the `snmp_objects` table, or inserts new record if no matching devicename/oid exists. Expects either array of `snmp_objects` objects or single object in `msg.payload`.
+- `selectObjects`: fetches object list from `snmp_objects`. Can filter by `devicename` using `msg.devicename` in input.
+- `selectDevices`: fetches object list from `snmp_objects`. Can filter by `devicename` using `msg.devicename` in input.
+- `initialise`: drops and recreates empty `snmp_objects` and `snmp_devices` tables.
+- `updateDeviceUpdated`: updates `updated` field for device in `snmp_devices` table. Expects valid `msg.devicename`, updates `updated` field to `CURRENT_TIMESTAMP`.
+
+### snmp3 fetch and save
+Fetches objects from a SNMPv3 device using the `snmp3 fetch values` node, then writes the response values to the database using the `db updateValues` node.
+
+**Input:** Input messages should contain the following objects:
+- `msg.devicename`: (string) snmp device name (used as id for saving values to db)
+- `msg.host`: (string) snmp device hostname/IP address
+- `msg.username`: (string) device snmpv3 username
+- `msg.securitylevel`: (string enum: `AuthPriv` | `AuthNoPRiv` | `NoAuthNoPRiv` ) string snmpv3 security level
+- `msg.authmode`: (string enum: `MD5` | `SHA`) snmpv3 auth protocol
+- `msg.authkey`: (string) snmpv3 auth password
+- `msg.privmode`: (string enum: `AES` | `DES`) snmpv3 privacy protocol
+- `msg.privkey`: (string) snmpv3 privacy password
+- `msg.oid`: (string) list of comma seperated oids
+
+**Output:** `msg.payload` contains response from sqlite node.
+
+### get snmp device oid list
+Queries `db` and gets list of snmp devices (and connection details) from `snmp_devices` table.\r\nThen for each device, gets a list of its oids from `snmp_objects` table.\r\nPrepares and splits into one message per device, ready to send to an `snmp3 fetch` or `snmp3 fetch and save` node.
+
+**Input:** Triggered by any input. The input msg data is ignored and possibly overwritten.
+
+**Output:** Output messages (one per snmp device) contains the following objects:
+- `msg.devicename`: (string) snmp device name (used as id for saving values to db)
+- `msg.host`: (string) snmp device hostname/IP address
+- `msg.username`: (string) device snmpv3 username
+- `msg.securitylevel`: (string enum: `AuthPriv` | `AuthNoPriv` | `NoAuthNoPRiv` ) string snmpv3 security level
+- `msg.authmode`: (string enum: `MD5` | `SHA`) snmpv3 auth protocol
+- `msg.authkey`: (string) snmpv3 auth password
+- `msg.privmode`: (string enum: `AES` | `DES`) snmpv3 privacy protocol
+- `msg.privkey`: (string) snmpv3 privacy password
+- `msg.oid`: (string) list of comma seperated oids
+
+### http serve xml
+
+Simple XML Web Service.
+- Listens on `/objects`, fetches data from `db selectObjects` node and returns XML parsed array of SNMP objects.
+- Listens on `/devices`, fetches data from `db selectDevices` node and returns XML parsed array of SNMP devices.
+
+**http query parameters (optional):**
+- `devicename`: filters by matching devicename. Applies to both `/objects` and `/devices` endpoints.
+  - `devicename` may be a substring within the devicename, eg `?devicename=\"T1-L00-DC1-A1-PDU\"` will return \"T1-L00-DC1-A1-PDU-A\" and \"T1-L00-DC1-A1-PDU-B\".
+  - `devicename` may include \"%\" as a wildcard, eg `?devicename=\"T1-L00-DC1-A%-PDU-A\"` will return \"T1-L00-DC1-A1-PDU-A\" and \"T1-L00-DC1-A2-PDU-A\".
+
+## SNMP Object List CSV
+
+When the flow starts, the SQLite database is initialised, then the csv is loaded and values inserted into the `snmp_objects` table and `snmp_devices` table.
+A sample CSV config file is provided in `./examples/SNMPObjectList.csv`.
+
+This data tells `node-red-snmp-gateway` which devices to poll and what objects to retrieve.
+
+![SNMPObjectsList.csv](./images/snmpobjectlist.csv.png)
 
 ## Deploy to production on Windows
 
