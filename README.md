@@ -150,6 +150,19 @@ This data tells `node-red-snmp-gateway` which devices to poll and what objects t
 
 ![SNMPObjectsList.csv](./images/snmpobjectlist.csv.png)
 
+## Connect to the Simple XML Web Service from EBO
+
+**Retrieve SNMP objects:** The `/objects` endpoint provides the SNMP object values. Use query parameters to filter the returned objects. 
+
+![EBO step 1](./images/ebo-setup-1.png)
+![EBO step 2](./images/ebo-setup-2.png)
+![EBO step 3](./images/ebo-setup-3.png)
+![EBO step 4](./images/ebo-setup-4.png)
+
+**Monitor SNMP devices:** The `/devices` endpoint provides the UTC timestamp of the last response from the device or 'never' for a device that has never responded since the SQLite database was initialised. Use query parameters to filter the returned devices. 
+
+![EBO step 4](./images/ebo-setup-5.png)
+
 ## Deploy to production on Windows
 
 In a default Node.js install, node modules (including Node-RED) are installed in the current users `%APPDATA%`. In a default Node-RED install, the Node-RED `userDir` is installed in the current users `~\.node-red` directory. Neither of these will work well if the flow is to run in production as a service, independently of user login, and handle server restarts and faults.
